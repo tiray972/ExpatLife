@@ -17,7 +17,7 @@ export default function Home() {
           <div className="flex items-center justify-center mb-6">
             <h1 className="text-4xl font-bold text-orange-500">Expat</h1>
             <h1 className="text-4xl font-bold text-teal-500">Life</h1>
-            <span className="text-4xl font-bold text-white">.com</span>
+            <span className="text-4xl font-bold text-white">.cm</span>
           </div>
           <h2 className="text-3xl md:text-5xl font-extrabold mb-6 leading-tight">
             Trouvez votre logement aux ÉMIRATS, grâce à un accompagnement personnalisé pour une arrivée sereine et réussie.
