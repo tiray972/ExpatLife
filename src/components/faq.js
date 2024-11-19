@@ -13,7 +13,7 @@ export default function FAQ({faqData}) {
 
   return (
     <div className="bg-white ">
-      <div className="max-w-full p-16 bg-white shadow-lg rounded-lg">
+      <div className="max-w-full p-8 md:p-16 bg-white shadow-lg rounded-lg">
         <h1 className="text-3xl font-bold text-gray-800 text-left mb-6">FAQ</h1>
         <Accordion type="single" collapsible>
           {faqData.map((item, index) => (

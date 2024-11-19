@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation"; // Redirection utilisateur
 import { signInWithEmail, signInWithGoogle } from "@/lib/firebase/auth";
+import Header from "@/components/header";
 import {CircleUserRound } from "lucide-react"
 
 export default function Login() {
@@ -65,11 +66,16 @@ export default function Login() {
   };
 
   return (
-    <div className="min-h-screen flex items-center bg-contain bg-center justify-center bg-gray-100"
+    <div className="min-h-screen min-w-screen flex  flex-col" >
+    <Header/>
+    <div className="min-h-[90vh] flex items-center bg-contain bg-center justify-center bg-gray-100"
     style={{ backgroundImage: 'url("/images/background-login.png")' }}
     >
       <form onSubmit={handleLogin} className="space-y-4 flex flex-col items-center justify-center bg-white p-6 rounded shadow-md w-96">
-      <CircleUserRound className="text-center text-teal-400" />
+      <CircleUserRound 
+      className="text-center text-teal-400"
+      size={90}
+      />
       
         <h1 className="text-2xl font-bold text-center">Connexion</h1>
 
@@ -108,6 +114,7 @@ export default function Login() {
           </button>
         </div>
       </form>
+    </div>
     </div>
   );
 }
