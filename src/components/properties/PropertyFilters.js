@@ -1,14 +1,41 @@
 "use client";
 
+import { useState } from "react";
 import { Card } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Slider } from "@/components/ui/slider";
+import { Switch } from "@/components/ui/switch";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 
-export function PropertyFilters({ filters, setFilters }) {
+export function PropertyFilters() {
+  const [filters, setFilters] = useState({
+    emirateID: true, // Par défaut activé
+    type: "all",
+    priceRange: [0, 50000],
+    bedrooms: "all",
+    duration: "all",
+    furnished: "all",
+  });
+
+  const isEmirateIDProvided = filters.emirateID;
+
   return (
     <Card className="p-6">
       <div className="space-y-6">
+        {/* Section Emirate ID */}
+        <div>
+          <Label htmlFor="emirate-id-toggle" className="flex items-center justify-between">
+            Emirate ID
+            <Switch
+              id="emirate-id-toggle"
+              checked={filters.emirateID} // Valeur initiale
+              onCheckedChange={(checked) => setFilters({ ...filters, emirateID: checked })}
+            />
+          </Label>
+        </div>
+
+        {/* Autres sections (inchangées) */}
+        {/* Section Type de bien */}
         <div>
           <Label>Type de bien</Label>
           <Select
@@ -27,23 +54,27 @@ export function PropertyFilters({ filters, setFilters }) {
           </Select>
         </div>
 
-        <div>
-          <Label>Budget mensuel (AED)</Label>
-          <div className="pt-4">
-            <Slider
-              value={filters.priceRange}
-              min={0}
-              max={50000}
-              step={1000}
-              onValueChange={(value) => setFilters({ ...filters, priceRange: value })}
-            />
-            <div className="flex justify-between mt-2 text-sm text-gray-600">
-              <span>{filters.priceRange[0]} AED</span>
-              <span>{filters.priceRange[1]} AED</span>
+        {/* Section Budget mensuel */}
+        {isEmirateIDProvided && (
+          <div>
+            <Label>Budget mensuel (AED)</Label>
+            <div className="pt-4">
+              <Slider
+                value={filters.priceRange}
+                min={0}
+                max={50000}
+                step={1000}
+                onValueChange={(value) => setFilters({ ...filters, priceRange: value })}
+              />
+              <div className="flex justify-between mt-2 text-sm text-gray-600">
+                <span>{filters.priceRange[0]} AED</span>
+                <span>{filters.priceRange[1]} AED</span>
+              </div>
             </div>
           </div>
-        </div>
+        )}
 
+        {/* Section Chambres */}
         <div>
           <Label>Chambres</Label>
           <Select
@@ -64,11 +95,13 @@ export function PropertyFilters({ filters, setFilters }) {
           </Select>
         </div>
 
+        {/* Section Durée */}
         <div>
           <Label>Durée</Label>
           <Select
             value={filters.duration}
             onValueChange={(value) => setFilters({ ...filters, duration: value })}
+            disabled={!isEmirateIDProvided} // Désactivé si Emirate ID est OFF
           >
             <SelectTrigger>
               <SelectValue placeholder="Durée de location" />
@@ -81,6 +114,7 @@ export function PropertyFilters({ filters, setFilters }) {
           </Select>
         </div>
 
+        {/* Section Meublé */}
         <div>
           <Label>Meublé</Label>
           <Select

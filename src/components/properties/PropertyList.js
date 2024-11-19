@@ -12,6 +12,7 @@ export function PropertyList({ filters }) {
     if (filters.bedrooms !== "all" && property.bedrooms !== filters.bedrooms) return false;
     if (filters.duration !== "all" && property.duration !== filters.duration) return false;
     if (filters.furnished !== "all" && property.furnished !== (filters.furnished === "yes")) return false;
+    // if (filters.emirateID !== property.needEmirateID) return false;
     return true;
   });
 

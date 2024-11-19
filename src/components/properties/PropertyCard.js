@@ -26,7 +26,7 @@ export function PropertyCard({ property }) {
               <MapPin className="w-4 h-4" /> {property.location}
             </p>
           </div>
-          <div className="text-xl font-bold text-blue-600">
+          <div className="text-xl font-bold text-teal-600">
             {property.price} AED
             <span className="text-sm text-gray-500">/mois</span>
           </div>
