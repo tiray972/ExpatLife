@@ -60,7 +60,7 @@ export default function Home() {
        <Header />
       {/* Hero Section */}
       <section
-        className="relative h-screen flex items-center justify-center bg-cover bg-center"
+        className="relative min-h-12 py-8 flex items-center justify-center bg-cover bg-center"
         style={{ backgroundImage: 'url("/images/background.png")' }}
       >
         <div className="absolute inset-0 bg-black bg-opacity-40"></div>
