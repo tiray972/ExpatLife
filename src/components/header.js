@@ -47,7 +47,7 @@ export default function Header() {
             alt="logo ExpatLife"
             height={50}
             width={100}
-            className="rounded-lg hover:scale-110 shadow-lg"
+            className="rounded-lg hover:scale-110 "
           />
           </Link>
         </div>

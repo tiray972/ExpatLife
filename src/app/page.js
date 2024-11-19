@@ -15,15 +15,19 @@ export default function Home() {
         <div className="absolute inset-0 bg-black bg-opacity-40"></div>
         <div className="relative z-10 text-center text-white max-w-4xl px-6">
           <div className="flex items-center justify-center mb-6">
-            <h1 className="text-4xl font-bold text-orange-500">Expat</h1>
-            <h1 className="text-4xl font-bold text-teal-500">Life</h1>
-            <span className="text-4xl font-bold text-white">.cm</span>
+            <Image
+            src="/images/logo.png"
+            alt="logo ExpatLife sur banner"
+            width={300}
+            height={250}
+            className=""
+            />
           </div>
           <h2 className="text-3xl md:text-5xl font-extrabold mb-6 leading-tight">
             Trouvez votre logement aux ÉMIRATS, grâce à un accompagnement personnalisé pour une arrivée sereine et réussie.
           </h2>
           <div className="flex justify-center gap-4">
-            <Link href="/housing">
+            <Link href="/location">
               <button className="bg-black text-white font-medium py-3 px-6 rounded-lg hover:bg-gray-800 transition">
                 TROUVER UN LOGEMENT
               </button>
@@ -66,37 +70,41 @@ export default function Home() {
         <h2 className="text-center text-3xl font-bold mb-10">NOTRE PRIORITÉ</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 px-6 md:px-20">
           {/* Card 1 */}
-          <div className="bg-white p-6 border rounded-lg shadow-md flex flex-col items-start justify-between h-full">
-            <div className="text-teal-500 text-4xl mb-4">
-              <Users />
+          <Link  href="/contact"  >
+            <div className="bg-white hover:scale-105 p-6 border rounded-lg shadow-md flex flex-col items-start justify-between h-full">
+              <div className="text-teal-500 text-4xl mb-4">
+                <Users />
+              </div>
+              <h3 className="font-bold text-xl mb-4 text-center">VOTRE ACCOMPAGNEMENT</h3>
+              <p className="text-gray-700 text-start">
+                Nous vous mettons à disposition la création de votre visa personnel, celui de votre famille et également votre société ainsi que toutes démarches administratives pour votre installation.
+              </p>
             </div>
-            <h3 className="font-bold text-xl mb-4 text-center">VOTRE ACCOMPAGNEMENT</h3>
-            <p className="text-gray-700 text-start">
-              Nous vous mettons à disposition la création de votre visa personnel, celui de votre famille et également votre société ainsi que toutes démarches administratives pour votre installation.
-            </p>
-          </div>
-
+          </Link>
           {/* Card 2 */}
-          <div className="bg-white p-6 border rounded-lg shadow-md flex flex-col items-start justify-between h-full">
-            <div className="text-teal-500 text-4xl mb-4">
-              <Briefcase />
+          <Link href="/location" >
+            <div className="bg-white hover:scale-105 p-6 border rounded-lg shadow-md flex flex-col items-start justify-between h-full">
+              <div className="text-teal-500 text-4xl mb-4">
+                <Briefcase />
+              </div>
+              <h3 className="font-bold text-xl mb-4 text-center">VOTRE INSTALLATION</h3>
+              <p className="text-gray-700 text-start">
+                Avec ou sans visa, trouvez votre 1er logement, petite ou longue durée et installez-vous en toute sérénité grâce à nos partenaires et propriétaires triés sur le volet.
+              </p>
             </div>
-            <h3 className="font-bold text-xl mb-4 text-center">VOTRE INSTALLATION</h3>
-            <p className="text-gray-700 text-start">
-              Avec ou sans visa, trouvez votre 1er logement, petite ou longue durée et installez-vous en toute sérénité grâce à nos partenaires et propriétaires triés sur le volet.
-            </p>
-          </div>
-
+          </Link>
           {/* Card 3 */}
-          <div className="bg-white p-6 border rounded-lg shadow-md flex flex-col items-start justify-between h-full">
-            <div className="text-teal-500 text-4xl mb-4">
-              <Handshake />
+          <Link href="/contact" >
+            <div className="bg-white hover:scale-105 p-6 border rounded-lg shadow-md flex flex-col items-start justify-between h-full">
+              <div className="text-teal-500 text-4xl mb-4">
+                <Handshake />
+              </div>
+              <h3 className="font-bold text-xl mb-4 text-center">VOTRE CONFIANCE</h3>
+              <p className="text-gray-700 text-start">
+                Notre expérience de plusieurs années en relation publique vous permettra d'être soutenu dans n'importe quelle démarche qu'elle soit administrative ou autre ici aux Émirats.
+              </p>
             </div>
-            <h3 className="font-bold text-xl mb-4 text-center">VOTRE CONFIANCE</h3>
-            <p className="text-gray-700 text-start">
-              Notre expérience de plusieurs années en relation publique vous permettra d'être soutenu dans n'importe quelle démarche qu'elle soit administrative ou autre ici aux Émirats.
-            </p>
-          </div>
+          </Link>
         </div>
       </section>
 
