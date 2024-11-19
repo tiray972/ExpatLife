@@ -38,16 +38,16 @@ export default function Header() {
 
   return (
     <header className="bg-white text-black shadow-md">
-      <div className="container mx-auto px-4 py-4 flex items-center justify-between">
+      <div className="container mx-auto px-4  flex items-center justify-between">
         {/* Logo */}
         <div className="text-2xl font-bold">
           <Link href="/">
           <Image
             src="/images/logo.png"
             alt="logo ExpatLife"
-            height={50}
+            height={200}
             width={100}
-            className="rounded-lg hover:scale-110 "
+            className="rounded-lg object-cover hover:scale-110 "
           />
           </Link>
         </div>
