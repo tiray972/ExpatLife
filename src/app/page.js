@@ -2,8 +2,59 @@ import Image from 'next/image';
 import Link from 'next/link';
 import {Users, Briefcase, Handshake } from 'lucide-react';
 import Header from "@/components/header";
+import FAQ from '@/components/faq';
+
 
 export default function Home() {
+
+  const faqData = [
+    {
+      question: "Quels services propose Expatlife ?",
+      answer:
+        "Expatlife accompagne les expatriés dans leur installation aux Émirats Arabes Unis, notamment dans la recherche de logements, la création de visas, et le conseil en démarches administratives.",
+    },
+    {
+      question: "Puis-je trouver un logement sans visa ?",
+      answer:
+        "Oui, Expatlife offre des solutions pour trouver des logements, que vous disposiez d'un visa ou non.",
+    },
+    {
+      question: "Quels types de logements sont disponibles ?",
+      answer:
+        "Expatlife propose une gamme de logements adaptés à différents besoins, pour des durées courtes ou longues, avec des options pour tout budget.",
+    },
+    {
+      question: "Aidez-vous à obtenir un visa ou une Emirates ID ?",
+      answer:
+        "Oui, nos partenaires spécialisés peuvent vous aider à créer votre visa et obtenir votre Emirates ID, même si votre entreprise ne prend pas en charge ce processus.",
+    },
+    {
+      question: "Puis-je bénéficier d'une assistance pour créer ma société ?",
+      answer:
+        "Absolument, Expatlife propose un accompagnement pour les démarches de création d'entreprise, de la réflexion initiale à l'enregistrement officiel.",
+    },
+    {
+      question: "Que comprend l’accompagnement après l’installation ?",
+      answer:
+        "Nous aidons pour des démarches courantes comme l'achat d'un véhicule, le choix d'une école, ou la souscription à une assurance, grâce à notre expertise et nos partenaires fiables.",
+    },
+    {
+      question: "Y a-t-il un service client pour répondre à mes questions ?",
+      answer:
+        "Oui, notre équipe est disponible pour répondre à vos questions et vous accompagner dans toutes vos démarches aux Émirats.",
+    },
+    {
+      question: "Est-ce que je peux bénéficier de vos services si je ne parle pas anglais ou arabe ?",
+      answer:
+        "Oui, nous offrons un accompagnement multilingue pour faciliter votre transition aux Émirats.",
+    },
+    {
+      question: "Quels sont les coûts associés à vos services ?",
+      answer:
+        "Les coûts varient selon les services demandés. Contactez notre équipe pour un devis personnalisé.",
+    },
+  ];
+
   return (
     <div className="bg-gray-100">
        <Header />
@@ -236,6 +287,10 @@ export default function Home() {
         
         
       </section>
+
+      {/* section FAQ */}
+      <FAQ faqData={faqData}/>
+
     </div>
   );
 }
