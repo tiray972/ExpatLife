@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import {Users, Briefcase, Handshake } from 'lucide-react';
 import Header from "@/components/header";
+import Footer from '@/components/Footer';
 import FAQ from '@/components/faq';
 
 
@@ -285,7 +286,7 @@ export default function Home() {
 
       {/* section FAQ */}
       <FAQ faqData={faqData}/>
-
+      <Footer/>
     </div>
   );
 }
