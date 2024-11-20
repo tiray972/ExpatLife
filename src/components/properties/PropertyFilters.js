@@ -7,18 +7,10 @@ import { Slider } from "@/components/ui/slider";
 import { Switch } from "@/components/ui/switch";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 
-export function PropertyFilters() {
-  const [filters, setFilters] = useState({
-    emirateID: true, // Par défaut activé
-    type: "all",
-    priceRange: [0, 50000],
-    bedrooms: "all",
-    duration: "all",
-    furnished: "all",
-  });
-
+export function PropertyFilters({filters, setFilters}) {
+  
   const isEmirateIDProvided = filters.emirateID;
-
+  
   return (
     <Card className="p-6">
       <div className="space-y-6">

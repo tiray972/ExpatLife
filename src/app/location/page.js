@@ -11,6 +11,7 @@ import Header from "@/components/header";
 
 export default function LocationsPage() {
   const [filters, setFilters] = useState({
+    emirateID: true, // Initialisé à true
     type: "all",
     priceRange: [0, 50000],
     bedrooms: "all",
