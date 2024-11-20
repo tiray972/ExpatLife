@@ -221,7 +221,7 @@ export default function Home() {
         </div>
       </section>
       {/* Section ACCOMPAGNEMENT */}
-      <section className="bg-white rounded-lg shadow-lg p-8 px-6 md:px-20 2xl:px-96 space-x-8  flex flex-col md:flex-row">
+      <section className="bg-gray-100 rounded-lg shadow-lg p-8 px-6 md:px-20 2xl:px-96 space-x-8  flex flex-col md:flex-row">
         <div className="md:w-1/2 ">
           <h2 className="text-2xl font-bold text-gray-900 mb-4">VOTRE ACCOMPAGNEMENT</h2>
           <p className="text-teal-500 font-semibold mb-4">
