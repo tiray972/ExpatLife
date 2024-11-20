@@ -93,7 +93,7 @@ export default function Home() {
       </section>
 
       {/* Problem Section */}
-      <section className="flex flex-col md:flex-row items-center justify-between px-6 md:px-20 py-10 bg-white">
+      <section className="flex flex-col md:flex-row items-center justify-between px-6 md:px-20 2xl:px-40 py-10 bg-white">
         <div className="max-w-lg">
           <h2 className="text-2xl md:text-4xl font-bold mb-4">
             Chaque nouvel arrivant sur le territoire des Émirats rencontre le même problème,
@@ -119,7 +119,7 @@ export default function Home() {
       {/* Our Priorities Section */}
       <section className="bg-gray-100 py-16">
         <h2 className="text-center text-3xl font-bold mb-10">NOTRE PRIORITÉ</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 px-6 md:px-20">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 px-6 md:px-20 2xl:px-40">
           {/* Card 1 */}
           <Link  href="/contact"  >
             <div className="bg-white hover:scale-105 p-6 border rounded-lg shadow-md flex flex-col items-start justify-between h-full">
@@ -160,7 +160,7 @@ export default function Home() {
       </section>
 
       {/* About Us Section */}
-      <section className="bg-teal-100 rounded-lg shadow-lg py-8 px-6 md:px-20 flex flex-col md:flex-row">
+      <section className="bg-teal-100 rounded-lg shadow-lg py-8 px-6 md:px-20 2xl:px-40 flex flex-col md:flex-row">
           <div className="md:w-1/2 md:pl-8">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
               EXPATLIFE.COM
@@ -188,7 +188,7 @@ export default function Home() {
     
       </section>
       {/* Section INSTALLATION */}
-      <section className="bg-white rounded-lg shadow-lg py-8 px-6 md:px-20 flex flex-col md:flex-row">
+      <section className="bg-white rounded-lg shadow-lg py-8 px-6 md:px-20 2xl:px-40 flex flex-col md:flex-row">
         <div className="md:w-1/2">
           <img
             src="images/logo.png"
@@ -219,7 +219,7 @@ export default function Home() {
         </div>
       </section>
       {/* Section ACCOMPAGNEMENT */}
-      <section className="bg-white rounded-lg shadow-lg p-8 px-6 md:px-20 flex flex-col md:flex-row">
+      <section className="bg-white rounded-lg shadow-lg p-8 px-6 md:px-20 2xl:px-40 flex flex-col md:flex-row">
         <div className="md:w-1/2 md:pl-8">
           <h2 className="text-2xl font-bold text-gray-900 mb-4">VOTRE ACCOMPAGNEMENT</h2>
           <p className="text-teal-500 font-semibold mb-4">
@@ -249,7 +249,7 @@ export default function Home() {
         
       </section>
       {/* Section confiance */}
-      <section className="bg-white rounded-lg shadow-lg p-8 px-6 md:px-20 flex flex-col md:flex-row">
+      <section className="bg-white rounded-lg shadow-lg p-8 px-6 md:px-20 2xl:px-40 flex flex-col md:flex-row">
         <div className="md:w-1/2">
           <img
             src="images/logo.png"
