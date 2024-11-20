@@ -119,7 +119,7 @@ export default function Home() {
       {/* Our Priorities Section */}
       <section className="bg-gray-100 py-16">
         <h2 className="text-center text-3xl font-bold mb-10">NOTRE PRIORITÉ</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 px-6 md:px-20 2xl:px-96 space-x-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 px-6 md:px-20  space-x-8">
           {/* Card 1 */}
           <Link  href="/contact"  >
             <div className="bg-white hover:scale-105 p-6 border rounded-lg shadow-md flex flex-col items-start justify-between h-full">
