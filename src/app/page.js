@@ -160,9 +160,8 @@ export default function Home() {
       </section>
 
       {/* About Us Section */}
-      <section className="bg-teal-100 px-8 py-16">
-        <div className="flex flex-col md:flex-row items-center justify-between">
-          <div className="flex-1 text-center md:text-left md:mr-8">
+      <section className="bg-teal-100 rounded-lg shadow-lg py-8 px-6 md:px-20 flex flex-col md:flex-row">
+          <div className="md:w-1/2 md:pl-8">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
               EXPATLIFE.COM
             </h2>
@@ -176,26 +175,20 @@ export default function Home() {
               </button>
             </Link>
           </div>
-          <div className="flex-1 relative mt-8 md:mt-0">
+          <div className="md:w-1/2">
             <Image
               src="/images/199.png"
               alt="Notre équipe"
-              width={500}
+              width={800}
               height={350}
               className="rounded-lg shadow-md"
             />
-            {/* <div className="absolute inset-0 flex items-center justify-center">
-              <Link href="/about">
-                <button className="bg-red-500 text-white rounded-full p-4 shadow-md">
-                  ▶
-                </button>
-              </Link>
-            </div> */}
+            
           </div>
-        </div>
+    
       </section>
       {/* Section INSTALLATION */}
-      <section className="bg-white rounded-lg shadow-lg p-8 flex flex-col md:flex-row">
+      <section className="bg-white rounded-lg shadow-lg py-8 px-6 md:px-20 flex flex-col md:flex-row">
         <div className="md:w-1/2">
           <img
             src="images/logo.png"
@@ -226,7 +219,7 @@ export default function Home() {
         </div>
       </section>
       {/* Section ACCOMPAGNEMENT */}
-      <section className="bg-white rounded-lg shadow-lg p-8 flex flex-col md:flex-row">
+      <section className="bg-white rounded-lg shadow-lg p-8 px-6 md:px-20 flex flex-col md:flex-row">
         <div className="md:w-1/2 md:pl-8">
           <h2 className="text-2xl font-bold text-gray-900 mb-4">VOTRE ACCOMPAGNEMENT</h2>
           <p className="text-teal-500 font-semibold mb-4">
@@ -256,7 +249,7 @@ export default function Home() {
         
       </section>
       {/* Section confiance */}
-      <section className="bg-white rounded-lg shadow-lg p-8 flex flex-col md:flex-row">
+      <section className="bg-white rounded-lg shadow-lg p-8 px-6 md:px-20 flex flex-col md:flex-row">
         <div className="md:w-1/2">
           <img
             src="images/logo.png"
