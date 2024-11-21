@@ -1,5 +1,5 @@
 "use client"
-
+import { PropertyCard } from "@/components/properties/PropertyCard"
 import { useAuth } from "@/hooks/useAuth"
 import { useState, useEffect } from "react"
 import { addPropertyForAgent, fetchAgentProperties } from "@/lib/firebase/properties"
@@ -18,6 +18,7 @@ import {
   SidebarProvider,
   SidebarTrigger,
 } from "@/components/ui/sidebar"
+import AddPropertyDialog from "@/components/properties/AddPropertyDialog"
 
 export default function Dashboard() {
   const { user, loading } = useAuth()
@@ -32,7 +33,7 @@ export default function Dashboard() {
 
   return (
     <SidebarProvider>
-      <AppSidebar />
+      <AppSidebar/>
       <SidebarInset>
         {/* Header avec barre latérale et fil d'Ariane */}
         <header className="flex h-16 shrink-0 items-center gap-2 border-b px-4">
@@ -55,16 +56,8 @@ export default function Dashboard() {
         <div className="flex flex-1 flex-col gap-4 p-4">
           <h1 className="text-2xl font-bold">Bienvenue, {user.email}!</h1>
 
-          {/* Bouton pour ajouter une propriété */}
-          <button
-            className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
-            onClick={() =>
-              addPropertyForAgent({ name: "Nouvelle Propriété", price: 250000 })
-            }
-          >
-            Ajouter une propriété
-          </button>
-
+          {/* Dialog pour ajouter une propriété */}
+          <AddPropertyDialog/>
           {/* Composant des propriétés de l'agent */}
           <AgentProperties />
         </div>
@@ -99,16 +92,11 @@ function AgentProperties() {
   return (
     <div>
       <h2 className="text-xl font-semibold">Propriétés de l'Agent</h2>
-      <ul className="space-y-2">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {properties.map((property) => (
-          <li
-            key={property.id}
-            className="p-4 border rounded shadow-sm bg-white"
-          >
-            {property.name} - {property.price.toLocaleString()} €
-          </li>
+          <PropertyCard key={property.id} property={property} />
         ))}
-      </ul>
+      </div>
     </div>
   )
 }
