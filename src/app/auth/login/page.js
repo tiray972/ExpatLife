@@ -2,23 +2,64 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation"; // Redirection utilisateur
 import { signInWithEmail, signInWithGoogle } from "@/lib/firebase/auth";
+import { db } from "@/lib/firebase/firebase"; // Firestore config
+import { doc, setDoc, getDoc } from "firebase/firestore";
 import Header from "@/components/header";
-import {CircleUserRound } from "lucide-react"
+import { CircleUserRound } from "lucide-react";
 
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState(""); // Gestion des erreurs
-  const [isLoading, setIsLoading] = useState(false); // Gestion de l'état de chargement
+  const [role, setRole] = useState("client"); // Valeur par défaut pour le rôle
+  const [error, setError] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
-  const router = useRouter(); // Utilisé pour la redirection
+  const router = useRouter();
 
+  // Fonction pour sauvegarder l'utilisateur dans Firestore
+  const saveUserToFirestore = async (user) => {
+    try {
+      const userDocRef = doc(db, "users", user.uid); // Référence du document utilisateur dans Firestore
+      const userSnap = await getDoc(userDocRef);  // Vérifie si l'utilisateur existe déjà dans Firestore
+
+      if (!userSnap.exists()) {
+        // Si l'utilisateur n'existe pas encore dans Firestore, on le crée
+        let newUser ={};
+        if(role === "agent"){
+          newUser = {
+            uid: user.uid,
+            email: user.email,
+            name: user.displayName || "Utilisateur", // Prend le nom de l'utilisateur ou un nom par défaut
+            role: role, // Rôle sélectionné
+            properties: [],
+            createdAt: new Date(), // Date de création
+          };
+        }else{
+          newUser = {
+            uid: user.uid,
+            email: user.email,
+            name: user.displayName || "Utilisateur", // Prend le nom de l'utilisateur ou un nom par défaut
+            role: role, // Rôle sélectionné
+            createdAt: new Date(), // Date de création
+          };
+        }
+
+        await setDoc(userDocRef, newUser); // Ajoute le document à Firestore
+        console.log("Utilisateur ajouté à Firestore :", newUser);
+      } else {
+        console.log("Utilisateur déjà existant dans Firestore :", userSnap.data());
+      }
+    } catch (error) {
+      console.error("Erreur lors de l'enregistrement dans Firestore :", error);
+    }
+  };
+
+  // Fonction de gestion de la connexion via email et mot de passe
   const handleLogin = async (e) => {
     e.preventDefault();
-    setError(""); // Réinitialiser les erreurs
+    setError("");
     setIsLoading(true);
 
-    // Validation simple
     if (!email || !password) {
       setError("Veuillez remplir tous les champs.");
       setIsLoading(false);
@@ -26,21 +67,20 @@ export default function Login() {
     }
 
     try {
-      const user = await signInWithEmail(email, password);
+      const user = await signInWithEmail(email, password); // Connexion via email et mot de passe
       console.log("Connexion réussie :", user);
-      router.push("/dashboard"); // Redirection vers le tableau de bord
+
+      // Sauvegarder l'utilisateur dans Firestore
+      await saveUserToFirestore(user);
+
+      // Redirection vers le tableau de bord basé sur le rôle
+      router.push(role === "agent" ? "/dashboard/agent" : "/dashboard/client");
     } catch (error) {
       console.error("Erreur lors de la connexion :", error);
-
-      // Gérer les erreurs spécifiques
       if (error.code === "auth/user-not-found") {
         setError("Aucun utilisateur trouvé avec cet e-mail.");
       } else if (error.code === "auth/wrong-password") {
         setError("Mot de passe incorrect.");
-      } else if (error.code === "auth/too-many-requests") {
-        setError(
-          "Trop de tentatives. Veuillez réessayer plus tard ou réinitialiser votre mot de passe."
-        );
       } else {
         setError("Une erreur s'est produite. Veuillez réessayer.");
       }
@@ -49,14 +89,20 @@ export default function Login() {
     }
   };
 
+  // Fonction de gestion de la connexion via Google
   const handleGoogleLogin = async () => {
-    setError(""); // Réinitialiser les erreurs
+    setError("");
     setIsLoading(true);
 
     try {
-      const user = await signInWithGoogle();
+      const user = await signInWithGoogle(); // Connexion via Google
       console.log("Connexion Google réussie :", user);
-      router.push("/dashboard"); // Redirection vers le tableau de bord
+
+      // Sauvegarder l'utilisateur dans Firestore
+      await saveUserToFirestore(user);
+
+      // Redirection vers le tableau de bord basé sur le rôle
+      router.push(role === "agent" ? "/dashboard/agent" : "/dashboard/client");
     } catch (error) {
       console.error("Erreur lors de la connexion Google :", error);
       setError("Une erreur s'est produite lors de la connexion avec Google.");
@@ -66,55 +112,72 @@ export default function Login() {
   };
 
   return (
-    <div className="min-h-screen min-w-screen flex  flex-col" >
-    <Header/>
-    <div className="min-h-[90vh] flex items-center bg-contain bg-center justify-center bg-gray-100"
-    style={{ backgroundImage: 'url("/images/background-login.png")' }}
-    >
-      <form onSubmit={handleLogin} className="space-y-4 flex flex-col items-center justify-center bg-white p-6 rounded shadow-md w-96">
-      <CircleUserRound 
-      className="text-center text-teal-400"
-      size={90}
-      />
-      
-        <h1 className="text-2xl font-bold text-center">Connexion</h1>
-
-        {error && <p className="text-red-500 text-sm text-center">{error}</p>}
-        <input
-          type="email"
-          placeholder="E-mail"
-          className="border p-2 w-full rounded"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
-        <input
-          type="password"
-          placeholder="Mot de passe"
-          className="border p-2 w-full rounded"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-        <button
-          className={`bg-blue-500 text-white py-2 px-4 rounded w-full ${
-            isLoading ? "opacity-50 cursor-not-allowed" : ""
-          }`}
-          type="submit"
-          disabled={isLoading}
+    <div className="min-h-screen min-w-screen flex flex-col">
+      <Header />
+      <div
+        className="min-h-[90vh] flex items-center bg-contain bg-center justify-center bg-gray-100"
+        style={{ backgroundImage: 'url("/images/background-login.png")' }}
+      >
+        <form
+          onSubmit={handleLogin}
+          className="space-y-4 flex flex-col items-center justify-center bg-white p-6 rounded shadow-md w-96"
         >
-          {isLoading ? "Connexion en cours..." : "Se connecter"}
-        </button>
-        <div className="flex justify-center">
+          <CircleUserRound className="text-center text-teal-400" size={90} />
+          <h1 className="text-2xl font-bold text-center">Connexion</h1>
+
+          {error && <p className="text-red-500 text-sm text-center">{error}</p>}
+          <input
+            type="email"
+            placeholder="E-mail"
+            className="border p-2 w-full rounded"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <input
+            type="password"
+            placeholder="Mot de passe"
+            className="border p-2 w-full rounded"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+
+          {/* Sélecteur de rôle */}
+          <div className="w-full">
+            <label htmlFor="role" className="block mb-2 text-sm font-medium text-gray-700">
+              Rôle :
+            </label>
+            <select
+              id="role"
+              value={role}
+              onChange={(e) => setRole(e.target.value)}
+              className="border p-2 w-full rounded"
+            >
+              <option value="client">Client</option>
+              <option value="agent">Agent</option>
+            </select>
+          </div>
+
           <button
-            className="bg-red-500 text-white py-2 px-4 rounded w-full mt-2"
-            type="button"
-            onClick={handleGoogleLogin}
+            className={`bg-blue-500 text-white py-2 px-4 rounded w-full ${
+              isLoading ? "opacity-50 cursor-not-allowed" : ""
+            }`}
+            type="submit"
             disabled={isLoading}
           >
-            {isLoading ? "Connexion..." : "Connexion avec Google"}
+            {isLoading ? "Connexion en cours..." : "Se connecter"}
           </button>
-        </div>
-      </form>
-    </div>
+          <div className="flex justify-center">
+            <button
+              className="bg-red-500 text-white py-2 px-4 rounded w-full mt-2"
+              type="button"
+              onClick={handleGoogleLogin}
+              disabled={isLoading}
+            >
+              {isLoading ? "Connexion..." : "Connexion avec Google"}
+            </button>
+          </div>
+        </form>
+      </div>
     </div>
   );
 }
