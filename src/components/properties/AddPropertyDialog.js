@@ -240,7 +240,7 @@ export default function AddPropertyDialog() {
         </form>
 
         <DialogFooter>
-          <Button variant="outline" onClick={() => setFormData({})}>
+          <Button variant="outline" onClick={() => setIsOpen(false)}>
             Annuler
           </Button>
           <Button className="bg-blue-500 text-white" onClick={handleSubmit}>

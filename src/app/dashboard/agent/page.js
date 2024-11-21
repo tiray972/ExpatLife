@@ -2,7 +2,7 @@
 import { PropertyCard } from "@/components/properties/PropertyCard"
 import { useAuth } from "@/hooks/useAuth"
 import { useState, useEffect } from "react"
-import { addPropertyForAgent, fetchAgentProperties } from "@/lib/firebase/properties"
+import {  fetchAgentProperties } from "@/lib/firebase/properties"
 import { AppSidebar } from "@/components/app-sidebar"
 import {
   Breadcrumb,
