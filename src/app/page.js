@@ -4,6 +4,7 @@ import {Users, Briefcase, Handshake } from 'lucide-react';
 import Header from "@/components/header";
 import Footer from '@/components/Footer';
 import FAQ from '@/components/faq';
+import GoogleReviews from '@/components/google/googlereviews';
 
 
 export default function Home() {
@@ -55,6 +56,30 @@ export default function Home() {
         "Les coûts varient selon les services demandés. Contactez notre équipe pour un devis personnalisé.",
     },
   ];
+  const reviews = [
+    {
+      authorName: "Jean Dupont",
+      profilePhoto: "/images/default-avatar.png", // Mettre des avatars corrects
+      text: "Service impeccable, je recommande fortement.",
+      rating: 5,
+      relativeTime: "il y a 2 jours",
+    },
+    {
+      authorName: "Marie Curie",
+      profilePhoto: "/images/default-avatar.png",
+      text: "Très bon accueil, rien à redire.",
+      rating: 4,
+      relativeTime: "il y a 1 semaine",
+    },
+    {
+      authorName: "Albert Einstein",
+      profilePhoto: "/images/default-avatar.png",
+      text: "Satisfait du service, mais des améliorations possibles.",
+      rating: 3,
+      relativeTime: "il y a 1 mois",
+    },
+  ];
+  
 
   return (
     <div className="bg-gray-100">
@@ -160,6 +185,8 @@ export default function Home() {
         </div>
       </section>
 
+      {/* section google */}
+      <GoogleReviews reviews={reviews}/>
       {/* About Us Section */}
       <section className="bg-teal-100 rounded-lg shadow-lg py-8 px-6 md:px-20 2xl:px-96 space-x-8 flex flex-col md:flex-row">
           <div className="md:w-1/2 ">
