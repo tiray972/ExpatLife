@@ -31,8 +31,10 @@ export default function Dashboard() {
   }
 
   if (!user) {
-    return <p>Veuillez vous connecter pour accéder à ce tableau de bord.</p>
+    alert("Connecte toi batard");
     router.push("/auth/login");
+    return ;
+    
   }
 
   return (
