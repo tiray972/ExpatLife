@@ -6,6 +6,11 @@ const geistSans = localFont({
   variable: "--font-geist-sans",
   weight: "100 900",
 });
+const francois = localFont({
+  src: "./fonts/FrancoisOne-Regular.ttf",
+  variable: "--font-francois-sans",
+  weight: "100 900",
+});
 const geistMono = localFont({
   src: "./fonts/GeistMonoVF.woff",
   variable: "--font-geist-mono",
@@ -21,7 +26,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body suppressHydrationWarning
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${francois.variable} ${geistMono.variable} antialiased`}
       >
         {children}
       </body>
