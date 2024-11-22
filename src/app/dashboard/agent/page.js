@@ -6,9 +6,22 @@ import { useState } from "react";
 import AgentProfile from "@/components/agent/AgentProfile";
 import AgentSupport from "@/components/agent/AgentSupport";
 import AgentProperties from "@/components/agent/AgentProperty";
+import { useRouter } from "next/navigation"; // Pour redirection
+import { auth } from "@/lib/firebase/firebase"; // Firebase Auth instance
+import { signOut } from "firebase/auth"; // Déconnexion Firebase
+
 
 export default function Dashboard() {
+  const router = useRouter();
   const [activeKey, setActiveKey] = useState("profile");
+  const handleLogout = async () => {
+    try {
+      await signOut(auth);
+      router.push("/"); // Redirection vers l'accueil après déconnexion
+    } catch (error) {
+      console.error("Erreur lors de la déconnexion :", error);
+    }
+  };
 
   const renderContent = () => {
     switch (activeKey) {
@@ -21,6 +34,7 @@ export default function Dashboard() {
       case "support":
         return <AgentSupport />;
       case "logout":
+        handleLogout()
         return <p>Déconnexion...</p>; // Gérer la déconnexion
       default:
         return <p>Bienvenue dans votre espace Agent.</p>;
