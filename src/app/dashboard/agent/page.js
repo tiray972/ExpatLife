@@ -4,6 +4,8 @@ import { useAuth } from "@/hooks/useAuth"
 import { useState, useEffect } from "react"
 import {  fetchAgentProperties } from "@/lib/firebase/properties"
 import { AppSidebar } from "@/components/app-sidebar"
+import { useRouter } from "next/navigation";
+
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -22,6 +24,7 @@ import AddPropertyDialog from "@/components/properties/AddPropertyDialog"
 
 export default function Dashboard() {
   const { user, loading } = useAuth()
+  const router = useRouter();
 
   if (loading) {
     return <p>Chargement...</p>
@@ -29,6 +32,7 @@ export default function Dashboard() {
 
   if (!user) {
     return <p>Veuillez vous connecter pour accéder à ce tableau de bord.</p>
+    router.push("/auth/login");
   }
 
   return (

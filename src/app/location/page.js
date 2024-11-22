@@ -41,10 +41,18 @@ export default function LocationsPage() {
                 </TabsTrigger>
               </TabsList>
               <TabsContent value="list">
+                {isLoading ? (
+                  <p>Chargement...</p>
+                ) : (
                 <PropertyList filters={filters} />
+                )}
               </TabsContent>
               <TabsContent value="map">
-                <PropertyMap properties={properties} />
+              {isLoading ? (
+                  <p>Chargement...</p>
+                ) : (
+                  <PropertyMap properties={properties} />
+                )}
               </TabsContent>
             </Tabs>
           </div>
