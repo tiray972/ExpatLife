@@ -5,6 +5,7 @@ import { Button } from "../ui/button";
 import { Label } from "../ui/label";
 import { Input } from "../ui/input";
 import { Select, SelectTrigger, SelectContent, SelectItem } from "../ui/select";
+import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
 import { addPropertyForAgent } from "@/lib/firebase/properties";
 
 export default function AddPropertyDialog() {
@@ -12,12 +13,13 @@ export default function AddPropertyDialog() {
   const [formData, setFormData] = useState({
     title: "",
     type: "apartment",
+    isverifed:false,
     price: "",
     bedrooms: "",
     size: "",
     location: "",
     image: "",
-    duration: "short",
+    duration: "",
     furnished: false,
     needEmirateID: false,
     coordinates: { lat: "", lng: "" },
@@ -51,7 +53,7 @@ export default function AddPropertyDialog() {
       size: "",
       location: "",
       image: "",
-      duration: "short",
+      duration: "",
       furnished: false,
       needEmirateID: false,
       coordinates: { lat: "", lng: "" },
@@ -168,16 +170,48 @@ export default function AddPropertyDialog() {
           {/* Durée */}
           <div>
             <Label htmlFor="duration">Durée</Label>
-            <Select
+            <ToggleGroup
+              type="multiple"
               value={formData.duration}
-              onValueChange={(value) => setFormData({ ...formData, duration: value })}
+              onValueChange={(value) => {
+                setFormData({ ...formData, duration: value });
+              }}
+              className="mt-2 flex gap-2"
             >
-              <SelectTrigger>{formData.duration}</SelectTrigger>
-              <SelectContent>
-                <SelectItem value="short">Court terme</SelectItem>
-                <SelectItem value="long">Long terme</SelectItem>
-              </SelectContent>
-            </Select>
+              <ToggleGroupItem
+                value="weekly"
+                aria-label="weekly"
+                className={`px-4 py-2 rounded-md text-sm ${
+                  formData.duration.includes("weekly")
+                    ? "bg-teal-500 text-white"
+                    : "bg-gray-200"
+                }`}
+              >
+                weekly
+              </ToggleGroupItem>
+              <ToggleGroupItem
+                value="monthly"
+                aria-label="monthly"
+                className={`px-4 py-2 rounded-md text-sm ${
+                  formData.duration.includes("monthly")
+                    ? "bg-teal-500 text-white"
+                    : "bg-gray-200"
+                }`}
+              >
+              monthly
+              </ToggleGroupItem>
+              <ToggleGroupItem
+                value="yearly"
+                aria-label="yearly"
+                className={`px-4 py-2 rounded-md text-sm ${
+                  formData.duration.includes("yearly")
+                    ? "bg-teal-500 text-white"
+                    : "bg-gray-200"
+                }`}
+              >
+              yearly
+              </ToggleGroupItem>
+            </ToggleGroup>
           </div>
 
           {/* Options supplémentaires */}

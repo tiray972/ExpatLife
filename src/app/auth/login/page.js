@@ -6,6 +6,7 @@ import { db } from "@/lib/firebase/firebase"; // Firestore config
 import { doc, setDoc, getDoc } from "firebase/firestore";
 import Header from "@/components/header";
 import { CircleUserRound } from "lucide-react";
+import Link from "next/link";
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -118,65 +119,76 @@ export default function Login() {
         className="min-h-[90vh] flex items-center bg-contain bg-center justify-center bg-gray-100"
         style={{ backgroundImage: 'url("/images/background-login.png")' }}
       >
-        <form
-          onSubmit={handleLogin}
-          className="space-y-4 flex flex-col items-center justify-center bg-white p-6 rounded shadow-md w-96"
-        >
-          <CircleUserRound className="text-center text-teal-400" size={90} />
-          <h1 className="text-2xl font-bold text-center">Connexion</h1>
-
-          {error && <p className="text-red-500 text-sm text-center">{error}</p>}
-          <input
-            type="email"
-            placeholder="E-mail"
-            className="border p-2 w-full rounded"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-          <input
-            type="password"
-            placeholder="Mot de passe"
-            className="border p-2 w-full rounded"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-
-          {/* Sélecteur de rôle */}
-          <div className="w-full">
-            <label htmlFor="role" className="block mb-2 text-sm font-medium text-gray-700">
-              Rôle :
-            </label>
-            <select
-              id="role"
-              value={role}
-              onChange={(e) => setRole(e.target.value)}
-              className="border p-2 w-full rounded"
-            >
-              <option value="client">Client</option>
-              <option value="agent">Agent</option>
-            </select>
-          </div>
-
-          <button
-            className={`bg-blue-500 text-white py-2 px-4 rounded w-full ${
-              isLoading ? "opacity-50 cursor-not-allowed" : ""
-            }`}
-            type="submit"
-            disabled={isLoading}
+        <div>
+          <form
+            onSubmit={handleLogin}
+            className="space-y-4 flex flex-col items-center justify-center bg-white p-6 rounded shadow-md w-96"
           >
-            {isLoading ? "Connexion en cours..." : "Se connecter"}
-          </button>
-          <div className="flex justify-center">
+            <CircleUserRound className="text-center text-teal-400" size={90} />
+            <h1 className="text-2xl font-bold text-center">Connexion</h1>
+
+            {error && <p className="text-red-500 text-sm text-center">{error}</p>}
+            <input
+              type="email"
+              placeholder="E-mail"
+              className="border p-2 w-full rounded"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+            <input
+              type="password"
+              placeholder="Mot de passe"
+              className="border p-2 w-full rounded"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+
+            {/* Sélecteur de rôle */}
+            <div className="w-full">
+              <label htmlFor="role" className="block mb-2 text-sm font-medium text-gray-700">
+                Rôle :
+              </label>
+              <select
+                id="role"
+                value={role}
+                onChange={(e) => setRole(e.target.value)}
+                className="border p-2 w-full rounded"
+              >
+                <option value="client">Client</option>
+                <option value="agent">Agent</option>
+              </select>
+            </div>
+
             <button
-              className="bg-red-500 text-white py-2 px-4 rounded w-full mt-2"
-              type="button"
-              onClick={handleGoogleLogin}
+              className={`bg-blue-500 text-white py-2 px-4 rounded w-full ${
+                isLoading ? "opacity-50 cursor-not-allowed" : ""
+              }`}
+              type="submit"
               disabled={isLoading}
             >
-              {isLoading ? "Connexion..." : "Connexion avec Google"}
+              {isLoading ? "Connexion en cours..." : "Se connecter"}
             </button>
+            <div className="flex justify-center">
+              <button
+                className="bg-red-500 text-white py-2 px-4 rounded w-full mt-2"
+                type="button"
+                onClick={handleGoogleLogin}
+                disabled={isLoading}
+              >
+                {isLoading ? "Connexion..." : "Connexion avec Google"}
+              </button>
+            </div>
+          </form> 
+          <div className="flex justify-between">
+            <Link href={"#"}>
+            new here ? SIGN UP
+            </Link>
+            <Link href={"#"} >
+            forgot password
+            </Link> 
           </div>
-        </form>
+        </div>
+        
       </div>
     </div>
   );

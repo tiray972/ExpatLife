@@ -133,7 +133,7 @@ export default function Home() {
         </div>
         <div className="mt-8 md:mt-0">
           <Image
-            src="/images/background.png"
+            src="/images/203.png"
             alt="Trouver un logement"
             width={500}
             height={350}
@@ -205,7 +205,7 @@ export default function Home() {
           </div>
           <div className="md:w-1/2">
             <Image
-              src="/images/199.png"
+              src="/images/204.png"
               alt="Notre équipe"
               width={800}
               height={350}
@@ -219,7 +219,7 @@ export default function Home() {
       <section className="bg-white rounded-lg shadow-lg py-8 px-6 md:px-20 2xl:px-96 space-x-8 flex flex-col md:flex-row">
         <div className="md:w-1/2">
         <Image
-              src="/images/199.png"
+              src="/images/205.png"
               alt="Notre équipe"
               width={800}
               height={350}
@@ -271,7 +271,7 @@ export default function Home() {
         </div>
         <div className="md:w-1/2">
           <img
-            src="images/logo.png"
+            src="images/206.png"
             alt="Panneau de conseils"
             className="rounded-lg"
           />
@@ -282,7 +282,7 @@ export default function Home() {
       <section className="bg-white rounded-lg shadow-lg p-8 px-6 md:px-20 2xl:px-96 space-x-8 flex flex-col md:flex-row">
         <div className="md:w-1/2">
           <img
-            src="images/logo.png"
+            src="images/207.png"
             alt="Panneau de conseils"
             className="rounded-lg"
           />

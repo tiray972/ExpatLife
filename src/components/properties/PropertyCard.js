@@ -8,6 +8,19 @@ import Link from "next/link";
 import Image from "next/image";
 
 export function PropertyCard({ property }) {
+  const durationLabels = {
+    yearly: "Annuel",
+    monthly: "Mensuel",
+    weekly: "Hebdomadaire",
+  };
+
+  // Normaliser `property.duration` pour toujours être un tableau
+  const durations = Array.isArray(property.duration)
+    ? property.duration
+    : property.duration
+    ? [property.duration]
+    : []; // Si c'est une chaîne, on la met dans un tableau. Sinon, tableau vide.
+
   return (
     <Card className="overflow-hidden">
       <div className="relative h-48">
@@ -48,15 +61,20 @@ export function PropertyCard({ property }) {
           </div>
         </div>
         <div className="flex gap-2 mb-4">
-          <Badge variant={property.duration === "short" ? "default" : "secondary"}>
-            {property.duration === "short" ? "Court séjour" : "Long séjour"}
-          </Badge>
+          {durations.map((duration) => (
+            <Badge
+              key={duration}
+              variant="default" // Peut être changé si vous souhaitez un style spécifique par type
+            >
+              {durationLabels[duration] || duration} {/* Affiche le label ou la valeur brute */}
+            </Badge>
+          ))}
           <Badge variant={property.furnished ? "default" : "secondary"}>
             {property.furnished ? "Meublé" : "Non meublé"}
           </Badge>
         </div>
         <Link href={`/location/${property.id}`}>
-        <Button className="w-full">Voir les détails</Button>
+          <Button className="w-full">Voir les détails</Button>
         </Link>
       </CardContent>
     </Card>

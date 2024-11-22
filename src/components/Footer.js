@@ -1,10 +1,11 @@
 import Image from "next/image";
+import Link from "next/link";
 export default function Footer() {
     return (
             <footer className="px-4 divide-y bg-gray-100 text-gray-800">
                 <div className="container flex flex-col justify-between py-10 mx-auto space-y-8 lg:flex-row lg:space-y-0">
                     <div className="lg:w-1/3">
-                        <a rel="noopener noreferrer" href="#" className="flex justify-center space-x-3 lg:justify-start">
+                        <a rel="noopener noreferrer" href="/" className="flex justify-center space-x-3 lg:justify-start">
                            <Image
                            src="/images/logo.png"
                            width={200}
@@ -34,6 +35,9 @@ export default function Footer() {
                         <div className="space-y-3">
                             <h3 className="tracking-wide uppercase text-gray-900">Company</h3>
                             <ul className="space-y-1">
+                                <li>
+                                    <a rel="noopener noreferrer" href="/cgv">cgv</a>
+                                </li>
                                 <li>
                                     <a rel="noopener noreferrer" href="#">Privacy</a>
                                 </li>
@@ -78,7 +82,7 @@ export default function Footer() {
                         </div>
                     </div>
                 </div>
-                <div className="py-6 text-sm text-center text-gray-600">© 1968 Company Co. All rights reserved.</div>
+                <div className="py-6 text-sm text-center text-gray-600">© Made with ❤️ By <Link href={"ugm-communication.com"} className="underline hover:text-teal-500" >UGM LLC</Link> All rights reserved.</div>
             </footer>
   );
 }
