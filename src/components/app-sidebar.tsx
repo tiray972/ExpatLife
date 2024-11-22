@@ -1,6 +1,9 @@
+"use client";
+
 import * as React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import {
   Sidebar,
   SidebarContent,
@@ -14,51 +17,46 @@ import {
   SidebarRail,
 } from "@/components/ui/sidebar";
 
-const sampleData = {
-  navMain: [
-    {
-      title: "Espace Agent",
-      url: "",
-      items: [
-        { title: "Mon Profil", url: "", key: "profile" },
-        { title: "Mes Annonces", url: "", key: "annonces" },
-        { title: "Assistance", url: "", key: "support" },
-        { title: "Déconnexion", url: "", key: "logout" },
-      ],
-    },
-  ],
-};
+export function AppSidebar({ activeKey, setActiveKey, ...props }) {
+  const router = useRouter();
 
-export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
-  const [activeKey, setActiveKey] = React.useState("profile"); // Suivre l'élément actif
-  const [navData, setNavData] = React.useState(sampleData); // Données de navigation dynamiques
+  // Navigation dynamique
+  const navData = {
+    navMain: [
+      {
+        title: "Espace Agent",
+        items: [
+          { title: "Mon Profil", url: "/dashboard/agent", key: "profile" },
+          { title: "Mes Proprieté", url: "/dashboard/agent", key: "properties" },
+          { title: "Mes Annonces", url: "/dashboard/agent", key: "annonces" },
+          { title: "Assistance", url: "/dashboard/agent", key: "support" },
+          { title: "Déconnexion", url: "/auth/logout", key: "logout" },
+        ],
+      },
+    ],
+  };
 
-  // Exemple d'appel API pour charger les données dynamiques
-  React.useEffect(() => {
-    async function fetchData() {
-      // Simulez un appel API ici
-      const response = await new Promise((resolve) =>
-        setTimeout(() => resolve(sampleData), 1000)
-      );
-      setNavData(response);
-    }
-    fetchData();
-  }, []);
+  const handleNavigation = (url, key) => {
+    setActiveKey(key);
+    if (url) router.push(url);
+  };
 
   return (
     <Sidebar {...props}>
+      {/* Header */}
       <SidebarHeader>
         <Link href="/">
           <Image
             src="/images/logo.png"
-            alt="logo ExpatLife sur banner"
+            alt="Logo ExpatLife"
             width={300}
             height={250}
           />
         </Link>
       </SidebarHeader>
+
+      {/* Sidebar Content */}
       <SidebarContent>
-        {/* Dynamically create groups based on navData */}
         {navData.navMain.map((group) => (
           <SidebarGroup key={group.title}>
             <SidebarGroupLabel>{group.title}</SidebarGroupLabel>
@@ -69,9 +67,9 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                     <SidebarMenuButton
                       asChild
                       isActive={activeKey === item.key}
-                      onClick={() => setActiveKey(item.key)} // Mise à jour de l'élément actif
+                      onClick={() => handleNavigation(item.url, item.key)}
                     >
-                      <Link href={item.url}>{item.title}</Link>
+                      <span>{item.title}</span>
                     </SidebarMenuButton>
                   </SidebarMenuItem>
                 ))}
@@ -80,6 +78,8 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
           </SidebarGroup>
         ))}
       </SidebarContent>
+
+      {/* Optional Sidebar Rail */}
       <SidebarRail />
     </Sidebar>
   );
