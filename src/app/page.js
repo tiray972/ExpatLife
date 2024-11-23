@@ -61,39 +61,25 @@ export default function Home() {
   ];
   const reviews = [
     {
-      authorName: "Jean Dupont",
+      authorName: "Alya Benkasi",
       profilePhoto: "/images/default-avatar.png", // Mettre des avatars corrects
       text: "Expatlife m'a aidé à trouver un logement parfait en un temps record. Je recommande à 100% !",
       rating: 5,
       relativeTime: "il y a 2 jours",
     },
     {
-      authorName: "Marie Curie",
+      authorName: "Nicolas Belford",
       profilePhoto: "/images/default-avatar.png",
       text: "Un service sur mesure et une équipe très professionnelle. Merci Expatlife pour cet accompagnement !",
       rating: 5,
       relativeTime: "il y a 1 semaine",
     },
     {
-      authorName: "Paul Martin",
+      authorName: "Sarah El Ousni",
       profilePhoto: "/images/default-avatar.png",
       text: "Grâce à Expatlife, mon installation aux Émirats a été rapide et sans stress. Un service exceptionnel !",
       rating: 5,
       relativeTime: "il y a 3 jours",
-    },
-    {
-      authorName: "Claire Dubois",
-      profilePhoto: "/images/default-avatar.png",
-      text: "L'équipe d'Expatlife est incroyablement réactive et à l'écoute. Je n'aurais pas pu rêver mieux pour ma transition.",
-      rating: 5,
-      relativeTime: "il y a 5 jours",
-    },
-    {
-      authorName: "Sophie Leclerc",
-      profilePhoto: "/images/default-avatar.png",
-      text: "Un accompagnement parfait du début à la fin. Expatlife a rendu mon expatriation simple et agréable !",
-      rating: 5,
-      relativeTime: "il y a 1 semaine",
     },
   ];
   
@@ -132,7 +118,7 @@ export default function Home() {
                 TROUVER UN LOGEMENT
               </button>
             </Link>
-            <Link href="/contact">
+            <Link href="#CONTACT">
               <button className="bg-teal-500 text-black font-medium py-3 px-6 rounded-lg hover:bg-teal-600 transition">
                 NOUS CONTACTER
               </button>
@@ -220,7 +206,7 @@ export default function Home() {
             <p className="text-gray-800 mb-8">
               L'accompagnement des expatriés aux UAE est aujourd'hui une priorité pour nous. Après plusieurs années de maîtrise dans la relation publique et la communication, expatlife.com a été fondé pour apporter une solution aux nouveaux expatriés afin de leur garantir une installation sereine et complète.
             </p>
-            <Link href="/contact">
+            <Link href="#CONTACT">
               <button className="bg-teal-500 text-white font-bold py-2 px-4 rounded-lg hover:bg-teal-600 transition">
                 NOUS CONTACTER
               </button>
@@ -335,9 +321,129 @@ export default function Home() {
         
         
       </section>
+      {/* Blog Section */}
+      <section className="bg-gray-100 py-16 px-6 md:px-20">
+        <h2 className="text-3xl font-bold text-center mb-10 text-gray-900">Derniers Articles</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {/* Blog Article 1 */}
+          <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+            <Image
+              src="/images/200.png"
+              alt="Astuces pour bien s'installer aux Émirats"
+              width={800}
+              height={500}
+              className="w-full h-48 object-cover"
+            />
+            <div className="p-6">
+              <h3 className="text-xl font-semibold mb-4 text-gray-800">
+                Astuces pour bien s'installer aux Émirats
+              </h3>
+              <p className="text-gray-700 mb-4">
+                Découvrez nos conseils pratiques pour réussir votre installation aux Émirats en toute sérénité.
+              </p>
+              <Link href="/blog/astuces-installation">
+                <button className="text-teal-500 font-medium hover:underline">
+                  Lire la suite
+                </button>
+              </Link>
+            </div>
+          </div>
+          {/* Blog Article 2 */}
+          <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+            <Image
+              src="/images/200.png"
+              alt="Comment choisir le bon logement à Dubaï"
+              width={800}
+              height={500}
+              className="w-full h-48 object-cover"
+            />
+            <div className="p-6">
+              <h3 className="text-xl font-semibold mb-4 text-gray-800">
+                Comment choisir le bon logement à Dubaï
+              </h3>
+              <p className="text-gray-700 mb-4">
+                Un guide complet pour vous aider à trouver le logement idéal selon vos besoins et votre budget.
+              </p>
+              <Link href="/blog/choisir-logement-dubai">
+                <button className="text-teal-500 font-medium hover:underline">
+                  Lire la suite
+                </button>
+              </Link>
+            </div>
+          </div>
+          {/* Blog Article 3 */}
+          <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+            <Image
+              src="/images/200.png"
+              alt="Les démarches pour obtenir un visa aux Émirats"
+              width={800}
+              height={500}
+              className="w-full h-48 object-cover"
+            />
+            <div className="p-6">
+              <h3 className="text-xl font-semibold mb-4 text-gray-800">
+                Les démarches pour obtenir un visa aux Émirats
+              </h3>
+              <p className="text-gray-700 mb-4">
+                Tout ce que vous devez savoir pour obtenir un visa aux Émirats sans stress.
+              </p>
+              <Link href="/blog/demarches-visa-emirats">
+                <button className="text-teal-500 font-medium hover:underline">
+                  Lire la suite
+                </button>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* section FAQ */}
       <FAQ faqData={faqData}/>
+      {/* Section Contact */}
+      <section id='CONTACT' className="bg-teal-100 py-16 px-6 md:px-20">
+        <div className="max-w-3xl mx-auto text-center">
+          <h2 className="text-3xl font-bold text-teal-500 mb-4">Prêt à Commencer Votre Nouvelle Vie aux Émirats ?</h2>
+          <p className="text-lg text-gray-700 mb-8">
+            Contactez-nous dès aujourd'hui pour un accompagnement personnalisé dans votre projet.
+          </p>
+          <form className="space-y-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {/* Nom */}
+              <input
+                type="text"
+                name="name"
+                placeholder="Nom"
+                className="w-full px-4 py-3 text-gray-700 bg-white rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-teal-400"
+                required
+              />
+              {/* Prénom */}
+              <input
+                type="text"
+                name="surname"
+                placeholder="Prénom"
+                className="w-full px-4 py-3 text-gray-700 bg-white rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-teal-400"
+                required
+              />
+            </div>
+            {/* Message */}
+            <textarea
+              name="message"
+              placeholder="Message"
+              rows="5"
+              className="w-full px-4 py-3 text-gray-700 bg-white rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-teal-400"
+              required
+            ></textarea>
+            {/* Bouton */}
+            <button
+              type="submit"
+              className="w-full sm:w-auto px-6 py-3 text-white bg-teal-500 hover:bg-teal-600 rounded-lg font-medium shadow-md focus:outline-none focus:ring-2 focus:ring-teal-400 focus:ring-offset-2"
+            >
+              Nous Contacter
+            </button>
+          </form>
+        </div>
+      </section>
+
       <Footer/>
     </div>
   );

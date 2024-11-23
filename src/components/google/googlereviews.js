@@ -2,20 +2,17 @@
 
 export default function GoogleReviews({ reviews }) {
   return (
-    <section className="p-6 bg-gray-50 rounded-lg shadow-md">
+    <section className="p-6 bg-white rounded-lg shadow-md">
       <h2 className="text-2xl font-bold text-gray-800 mb-4">Avis Clients</h2>
+      <img src="/images/logoGoogle.png" className="max-w-32"/>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {reviews.map((review, index) => (
           <div
             key={index}
-            className="p-4 bg-white border rounded-lg shadow hover:shadow-lg transition-shadow duration-300"
+            className="p-4 bg-white  rounded-lg"
           >
             <div className="flex items-center mb-3">
-              <img
-                src={review.profilePhoto}
-                alt={review.authorName}
-                className="w-10 h-10 rounded-full mr-3"
-              />
+              
               <div>
                 <h3 className="text-sm font-medium">{review.authorName}</h3>
                 <p className="text-xs text-gray-500">{review.relativeTime}</p>
