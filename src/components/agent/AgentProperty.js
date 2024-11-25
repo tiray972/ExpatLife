@@ -21,6 +21,7 @@ import {
   SidebarTrigger,
 } from "@/components/ui/sidebar"
 import AddPropertyDialog from "@/components/properties/AddPropertyDialog"
+import { useTriggerRefresh } from "@/providers/TriggerRefreshprovider"
 
 export default function Dashboard() {
   const { user, loading } = useAuth()
@@ -36,6 +37,7 @@ export default function Dashboard() {
     return ;
     
   }
+ 
 
   return (
     <SidebarInset>
@@ -61,6 +63,7 @@ export default function Dashboard() {
           <h1 className="text-2xl font-bold">Bienvenue, {user.email}!</h1>
 
           {/* Dialog pour ajouter une propriété */}
+
           <AddPropertyDialog/>
           {/* Composant des propriétés de l'agent */}
           <AgentProperties />
@@ -72,6 +75,7 @@ export default function Dashboard() {
 function AgentProperties() {
   const { user } = useAuth()
   const [properties, setProperties] = useState([])
+  const {refresh} = useTriggerRefresh();
 
   useEffect(() => {
     const fetchProperties = async () => {
@@ -86,7 +90,7 @@ function AgentProperties() {
     }
 
     fetchProperties()
-  }, [user])
+  }, [user, refresh])
 
   if (!Array.isArray(properties) || properties.length === 0) {
     return <p>Aucune propriété trouvée.</p>

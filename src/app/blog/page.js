@@ -2,37 +2,23 @@ import Head from "next/head";
 import Link from "next/link";
 import Image from "next/image";
 
-// Simuler un fetch des articles (connecter à une API dans un vrai projet)
-const articles = [
-  {
-    id: 1,
-    title: "Comment s'installer aux Émirats en toute sérénité",
-    slug: "installer-aux-emirats",
-    summary: "Découvrez les étapes essentielles pour une installation réussie aux Émirats Arabes Unis.",
-    featuredImage: "/images/blog1.jpg",
-    author: "Expatlife Team",
-    publishedDate: "2024-11-01",
-  },
-  {
-    id: 2,
-    title: "Les meilleures astuces pour trouver un logement rapide",
-    slug: "trouver-logement-rapide",
-    summary: "Voici nos conseils pour dénicher un logement adapté à vos besoins, même sans visa.",
-    featuredImage: "/images/blog2.jpg",
-    author: "Expatlife Team",
-    publishedDate: "2024-10-25",
-  },
-];
+// Fonction pour récupérer les articles depuis Firebase (exemple)
+import { getAllArticles } from "@/lib/firebase/articles";
 
-export default function Blog() {
+export default async function Blog() {
+  const articles = await getAllArticles();
+
   return (
     <div className="bg-gray-100">
       <Head>
         <title>Blog - Expatlife</title>
-        <meta name="description" content="Retrouvez nos articles sur l'expatriation, la vie aux Émirats, et bien plus." />
+        <meta
+          name="description"
+          content="Retrouvez nos articles sur l'expatriation, la vie aux Émirats, et bien plus."
+        />
         <meta name="keywords" content="blog expatriation, logement Émirats, conseils expatlife" />
       </Head>
-      
+
       <header className="py-10 bg-teal-500 text-white text-center">
         <h1 className="text-4xl font-bold">Nos Articles de Blog</h1>
         <p className="mt-2">Découvrez nos conseils et astuces pour une expatriation réussie.</p>

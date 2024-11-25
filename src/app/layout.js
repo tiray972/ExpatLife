@@ -1,5 +1,6 @@
 import localFont from "next/font/local";
 import "./globals.css";
+import { TriggerRefreshProvider } from "@/providers/TriggerRefreshprovider";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -28,7 +29,9 @@ export default function RootLayout({ children }) {
       <body suppressHydrationWarning
         className={`${geistSans.variable} ${francois.variable} ${geistMono.variable} antialiased`}
       >
+        <TriggerRefreshProvider>
         {children}
+        </TriggerRefreshProvider>
       </body>
     </html>
   );

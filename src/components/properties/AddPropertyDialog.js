@@ -7,6 +7,7 @@ import { Input } from "../ui/input";
 import { Select, SelectTrigger, SelectContent, SelectItem } from "../ui/select";
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
 import { addPropertyForAgent } from "@/lib/firebase/properties";
+import { useTriggerRefresh } from "@/providers/TriggerRefreshprovider";
 
 export default function AddPropertyDialog() {
     const [isOpen, setIsOpen] = useState(false)
@@ -35,32 +36,39 @@ export default function AddPropertyDialog() {
   };
 
   // Fonction de soumission
-  const handleSubmit = () => {
-    addPropertyForAgent({
-      ...formData,
-      price: parseFloat(formData.price),
-      size: parseFloat(formData.size),
-      coordinates: {
-        lat: parseFloat(formData.coordinates.lat),
-        lng: parseFloat(formData.coordinates.lng),
-      },
-    });
-    setFormData({
-      title: "",
-      type: "apartment",
-      price: "",
-      bedrooms: "",
-      size: "",
-      location: "",
-      image: "",
-      duration: "",
-      furnished: false,
-      needEmirateID: false,
-      coordinates: { lat: "", lng: "" },
-    });
-    setIsOpen(false);
+  const {triggerRefresh} = useTriggerRefresh();
+  const handleSubmit = async () => {
+    try {
+      await addPropertyForAgent({
+        ...formData,
+        price: parseFloat(formData.price),
+        size: parseFloat(formData.size),
+        coordinates: {
+          lat: parseFloat(formData.coordinates.lat),
+          lng: parseFloat(formData.coordinates.lng),
+        },
+      });
+  
+      setFormData({
+        title: "",
+        type: "apartment",
+        price: "",
+        bedrooms: "",
+        size: "",
+        location: "",
+        image: "",
+        duration: "",
+        furnished: false,
+        needEmirateID: false,
+        coordinates: { lat: "", lng: "" },
+      });
+  
+      triggerRefresh(); // Appel après l'ajout réussi
+      setIsOpen(false); // Fermer le formulaire
+    } catch (error) {
+      console.error("Erreur lors de l'ajout de la propriété :", error);
+    }
   };
-
   return (
     <div className="flex justify-center items-center" >
     <Dialog open={isOpen} onOpenChange={setIsOpen} className="flex justify-center items-center" >
@@ -99,79 +107,15 @@ export default function AddPropertyDialog() {
               <SelectContent>
                 <SelectItem value="apartment">Appartement</SelectItem>
                 <SelectItem value="villa">Villa</SelectItem>
-                <SelectItem value="office">Bureau</SelectItem>
+                <SelectItem value="apartmentHotel">Hotel Appartement</SelectItem>
               </SelectContent>
             </Select>
           </div>
-
-          {/* Prix */}
-          <div>
-            <Label htmlFor="price">Prix (en AED)</Label>
-            <Input
-              id="price"
-              name="price"
-              type="number"
-              value={formData.price}
-              onChange={handleChange}
-              placeholder="Prix de la propriété"
-            />
-          </div>
-
-          {/* Chambres */}
-          <div>
-            <Label htmlFor="bedrooms">Nombre de chambres</Label>
-            <Input
-              id="bedrooms"
-              name="bedrooms"
-              type="number"
-              value={formData.bedrooms}
-              onChange={handleChange}
-              placeholder="Nombre de chambres"
-            />
-          </div>
-
-          {/* Taille */}
-          <div>
-            <Label htmlFor="size">Taille (en m²)</Label>
-            <Input
-              id="size"
-              name="size"
-              type="number"
-              value={formData.size}
-              onChange={handleChange}
-              placeholder="Taille de la propriété en m²"
-            />
-          </div>
-
-          {/* Localisation */}
-          <div>
-            <Label htmlFor="location">Localisation</Label>
-            <Input
-              id="location"
-              name="location"
-              value={formData.location}
-              onChange={handleChange}
-              placeholder="Ex : Dubai Marina"
-            />
-          </div>
-
-          {/* Lien de l'image */}
-          <div>
-            <Label htmlFor="image">Lien de l'image</Label>
-            <Input
-              id="image"
-              name="image"
-              value={formData.image}
-              onChange={handleChange}
-              placeholder="URL de l'image"
-            />
-          </div>
-
           {/* Durée */}
           <div>
             <Label htmlFor="duration">Durée</Label>
             <ToggleGroup
-              type="multiple"
+              type="single"
               value={formData.duration}
               onValueChange={(value) => {
                 setFormData({ ...formData, duration: value });
@@ -212,6 +156,68 @@ export default function AddPropertyDialog() {
               yearly
               </ToggleGroupItem>
             </ToggleGroup>
+          </div>
+          {/* Prix */}
+          <div>
+            <Label htmlFor="price">Prix (en AED)</Label>
+            <Input
+              id="price"
+              name="price"
+              type="number"
+              value={formData.price}
+              onChange={handleChange}
+              placeholder="Prix de la propriété"
+            />
+          </div>
+
+          {/* Chambres */}
+          <div>
+            <Label htmlFor="bedrooms">Nombre de chambres</Label>
+            <Input
+              id="bedrooms"
+              name="bedrooms"
+              type="number"
+              value={formData.bedrooms}
+              onChange={handleChange}
+              placeholder="Nombre de chambres"
+            />
+          </div>
+
+          {/* Taille */}
+          <div>
+            <Label htmlFor="size">Taille (SQFT)</Label>
+            <Input
+              id="size"
+              name="size"
+              type="number"
+              value={formData.size}
+              onChange={handleChange}
+              placeholder="Taille de la propriété en m²"
+            />
+          </div>
+
+          {/* Localisation */}
+          <div>
+            <Label htmlFor="location">Localisation</Label>
+            <Input
+              id="location"
+              name="location"
+              value={formData.location}
+              onChange={handleChange}
+              placeholder="Ex : Dubai Marina"
+            />
+          </div>
+
+          {/* Lien de l'image */}
+          <div>
+            <Label htmlFor="image">Lien de l'image</Label>
+            <Input
+              id="image"
+              name="image"
+              value={formData.image}
+              onChange={handleChange}
+              placeholder="URL de l'image"
+            />
           </div>
 
           {/* Options supplémentaires */}

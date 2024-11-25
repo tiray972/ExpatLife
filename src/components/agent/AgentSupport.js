@@ -12,16 +12,9 @@ export default function AgentSupport() {
         <ul className="list-disc pl-6 mt-4">
           <li>
             <strong>Email :</strong>{" "}
-            <a href="mailto:support@expatlife.com" className="text-blue-600 underline">
-              support@expatlife.com
+            <a href="mailto:contact@expatlife-uae.com" className="text-blue-600 underline">
+              contact@expatlife-uae.com
             </a>
-          </li>
-          <li>
-            <strong>Téléphone :</strong> +971 123 456 789
-          </li>
-          <li>
-            <strong>Chat en direct :</strong>{" "}
-            Disponible sur l'application ExpatLife (section Assistance).
           </li>
         </ul>
         <p className="mt-4">

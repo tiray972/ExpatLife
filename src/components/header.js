@@ -57,7 +57,7 @@ export default function Header() {
           <Link href="/">
             <div className="hover:text-teal-200">Accueil</div>
           </Link>
-          <Link href="/about">
+          <Link href="/blog">
             <div className="hover:text-teal-200">À propos</div>
           </Link>
           {isLoggedIn && (

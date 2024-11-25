@@ -1,32 +1,10 @@
 import { notFound } from "next/navigation";
-import { Metadata } from "next";
 import Image from "next/image";
+import { getArticleBySlug } from "@/lib/firebase/articles";
 
-// Simuler une API pour obtenir un article
-async function fetchArticle(slug) {
-  const articles = {
-    "installer-aux-emirats": {
-      title: "Comment s'installer aux Émirats en toute sérénité",
-      content: "<p>Voici tout ce que vous devez savoir pour réussir votre expatriation...</p>",
-      featuredImage: "/images/blog1.jpg",
-      author: "Expatlife Team",
-      publishedDate: "2024-11-01",
-    },
-    "trouver-logement-rapide": {
-      title: "Les meilleures astuces pour trouver un logement rapide",
-      content: "<p>Voici nos conseils pour trouver un logement adapté à vos besoins...</p>",
-      featuredImage: "/images/blog2.jpg",
-      author: "Expatlife Team",
-      publishedDate: "2024-10-25",
-    },
-  };
-
-  return articles[slug] || null;
-}
-
-// Génération des métadonnées pour SEO
+// Générer les métadonnées pour SEO
 export async function generateMetadata({ params }) {
-  const article = await fetchArticle(params.slug);
+  const article = await getArticleBySlug(params.slug);
 
   if (!article) {
     return {
@@ -54,10 +32,10 @@ export async function generateMetadata({ params }) {
 
 // Composant principal de la page
 export default async function ArticlePage({ params }) {
-  const article = await fetchArticle(params.slug);
+  const article = await getArticleBySlug(params.slug);
 
   if (!article) {
-    notFound(); // Affiche une page 404 par défaut de Next.js si l'article n'existe pas
+    notFound(); // Redirige vers une page 404 par défaut si l'article n'existe pas
   }
 
   return (

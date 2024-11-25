@@ -6,14 +6,18 @@ import { useState } from "react";
 import AgentProfile from "@/components/agent/AgentProfile";
 import AgentSupport from "@/components/agent/AgentSupport";
 import AgentProperties from "@/components/agent/AgentProperty";
-import { useRouter } from "next/navigation"; // Pour redirection
+import { useParams, useRouter } from "next/navigation"; // Pour redirection
 import { auth } from "@/lib/firebase/firebase"; // Firebase Auth instance
 import { signOut } from "firebase/auth"; // Déconnexion Firebase
 
 
 export default function Dashboard() {
+  const params = useParams();
+  const role = params.role
+  // console.log("dfkffkf",role);
   const router = useRouter();
   const [activeKey, setActiveKey] = useState("profile");
+  
   const handleLogout = async () => {
     try {
       await signOut(auth);
