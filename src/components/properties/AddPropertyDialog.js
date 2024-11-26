@@ -8,6 +8,7 @@ import { Select, SelectTrigger, SelectContent, SelectItem } from "../ui/select";
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
 import { addPropertyForAgent } from "@/lib/firebase/properties";
 import { useTriggerRefresh } from "@/providers/TriggerRefreshprovider";
+import ImageUploader from "@/components/images/ImageUploader";
 
 export default function AddPropertyDialog() {
     const [isOpen, setIsOpen] = useState(false)
@@ -218,6 +219,7 @@ export default function AddPropertyDialog() {
               onChange={handleChange}
               placeholder="URL de l'image"
             />
+            <ImageUploader/>
           </div>
 
           {/* Options supplémentaires */}
