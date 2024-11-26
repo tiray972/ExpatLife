@@ -13,13 +13,14 @@ export default function LocationsPage() {
   const [filters, setFilters] = useState({
     emirateID: true, // Initialisé à true
     type: "all",
-    priceRange: [0, 50000],
+    priceRange: [0, 100000],
     bedrooms: "all",
     duration: "all",
     furnished: "all",
   });
 
   const { properties, isLoading } = useProperties();
+  console.log(properties)
 
   return (
     <main className="min-h-screen bg-gray-50 ">

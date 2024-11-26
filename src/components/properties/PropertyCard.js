@@ -22,7 +22,15 @@ export function PropertyCard({ property }) {
     : []; // Si c'est une chaîne, on la met dans un tableau. Sinon, tableau vide.
 
   return (
-    <Card className="overflow-hidden">
+    <Card className="overflow-hidden relative">
+      {/* Voile sur toute la carte si la propriété n'est pas vérifiée */}
+      {!property.isverified && (
+        <div className="absolute inset-0 bg-black/60 backdrop-blur-md z-10 flex items-center justify-center">
+          <span className="text-white text-lg font-semibold">
+            Non vérifié
+          </span>
+        </div>
+      )}
       <div className="relative h-48">
         <Image
           src={property.image}

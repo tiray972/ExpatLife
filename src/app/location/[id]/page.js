@@ -1,18 +1,26 @@
+"use client";
+
 import PropertyDetails from "@/components/properties/PropertyDetails";
-import { DEMO_PROPERTIES } from "@/lib/properties";
-
-
-export function generateStaticParams() {
-  return DEMO_PROPERTIES.map((property) => ({
-    id: property.id,
-  }));
-}
+import { useProperties } from "@/hooks/useProperties";
+import { useEffect, useState } from "react";
 
 export default function PropertyPage({ params }) {
-  const property = DEMO_PROPERTIES.find((p) => p.id === params.id);
+  const { properties, isLoading } = useProperties();
+  const [property, setProperty] = useState(null);
+
+  useEffect(() => {
+    if (!isLoading) {
+      const foundProperty = properties.find((p) => p.id === params.id);
+      setProperty(foundProperty);
+    }
+  }, [properties, isLoading, params.id]);
+
+  if (isLoading) {
+    return <p>Chargement...</p>;
+  }
 
   if (!property) {
-    return null; // Vous pouvez également afficher une page 404 ou un message d'erreur personnalisé ici
+    return <p>Propriété introuvable</p>; // Page d'erreur personnalisée
   }
 
   return <PropertyDetails property={property} />;

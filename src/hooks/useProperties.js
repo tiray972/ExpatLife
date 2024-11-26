@@ -2,31 +2,33 @@
 
 import { useState, useEffect } from "react";
 import { collection, getDocs } from "firebase/firestore";
-import { db } from "@/lib/firebase/firebase"; // Importez votre configuration Firebase
+import { db } from "@/lib/firebase/firebase";
 
 export function useProperties() {
   const [properties, setProperties] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     const loadProperties = async () => {
       try {
-        const querySnapshot = await getDocs(collection(db, "properties")); // Collection "properties" dans Firestore
-        const fetchedProperties = querySnapshot.docs.map(doc => ({
-          id: doc.id, // Récupérer l'ID du document
-          ...doc.data(), // Récupérer les données du document
+        const querySnapshot = await getDocs(collection(db, "properties"));
+        const fetchedProperties = querySnapshot.docs.map((doc) => ({
+          id: doc.id,
+          ...doc.data(),
         }));
 
-        setProperties(fetchedProperties); // Définir les propriétés
-      } catch (error) {
-        console.error("Erreur lors du chargement des propriétés :", error);
+        setProperties(fetchedProperties);
+      } catch (err) {
+        console.error("Erreur lors du chargement des propriétés :", err);
+        setError(err);
       } finally {
-        setIsLoading(false); // Arrêter le chargement
+        setIsLoading(false);
       }
     };
 
     loadProperties();
-  }, []); // Charger les données au premier rendu
+  }, []);
 
-  return { properties, isLoading };
+  return { properties, isLoading, error };
 }

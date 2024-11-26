@@ -32,7 +32,7 @@ export default function Dashboard() {
   }
 
   if (!user) {
-    alert("Connecte toi batard");
+    alert("login");
     router.push("/auth/login");
     return ;
     

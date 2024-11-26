@@ -14,7 +14,7 @@ export default function AddPropertyDialog() {
   const [formData, setFormData] = useState({
     title: "",
     type: "apartment",
-    isverifed:false,
+    isverified:false,
     price: "",
     bedrooms: "",
     size: "",

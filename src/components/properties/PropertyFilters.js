@@ -54,7 +54,7 @@ export function PropertyFilters({filters, setFilters}) {
               <Slider
                 value={filters.priceRange}
                 min={0}
-                max={50000}
+                max={100000}
                 step={1000}
                 onValueChange={(value) => setFilters({ ...filters, priceRange: value })}
               />
