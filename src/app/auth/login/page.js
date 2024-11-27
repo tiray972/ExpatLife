@@ -180,7 +180,7 @@ export default function Login() {
             </div>
           </form> 
           <div className="flex justify-between">
-            <Link href={"#"}>
+            <Link href={"/auth/signup"}>
             new here ? SIGN UP
             </Link>
             <Link href={"#"} >

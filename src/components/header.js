@@ -83,10 +83,10 @@ export default function Header() {
           </div>
         ) : (
           <button
-            onClick={() => router.push("/auth/login")} // Redirection vers la page de connexion
+            onClick={() => router.push("/auth/signup")} // Redirection vers la page de connexion
             className="bg-white text-teal-600 px-4 py-2 rounded-md shadow-md hover:bg-teal-700 hover:text-white"
           >
-            Connexion
+            S'inscrire
           </button>
         )}
       </div>
