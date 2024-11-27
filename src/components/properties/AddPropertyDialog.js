@@ -9,10 +9,12 @@ import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
 import { addPropertyForAgent } from "@/lib/firebase/properties";
 import { useTriggerRefresh } from "@/providers/TriggerRefreshprovider";
 import ImageUploader from "@/components/images/ImageUploader";
+import GeoLocator from "@/components/google/GeoLocator";
+import AddressAutocomplete from "@/components/google/AddressAutocomplete";
 
 export default function AddPropertyDialog() {
     const [isOpen, setIsOpen] = useState(false)
-  const [formData, setFormData] = useState({
+    const [formData, setFormData] = useState({
     title: "",
     type: "apartment",
     isverified:false,
@@ -26,6 +28,7 @@ export default function AddPropertyDialog() {
     needEmirateID: false,
     coordinates: { lat: "", lng: "" },
   });
+  
 
   // Fonction pour mettre à jour les champs
   const handleChange = (e) => {
@@ -70,6 +73,12 @@ export default function AddPropertyDialog() {
       console.error("Erreur lors de l'ajout de la propriété :", error);
     }
   };
+  const handleAddressSelected = ({ address, coordinates }) => {
+    setFormData({
+      ...formData,
+      location: address,
+      coordinates: { lat: coordinates.lat, lng: coordinates.lng },
+    });};
   return (
     <div className="flex justify-center items-center" >
     <Dialog open={isOpen} onOpenChange={setIsOpen} className="flex justify-center items-center" >
@@ -200,13 +209,7 @@ export default function AddPropertyDialog() {
           {/* Localisation */}
           <div>
             <Label htmlFor="location">Localisation</Label>
-            <Input
-              id="location"
-              name="location"
-              value={formData.location}
-              onChange={handleChange}
-              placeholder="Ex : Dubai Marina"
-            />
+            <AddressAutocomplete onAddressSelected={handleAddressSelected} />
           </div>
 
           {/* Lien de l'image */}
