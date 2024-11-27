@@ -17,6 +17,7 @@ export default function AddPropertyDialog() {
   const [formData, setFormData] = useState({
     title: "",
     type: "apartment",
+    isverified:false,
     price: "",
     bedrooms: "",
     size: "",
@@ -112,6 +113,7 @@ export default function AddPropertyDialog() {
           </DialogHeader>
 
           <form className="space-y-4">
+            {/* titre  */}
             <div>
               <Label htmlFor="title">Titre</Label>
               <Input
@@ -122,7 +124,8 @@ export default function AddPropertyDialog() {
                 placeholder="Titre de la propriété"
               />
             </div>
-
+            
+            {/* type  */}
             <div>
               <Label htmlFor="type">Type</Label>
               <Select
@@ -159,6 +162,7 @@ export default function AddPropertyDialog() {
                 ))}
               </ToggleGroup>
             </div> */}
+            {/* durée */}
             <div>
               <Label htmlFor="duration">Durée</Label>
               <Select
@@ -174,6 +178,34 @@ export default function AddPropertyDialog() {
               </Select>
             </div>
 
+
+            {/* Chambres */}
+            <div>
+              <Label htmlFor="bedrooms">Nombre de chambres</Label>
+              <Input
+                id="bedrooms"
+                name="bedrooms"
+                type="number"
+                value={formData.bedrooms}
+                onChange={handleChange}
+                placeholder="Nombre de chambres"
+              />
+            </div>
+
+            {/* Taille */}
+            <div>
+              <Label htmlFor="size">Taille (SQFT)</Label>
+              <Input
+                id="size"
+                name="size"
+                type="number"
+                value={formData.size}
+                onChange={handleChange}
+                placeholder="Taille de la propriété en m²"
+              />
+            </div>
+
+            {/* price */}
             <div>
               <Label htmlFor="price">Prix (AED)</Label>
               <Input

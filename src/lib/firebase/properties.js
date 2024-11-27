@@ -6,7 +6,7 @@ import { useTriggerRefresh } from "@/providers/TriggerRefreshprovider";
 export async function addPropertyForAgent(property) {
   const user = auth.currentUser;
 
-  if (!user) return alert("Please log in as an agent.");
+  if (!user) return alert("Please log in.");
 
   try {
     // Ajouter la propriété à la collection `properties`
@@ -21,7 +21,7 @@ export async function addPropertyForAgent(property) {
       properties: arrayUnion(propertyRef.id), // Ajout de l'ID de la nouvelle propriété
     });
 
-    alert("Property added successfully!");
+    alert("Bien ajouté avec succès ! Il sera vérifié sous 48 heures.");
   } catch (error) {
     console.error("Error adding property: ", error);
   }
@@ -30,7 +30,7 @@ export async function addPropertyForAgent(property) {
 // Récupérer les propriétés de l'agent
 export async function fetchAgentProperties() {
   const user = auth.currentUser;
-  if (!user) return alert("Please log in as an agent.");
+  if (!user) return alert("Please log in.");
 
   try {
     // Récupérer le document de l'agent
@@ -53,7 +53,7 @@ export async function fetchAgentProperties() {
 
         return propertyList;  // Retourner la liste des propriétés de l'agent
       } else {
-        console.log("Aucune propriété trouvée pour cet agent.");
+        console.log("Aucune propriété trouvée pour cet users.");
       }
     } else {
       console.log("Aucun document agent trouvé.");
