@@ -109,7 +109,7 @@ export default function AddPropertyDialog() {
         </DialogTrigger>
         <DialogContent className="max-w-2xl w-full max-h-[80vh] overflow-y-auto rounded-lg p-6 bg-white shadow-xl">
           <DialogHeader>
-            <DialogTitle>Add a news property</DialogTitle>
+            <DialogTitle>Add a new property</DialogTitle>
           </DialogHeader>
 
           <form className="space-y-4">
@@ -185,7 +185,7 @@ export default function AddPropertyDialog() {
                 value={formData.duration}
                 onValueChange={(value) => setFormData({ ...formData, duration: value })}
               >
-                <SelectTrigger>{formData.duration || "Sélect Period"}</SelectTrigger>
+                <SelectTrigger>{formData.duration || "Select Period"}</SelectTrigger>
                 <SelectContent>
                   <SelectItem value="weekly">Weekly</SelectItem>
                   <SelectItem value="monthly">Monthly</SelectItem>
@@ -204,7 +204,7 @@ export default function AddPropertyDialog() {
                 type="number"
                 value={formData.bedrooms}
                 onChange={handleChange}
-                placeholder="Number of Bedrooms"
+                placeholder="Bedrooms"
                 className="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-teal-500"
               />
             </div>
@@ -232,7 +232,7 @@ export default function AddPropertyDialog() {
                 type="number"
                 value={formData.price}
                 onChange={handleChange}
-                placeholder="Price of the Property"
+                placeholder="Price"
                 className="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-teal-500"
               />
             </div>
