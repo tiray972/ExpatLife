@@ -13,7 +13,7 @@ export default function LocationsPage() {
   const [filters, setFilters] = useState({
     emirateID: true, // Initialisé à true
     type: "all",
-    priceRange: [0, 100000],
+    priceRange: [0, 5000000],
     bedrooms: "all",
     duration: "all",
     furnished: "all",

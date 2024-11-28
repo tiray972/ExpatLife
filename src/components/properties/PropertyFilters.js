@@ -39,9 +39,9 @@ export function PropertyFilters({filters, setFilters}) {
             </SelectTrigger>
             <SelectContent>
               <SelectItem value="all">Tous</SelectItem>
-              <SelectItem value="apartment">Appartement</SelectItem>
+              <SelectItem value="Apartment">Apartment</SelectItem>
               <SelectItem value="villa">Villa</SelectItem>
-              <SelectItem value="studio">Studio</SelectItem>
+              <SelectItem value="Hotel Apartment">Hotel Apartment</SelectItem>
             </SelectContent>
           </Select>
         </div>
@@ -54,7 +54,7 @@ export function PropertyFilters({filters, setFilters}) {
               <Slider
                 value={filters.priceRange}
                 min={0}
-                max={100000}
+                max={5000000}
                 step={1000}
                 onValueChange={(value) => setFilters({ ...filters, priceRange: value })}
               />
@@ -68,28 +68,28 @@ export function PropertyFilters({filters, setFilters}) {
 
         {/* Section Chambres */}
         <div>
-          <Label>Chambres</Label>
+          <Label>Beds</Label>
           <Select
             value={filters.bedrooms}
             onValueChange={(value) => setFilters({ ...filters, bedrooms: value })}
           >
             <SelectTrigger>
-              <SelectValue placeholder="Nombre de chambres" />
+              <SelectValue placeholder="Beds" />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="all">Toutes</SelectItem>
+              <SelectItem value="all">All</SelectItem>
               <SelectItem value="studio">Studio</SelectItem>
-              <SelectItem value="1">1 chambre</SelectItem>
-              <SelectItem value="2">2 chambres</SelectItem>
-              <SelectItem value="3">3 chambres</SelectItem>
-              <SelectItem value="4+">4+ chambres</SelectItem>
+              <SelectItem value="1">1 Beds</SelectItem>
+              <SelectItem value="2">2 Beds</SelectItem>
+              <SelectItem value="3">3 Beds</SelectItem>
+              <SelectItem value="4+">4+ Beds</SelectItem>
             </SelectContent>
           </Select>
         </div>
 
         {/* Section Durée */}
         <div>
-          <Label>Durée</Label>
+          <Label>Period</Label>
           <Select
             value={filters.duration}
             onValueChange={(value) => setFilters({ ...filters, duration: value })}

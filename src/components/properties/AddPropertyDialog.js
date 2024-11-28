@@ -250,7 +250,7 @@ export default function AddPropertyDialog() {
             {/* Options supplémentaires */}
             <div className="flex items-center space-x-4">
               <div>
-                <Label htmlFor="furnished">furnished</Label>
+                <Label htmlFor="furnished">Furnished</Label>
                 <Input
                   id="furnished"
                   name="furnished"
@@ -307,10 +307,10 @@ export default function AddPropertyDialog() {
 
           <DialogFooter>
             <Button variant="outline" onClick={() => setIsOpen(false)}>
-              Annuler
+             Cancel
             </Button>
             <Button className="bg-teal-500 hover:bg-teal-700 text-white" onClick={handleSubmit}>
-              Confirmer
+              Confirm
             </Button>
           </DialogFooter>
         </DialogContent>

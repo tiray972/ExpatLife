@@ -21,7 +21,7 @@ export async function addPropertyForAgent(property) {
       properties: arrayUnion(propertyRef.id), // Ajout de l'ID de la nouvelle propriété
     });
 
-    alert("Bien ajouté avec succès ! Il sera vérifié sous 48 heures.");
+    alert("Successfully added! It will be reviewed within 48 hours by our team.");
   } catch (error) {
     console.error("Error adding property: ", error);
   }
