@@ -179,7 +179,7 @@ export default function AddPropertyDialog() {
             </div> */}
             {/* durée */}
             <div>
-              <Label htmlFor="duration">Durée</Label>
+              <Label htmlFor="duration">Period</Label>
               <Select
                 className="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-teal-500"
                 value={formData.duration}
@@ -187,9 +187,9 @@ export default function AddPropertyDialog() {
               >
                 <SelectTrigger>{formData.duration || "Sélectionnez une durée"}</SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="weekly">Hebdomadaire</SelectItem>
-                  <SelectItem value="monthly">Mensuel</SelectItem>
-                  <SelectItem value="yearly">Annuel</SelectItem>
+                  <SelectItem value="weekly">Weekly</SelectItem>
+                  <SelectItem value="monthly">Monthly</SelectItem>
+                  <SelectItem value="yearly">Yearly</SelectItem>
                 </SelectContent>
               </Select>
             </div>
@@ -197,48 +197,48 @@ export default function AddPropertyDialog() {
 
             {/* Chambres */}
             <div>
-              <Label htmlFor="bedrooms">Nombre de chambres</Label>
+              <Label htmlFor="bedrooms">Beds</Label>
               <Input
                 id="bedrooms"
                 name="bedrooms"
                 type="number"
                 value={formData.bedrooms}
                 onChange={handleChange}
-                placeholder="Nombre de chambres"
+                placeholder="Number of Bedrooms"
                 className="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-teal-500"
               />
             </div>
 
             {/* Taille */}
             <div>
-              <Label htmlFor="size">Taille (SQFT)</Label>
+              <Label htmlFor="size">Area (SQFT)</Label>
               <Input
                 id="size"
                 name="size"
                 type="number"
                 value={formData.size}
                 onChange={handleChange}
-                placeholder="Taille de la propriété en m²"
+                placeholder="Area in SQFT"
                 className="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-teal-500"
               />
             </div>
 
             {/* price */}
             <div>
-              <Label htmlFor="price">Prix (AED)</Label>
+              <Label htmlFor="price">Price (AED)</Label>
               <Input
                 id="price"
                 name="price"
                 type="number"
                 value={formData.price}
                 onChange={handleChange}
-                placeholder="Prix de la propriété"
+                placeholder="Price of the Property"
                 className="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-teal-500"
               />
             </div>
 
             <div>
-              <Label htmlFor="location">Localisation</Label>
+              <Label htmlFor="location">Location</Label>
               <AddressAutocomplete onAddressSelected={handleAddressSelected} />
             </div>
 
