@@ -9,9 +9,9 @@ import Image from "next/image";
 
 export function PropertyCard({ property }) {
   const durationLabels = {
-    yearly: "Annuel",
-    monthly: "Mensuel",
-    weekly: "Hebdomadaire",
+    yearly: "Yearly",
+    monthly: "Monthly",
+    weekly: "weekly",
   };
 
   // Normaliser `property.duration` pour toujours être un tableau
@@ -49,7 +49,7 @@ export function PropertyCard({ property }) {
           </div>
           <div className="text-xl font-bold text-teal-600">
             {property.price} AED
-            <span className="text-sm text-gray-500">/mois</span>
+            <span className="text-sm text-gray-500">{property.duration}</span>
           </div>
         </div>
       </CardHeader>
@@ -65,7 +65,7 @@ export function PropertyCard({ property }) {
           </div>
           <div className="flex items-center gap-2">
             <Square className="w-4 h-4 text-gray-500" />
-            <span>{property.size}m²</span>
+            <span>{property.size}SQRT</span>
           </div>
         </div>
         <div className="flex gap-2 mb-4">
@@ -81,9 +81,15 @@ export function PropertyCard({ property }) {
             {property.furnished ? "Meublé" : "Non meublé"}
           </Badge>
         </div>
-        <Link href={`/location/${property.id}`}>
-          <Button className="w-full">Voir les détails</Button>
-        </Link>
+        <div className="grid-cols-2 space-x-2">
+          <Link href={`/location/${property.id}`}>
+            <Button className="w-full">Display details</Button>
+          </Link>
+          <Link href={`/location/${property.id}`}>
+            <Button className="w-full">Display details</Button>
+          </Link>
+        </div>
+        
       </CardContent>
     </Card>
   );

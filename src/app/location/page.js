@@ -26,7 +26,7 @@ export default function LocationsPage() {
     <main className="min-h-screen bg-gray-50 ">
       <Header/>
       <div className="container mx-auto px-4 py-12">
-        <h1 className="text-4xl font-bold mb-8">Nos Locations Disponibles</h1>
+        <h1 className="text-4xl font-bold mb-8">Properties for rent</h1>
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
           <PropertyFilters filters={filters} setFilters={setFilters} />
           <div className="lg:col-span-3">
@@ -34,23 +34,23 @@ export default function LocationsPage() {
               <TabsList className="grid w-full grid-cols-2 max-w-[400px]">
                 <TabsTrigger value="list" className="flex items-center gap-2">
                   <List className="w-4 h-4" />
-                  Liste
+                  List
                 </TabsTrigger>
                 <TabsTrigger value="map" className="flex items-center gap-2">
                   <MapIcon className="w-4 h-4" />
-                  Carte
+                  Map
                 </TabsTrigger>
               </TabsList>
               <TabsContent value="list">
                 {isLoading ? (
-                  <p>Chargement...</p>
+                  <p>Loading...</p>
                 ) : (
                 <PropertyList filters={filters} />
                 )}
               </TabsContent>
               <TabsContent value="map">
               {isLoading ? (
-                  <p>Chargement...</p>
+                  <p>Loading...</p>
                 ) : (
                   <PropertyMap properties={properties} />
                 )}

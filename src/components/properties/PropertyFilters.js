@@ -29,16 +29,16 @@ export function PropertyFilters({filters, setFilters}) {
         {/* Autres sections (inchangées) */}
         {/* Section Type de bien */}
         <div>
-          <Label>Type de bien</Label>
+          <Label>Type</Label>
           <Select
             value={filters.type}
             onValueChange={(value) => setFilters({ ...filters, type: value })}
           >
             <SelectTrigger>
-              <SelectValue placeholder="Type de bien" />
+              <SelectValue placeholder="Type" />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="all">Tous</SelectItem>
+              <SelectItem value="all">All</SelectItem>
               <SelectItem value="Apartment">Apartment</SelectItem>
               <SelectItem value="villa">Villa</SelectItem>
               <SelectItem value="Hotel Apartment">Hotel Apartment</SelectItem>
@@ -99,7 +99,7 @@ export function PropertyFilters({filters, setFilters}) {
             <SelectContent>
               <SelectItem value="all">All</SelectItem>
               <SelectItem value="studio">Studio</SelectItem>
-              <SelectItem value="1">1 Beds</SelectItem>
+              <SelectItem value="1">1 Bed</SelectItem>
               <SelectItem value="2">2 Beds</SelectItem>
               <SelectItem value="3">3 Beds</SelectItem>
               <SelectItem value="4+">4+ Beds</SelectItem>
