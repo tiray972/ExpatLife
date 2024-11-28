@@ -9,10 +9,10 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 export default function PropertyDetails({ property }) {
-  const currentUrl = `https://yourdomain.com${usePathname()}`;
-  const whatsappUrl = `https://wa.me/971568127898?text=Bonjour,+je+suis+intéressé+par+le+bien+immobilier+disponible+à+l'adresse+suivante+:+${encodeURIComponent(
+  const currentUrl = `https://expatlife-uae.com${usePathname()}`;
+  const whatsappUrl = `https://wa.me/971568127898?text=Hello,+I+am+interested+in+the+property+available+at+the+following+address:+${encodeURIComponent(
     currentUrl
-  )}.+Pouvez-vous+me+fournir+plus+d'informations+?`;
+  )}.+Could+you+please+provide+me+with+more+details?`;
 
   return (
     <main className="min-h-screen bg-gray-50 py-12">
