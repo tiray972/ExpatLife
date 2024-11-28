@@ -250,25 +250,24 @@ export default function AddPropertyDialog() {
             {/* Options supplémentaires */}
             <div className="flex items-center space-x-4">
               <div>
-                <Label htmlFor="furnished">Meublé</Label>
+                <Label htmlFor="furnished">furnished</Label>
                 <Input
                   id="furnished"
                   name="furnished"
                   type="checkbox"
                   checked={formData.furnished}
                   onChange={handleChange}
-                  className="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-teal-500"
+                  
                 />
               </div>
               <div>
-                <Label htmlFor="needEmirateID">Nécessite Emirates ID</Label>
+                <Label htmlFor="needEmirateID">Need Emirates ID</Label>
                 <Input
                   id="needEmirateID"
                   name="needEmirateID"
                   type="checkbox"
                   checked={formData.needEmirateID}
                   onChange={handleChange}
-                  className="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-teal-500"
                 />
               </div>
             </div>
@@ -310,7 +309,7 @@ export default function AddPropertyDialog() {
             <Button variant="outline" onClick={() => setIsOpen(false)}>
               Annuler
             </Button>
-            <Button className="bg-blue-500 text-white" onClick={handleSubmit}>
+            <Button className="bg-teal-500 hover:bg-teal-700 text-white" onClick={handleSubmit}>
               Confirmer
             </Button>
           </DialogFooter>

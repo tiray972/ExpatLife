@@ -73,7 +73,7 @@ export default function ImageUploader({ onImagesUpload }) {
           htmlFor="file-upload"
           className="inline-block px-4 py-2 bg-teal-500 text-white rounded-md cursor-pointer hover:bg-teal-600"
         >
-          Choisir des fichiers
+          select files
         </label>
         <input
           id="file-upload"
