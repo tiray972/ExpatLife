@@ -122,6 +122,7 @@ export default function AddPropertyDialog() {
                 value={formData.title}
                 onChange={handleChange}
                 placeholder="Titre de la propriété"
+                className="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-black-500"
               />
             </div>
             {/* Description */}
@@ -133,23 +134,24 @@ export default function AddPropertyDialog() {
                 value={formData.description}
                 onChange={(e) => setFormData({ ...formData, description: e.target.value })}
                 placeholder="Décrivez les caractéristiques de la propriété"
-                className="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-teal-500"
+                className="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-black"
                 rows={4} // Ajustez le nombre de lignes visibles selon vos besoins
               />
             </div>
             
             {/* type  */}
-            <div>
+            <div >
               <Label htmlFor="type">Type</Label>
               <Select
+                className="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-teal-500"
                 value={formData.type}
                 onValueChange={(value) => setFormData({ ...formData, type: value })}
               >
                 <SelectTrigger>{formData.type}</SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="apartment">Appartement</SelectItem>
+                  <SelectItem value="Apartment">Apartment</SelectItem>
                   <SelectItem value="villa">Villa</SelectItem>
-                  <SelectItem value="apartmentHotel">Hôtel Appartement</SelectItem>
+                  <SelectItem value="Hotel Apartment">Hotel Apartment</SelectItem>
                 </SelectContent>
               </Select>
             </div>
@@ -179,6 +181,7 @@ export default function AddPropertyDialog() {
             <div>
               <Label htmlFor="duration">Durée</Label>
               <Select
+                className="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-teal-500"
                 value={formData.duration}
                 onValueChange={(value) => setFormData({ ...formData, duration: value })}
               >
@@ -202,6 +205,7 @@ export default function AddPropertyDialog() {
                 value={formData.bedrooms}
                 onChange={handleChange}
                 placeholder="Nombre de chambres"
+                className="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-teal-500"
               />
             </div>
 
@@ -215,6 +219,7 @@ export default function AddPropertyDialog() {
                 value={formData.size}
                 onChange={handleChange}
                 placeholder="Taille de la propriété en m²"
+                className="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-teal-500"
               />
             </div>
 
@@ -228,6 +233,7 @@ export default function AddPropertyDialog() {
                 value={formData.price}
                 onChange={handleChange}
                 placeholder="Prix de la propriété"
+                className="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-teal-500"
               />
             </div>
 
@@ -251,6 +257,7 @@ export default function AddPropertyDialog() {
                   type="checkbox"
                   checked={formData.furnished}
                   onChange={handleChange}
+                  className="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-teal-500"
                 />
               </div>
               <div>
@@ -261,6 +268,7 @@ export default function AddPropertyDialog() {
                   type="checkbox"
                   checked={formData.needEmirateID}
                   onChange={handleChange}
+                  className="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-teal-500"
                 />
               </div>
             </div>

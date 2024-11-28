@@ -82,6 +82,7 @@ const AddressAutocomplete = ({ onAddressSelected }) => {
         value={inputValue}
         onChange={handleInputChange}
         placeholder="Entrez une adresse"
+        className="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-black"
         style={{
           width: "100%",
           padding: "10px",
