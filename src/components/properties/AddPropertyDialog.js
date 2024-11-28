@@ -266,7 +266,7 @@ export default function AddPropertyDialog() {
             </div>
             
              {/* Coordonnées */}
-            <div className="flex space-x-4">
+            {/* <div className="flex space-x-4">
               <div>
                 <Label htmlFor="lat">Latitude</Label>
                 <Input
@@ -295,7 +295,7 @@ export default function AddPropertyDialog() {
                   }
                 />
               </div>
-            </div>
+            </div> */}
           </form>
 
           <DialogFooter>
