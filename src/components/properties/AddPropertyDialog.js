@@ -124,6 +124,19 @@ export default function AddPropertyDialog() {
                 placeholder="Titre de la propriété"
               />
             </div>
+            {/* Description */}
+            <div>
+              <Label htmlFor="description">Description</Label>
+              <textarea
+                id="description"
+                name="description"
+                value={formData.description}
+                onChange={(e) => setFormData({ ...formData, description: e.target.value })}
+                placeholder="Décrivez les caractéristiques de la propriété"
+                className="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-teal-500"
+                rows={4} // Ajustez le nombre de lignes visibles selon vos besoins
+              />
+            </div>
             
             {/* type  */}
             <div>

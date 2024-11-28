@@ -6,8 +6,14 @@ import { Bed, Home, MapPin, Square } from "lucide-react";
 import { PropertyMap } from "@/components/properties/PropertyMap";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export default function PropertyDetails({ property }) {
+  const currentUrl = `https://yourdomain.com${usePathname()}`;
+  const whatsappUrl = `https://wa.me/971568127898?text=Bonjour,+je+suis+intéressé+par+le+bien+immobilier+disponible+à+l'adresse+suivante+:+${encodeURIComponent(
+    currentUrl
+  )}.+Pouvez-vous+me+fournir+plus+d'informations+?`;
+
   return (
     <main className="min-h-screen bg-gray-50 py-12">
       <div className="container mx-auto px-4">
@@ -16,9 +22,10 @@ export default function PropertyDetails({ property }) {
             ← Retour aux locations
           </Button>
         </Link>
-        
+
         <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-          <div className="relative h-[400px]">
+          {/* Image principale */}
+          <div className="relative h-[400px] border-b border-gray-200">
             <Image
               src={property.image}
               alt={property.title}
@@ -26,8 +33,25 @@ export default function PropertyDetails({ property }) {
               className="object-cover"
             />
           </div>
-          
+
+          {/* Galerie d'images */}
+          {property.images && property.images.length > 0 && (
+            <div className="grid grid-cols-2 gap-2 p-4">
+              {property.images.map((image, index) => (
+                <div key={index} className="relative h-[200px]">
+                  <Image
+                    src={image}
+                    alt={`${property.title} - image ${index + 1}`}
+                    fill
+                    className="object-cover rounded-lg"
+                  />
+                </div>
+              ))}
+            </div>
+          )}
+
           <div className="p-8">
+            {/* Titre et informations principales */}
             <div className="flex justify-between items-start mb-6">
               <div>
                 <h1 className="text-3xl font-bold mb-2">{property.title}</h1>
@@ -42,6 +66,7 @@ export default function PropertyDetails({ property }) {
               </div>
             </div>
 
+            {/* Détails de la propriété */}
             <div className="grid grid-cols-3 gap-6 mb-8">
               <div className="flex items-center gap-3">
                 <Home className="w-6 h-6 text-blue-600" />
@@ -66,6 +91,7 @@ export default function PropertyDetails({ property }) {
               </div>
             </div>
 
+            {/* Badges */}
             <div className="flex gap-3 mb-8">
               <Badge variant={property.duration === "short" ? "default" : "secondary"}>
                 {property.duration === "short" ? "Court séjour" : "Long séjour"}
@@ -75,16 +101,29 @@ export default function PropertyDetails({ property }) {
               </Badge>
             </div>
 
+            {/* Description */}
+            <div className="mb-8">
+              <h2 className="text-xl font-semibold mb-4">Description</h2>
+              <p className="text-gray-600 leading-relaxed">{property.description}</p>
+            </div>
+
+            {/* Localisation */}
             <div className="mb-8">
               <h2 className="text-xl font-semibold mb-4">Localisation</h2>
-              <div className="h-[300px]">
+              <div >
                 <PropertyMap properties={[property]} />
               </div>
             </div>
 
-            <Button size="lg" className="w-full">
-              Contacter l'agent
-            </Button>
+            {/* Lien WhatsApp */}
+            <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
+              <Button
+                size="lg"
+                className="w-full bg-green-500 text-white hover:bg-green-600 mt-6"
+              >
+                Contacter via WhatsApp
+              </Button>
+            </a>
           </div>
         </div>
       </div>

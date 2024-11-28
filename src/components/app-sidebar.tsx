@@ -28,7 +28,6 @@ export function AppSidebar({ activeKey, setActiveKey, ...props }) {
         items: [
           { title: "Mon Profil", url: "/dashboard/agent", key: "profile" },
           { title: "Mes Proprieté", url: "/dashboard/agent", key: "properties" },
-          { title: "Mes Annonces", url: "/dashboard/agent", key: "annonces" },
           { title: "Assistance", url: "/dashboard/agent", key: "support" },
           { title: "Déconnexion", url: "#", key: "logout" },
         ],
