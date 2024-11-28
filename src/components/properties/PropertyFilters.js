@@ -46,10 +46,30 @@ export function PropertyFilters({filters, setFilters}) {
           </Select>
         </div>
 
+        {/* Section Durée */}
+        <div>
+          <Label>Period</Label>
+          <Select
+            value={filters.duration}
+            onValueChange={(value) => setFilters({ ...filters, duration: value })}
+            disabled={!isEmirateIDProvided} // Désactivé si Emirate ID est OFF
+          >
+            <SelectTrigger>
+              <SelectValue placeholder="Durée de location" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="all">All</SelectItem>
+              <SelectItem value="weekly">weekly</SelectItem>
+              <SelectItem value="monthly">Monthly</SelectItem>
+              <SelectItem value="yearly">Yearly</SelectItem>
+            </SelectContent>
+          </Select>
+        </div>
+
         {/* Section Budget mensuel */}
         {isEmirateIDProvided && (
           <div>
-            <Label>Budget mensuel (AED)</Label>
+            <Label>Rent (AED)</Label>
             <div className="pt-4">
               <Slider
                 value={filters.priceRange}
@@ -87,39 +107,22 @@ export function PropertyFilters({filters, setFilters}) {
           </Select>
         </div>
 
-        {/* Section Durée */}
-        <div>
-          <Label>Period</Label>
-          <Select
-            value={filters.duration}
-            onValueChange={(value) => setFilters({ ...filters, duration: value })}
-            disabled={!isEmirateIDProvided} // Désactivé si Emirate ID est OFF
-          >
-            <SelectTrigger>
-              <SelectValue placeholder="Durée de location" />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectItem value="all">Toutes</SelectItem>
-              <SelectItem value="short">Court séjour</SelectItem>
-              <SelectItem value="long">Long séjour</SelectItem>
-            </SelectContent>
-          </Select>
-        </div>
+        
 
         {/* Section Meublé */}
         <div>
-          <Label>Meublé</Label>
+          <Label>Furnished</Label>
           <Select
             value={filters.furnished}
             onValueChange={(value) => setFilters({ ...filters, furnished: value })}
           >
             <SelectTrigger>
-              <SelectValue placeholder="Meublé" />
+              <SelectValue placeholder="furnished" />
             </SelectTrigger>
             <SelectContent>
               <SelectItem value="all">Tous</SelectItem>
-              <SelectItem value="yes">Meublé</SelectItem>
-              <SelectItem value="no">Non meublé</SelectItem>
+              <SelectItem value="yes">furnished</SelectItem>
+              <SelectItem value="no">unfurnished</SelectItem>
             </SelectContent>
           </Select>
         </div>
