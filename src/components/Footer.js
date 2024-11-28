@@ -52,7 +52,7 @@ export default function Footer() {
                                 {/* Instagram */}
                                 <a
                                 rel="noopener noreferrer"
-                                href="#"
+                                href="https://www.instagram.com/expatlife.com_/"
                                 title="Instagram"
                                 className="flex items-center p-1"
                                 >
@@ -69,7 +69,7 @@ export default function Footer() {
                                 {/* WhatsApp */}
                                 <a
                                 rel="noopener noreferrer"
-                                href="#"
+                                href="https://wa.me/971568127898?text=prout"
                                 title="WhatsApp"
                                 className="flex items-center p-1"
                                 >

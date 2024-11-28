@@ -109,19 +109,19 @@ export default function AddPropertyDialog() {
         </DialogTrigger>
         <DialogContent className="max-w-2xl w-full max-h-[80vh] overflow-y-auto rounded-lg p-6 bg-white shadow-xl">
           <DialogHeader>
-            <DialogTitle>Ajouter une nouvelle propriété</DialogTitle>
+            <DialogTitle>Add a news property</DialogTitle>
           </DialogHeader>
 
           <form className="space-y-4">
             {/* titre  */}
             <div>
-              <Label htmlFor="title">Titre</Label>
+              <Label htmlFor="title">Title</Label>
               <Input
                 id="title"
                 name="title"
                 value={formData.title}
                 onChange={handleChange}
-                placeholder="Titre de la propriété"
+                placeholder="enter title"
                 className="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-black-500"
               />
             </div>
@@ -133,7 +133,7 @@ export default function AddPropertyDialog() {
                 name="description"
                 value={formData.description}
                 onChange={(e) => setFormData({ ...formData, description: e.target.value })}
-                placeholder="Décrivez les caractéristiques de la propriété"
+                placeholder="Describe your property"
                 className="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-black"
                 rows={4} // Ajustez le nombre de lignes visibles selon vos besoins
               />
@@ -185,7 +185,7 @@ export default function AddPropertyDialog() {
                 value={formData.duration}
                 onValueChange={(value) => setFormData({ ...formData, duration: value })}
               >
-                <SelectTrigger>{formData.duration || "Sélectionnez une durée"}</SelectTrigger>
+                <SelectTrigger>{formData.duration || "Sélect Period"}</SelectTrigger>
                 <SelectContent>
                   <SelectItem value="weekly">Weekly</SelectItem>
                   <SelectItem value="monthly">Monthly</SelectItem>
