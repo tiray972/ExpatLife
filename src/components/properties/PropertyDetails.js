@@ -101,6 +101,15 @@ export default function PropertyDetails({ property }) {
               </Badge>
             </div>
 
+             {/* Lien WhatsApp */}
+            <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
+              <Button
+                size="lg"
+                className="w-full bg-green-500 text-white hover:bg-green-600 mt-6"
+              >
+                Contacter via WhatsApp
+              </Button>
+            </a>   
             {/* Description */}
             <div className="mb-8">
               <h2 className="text-xl font-semibold mb-4">Description</h2>
@@ -115,15 +124,7 @@ export default function PropertyDetails({ property }) {
               </div>
             </div>
 
-            {/* Lien WhatsApp */}
-            <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
-              <Button
-                size="lg"
-                className="w-full bg-green-500 text-white hover:bg-green-600 mt-6"
-              >
-                Contacter via WhatsApp
-              </Button>
-            </a>
+            
           </div>
         </div>
       </div>

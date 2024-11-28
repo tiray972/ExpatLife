@@ -120,7 +120,7 @@ export function PropertyFilters({filters, setFilters}) {
               <SelectValue placeholder="furnished" />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="all">Tous</SelectItem>
+              <SelectItem value="all">All</SelectItem>
               <SelectItem value="yes">furnished</SelectItem>
               <SelectItem value="no">unfurnished</SelectItem>
             </SelectContent>
