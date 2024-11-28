@@ -3,7 +3,7 @@
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Bed, Home, MapPin, Square } from "lucide-react";
+import { Bed, Home, MapPin, MessageCircleMore, Square } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -65,7 +65,7 @@ export function PropertyCard({ property }) {
           </div>
           <div className="flex items-center gap-2">
             <Square className="w-4 h-4 text-gray-500" />
-            <span>{property.size}SQRT</span>
+            <span>{property.size}<span className="w-4 h-4 text-gray-500">SQRT</span></span>
           </div>
         </div>
         <div className="flex gap-2 mb-4">
@@ -81,12 +81,14 @@ export function PropertyCard({ property }) {
             {property.furnished ? "Meublé" : "Non meublé"}
           </Badge>
         </div>
-        <div className="grid-cols-2 space-x-2">
+        <div className="grid grid-cols-2 space-x-2">
           <Link href={`/location/${property.id}`}>
             <Button className="w-full">Display details</Button>
           </Link>
-          <Link href={`/location/${property.id}`}>
-            <Button className="w-full">Display details</Button>
+          <Link href={`https://wa.me/971568127898?text=Hello,+I+am+interested+in+the+property+available+at+the+following+address:+${encodeURIComponent(
+    `https://expatlife-uae.com/location/${property.id}`
+  )}.+Could+you+please+provide+me+with+more+details?`}>
+            <Button className="w-full"><MessageCircleMore /></Button>
           </Link>
         </div>
         
