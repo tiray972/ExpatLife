@@ -104,8 +104,8 @@ export default function AddPropertyDialog() {
   return (
     <div className="flex justify-center items-center">
       <Dialog open={isOpen} onOpenChange={setIsOpen}>
-        <DialogTrigger className="bg-primary py-3 px-4 max-w-md rounded-lg text-white hover:bg-blue-600">
-          Ajouter une propriété
+        <DialogTrigger className="bg-primary py-3 px-4 max-w-md rounded-lg text-white hover:bg-teal-700">
+        Add new property
         </DialogTrigger>
         <DialogContent className="max-w-2xl w-full max-h-[80vh] overflow-y-auto rounded-lg p-6 bg-white shadow-xl">
           <DialogHeader>

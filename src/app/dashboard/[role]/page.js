@@ -39,7 +39,7 @@ export default function Dashboard() {
         return <AgentSupport />;
       case "logout":
         handleLogout()
-        return <p>Déconnexion...</p>; // Gérer la déconnexion
+        return <p>Logout...</p>; // Gérer la déconnexion
       default:
         return <p>Bienvenue dans votre espace Agent.</p>;
     }
