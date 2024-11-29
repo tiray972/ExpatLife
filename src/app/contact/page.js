@@ -1,4 +1,5 @@
 "use client"
+import Footer from "@/components/Footer";
 import Header from "@/components/header";
 import { Instagram, Facebook, MessageCircle } from "lucide-react";
 import { useState } from "react";
@@ -35,7 +36,7 @@ export default function Contact() {
       };
   return (
     <div className="relative items-center justify-center bg-cover bg-center"
-    style={{ backgroundImage: 'url("/images/background.png")' }}
+    style={{ backgroundImage: 'url("/images/200.png")' }}
     >
         <Header />
         <div className="min-h-screen flex items-center justify-center py-10 px-4">
@@ -141,6 +142,7 @@ export default function Contact() {
                 </div>
             </div>
         </div>
+        <Footer/>
     </div>
         
   );
