@@ -7,6 +7,7 @@ import FAQ from '@/components/faq';
 import GoogleReviews from '@/components/google/googlereviews';
 
 import Head from 'next/head';
+import ContactSection from '@/components/contact/contactHome';
 
 
 
@@ -277,9 +278,11 @@ export default function Home() {
           <p className="text-teal-500 mb-4">
           SOYEZ PATIENTS NOUS ARRIVONS PROCHAINEMENT
           </p>
+          <Link href={"mailto:contact@expatlife-uae.com"}>
           <button className="bg-teal-500 text-white font-bold py-2 px-4 rounded hover:bg-teal-600">
           PLUS D’INFORMATIONS
           </button>
+          </Link>
         </div>
         <div className="md:w-1/2">
           <img
@@ -399,53 +402,11 @@ export default function Home() {
           </div>
         </div>
       </section>
-
+      
       {/* section FAQ */}
       <FAQ faqData={faqData}/>
       {/* Section Contact */}
-      <section id='CONTACT' className="bg-teal-100 py-16 px-6 md:px-20">
-        <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-3xl font-bold text-teal-500 mb-4">Prêt à Commencer Votre Nouvelle Vie aux Émirats ?</h2>
-          <p className="text-lg text-gray-700 mb-8">
-            Contactez-nous dès aujourd'hui pour un accompagnement personnalisé dans votre projet.
-          </p>
-          <form className="space-y-6">
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {/* Nom */}
-              <input
-                type="text"
-                name="name"
-                placeholder="Nom"
-                className="w-full px-4 py-3 text-gray-700 bg-white rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-teal-400"
-                required
-              />
-              {/* Prénom */}
-              <input
-                type="text"
-                name="surname"
-                placeholder="Prénom"
-                className="w-full px-4 py-3 text-gray-700 bg-white rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-teal-400"
-                required
-              />
-            </div>
-            {/* Message */}
-            <textarea
-              name="message"
-              placeholder="Message"
-              rows="5"
-              className="w-full px-4 py-3 text-gray-700 bg-white rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-teal-400"
-              required
-            ></textarea>
-            {/* Bouton */}
-            <button
-              type="submit"
-              className="w-full sm:w-auto px-6 py-3 text-white bg-teal-500 hover:bg-teal-600 rounded-lg font-medium shadow-md focus:outline-none focus:ring-2 focus:ring-teal-400 focus:ring-offset-2"
-            >
-              Nous Contacter
-            </button>
-          </form>
-        </div>
-      </section>
+      <ContactSection/>
 
       <Footer/>
     </div>
