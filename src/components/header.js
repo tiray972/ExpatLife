@@ -69,14 +69,14 @@ export default function Header() {
         {/* Navigation */}
         <nav className="hidden md:flex space-x-6">
           <Link href="/">
-            <div className="hover:text-teal-200">Accueil</div>
+            <div className="hover:text-teal-200">Home</div>
           </Link>
           <Link href="/blog">
-            <div className="hover:text-teal-200">À propos</div>
+            <div className="hover:text-teal-200">About</div>
           </Link>
           {isLoggedIn && (
             <Link href="/dashboard">
-              <div className="hover:text-teal-200">Tableau de bord</div>
+              <div className="hover:text-teal-200">Dashboard</div>
             </Link>
           )}
           <Link href="/contact">
@@ -87,12 +87,12 @@ export default function Header() {
         {/* Bouton connexion/déconnexion */}
         {isLoggedIn ? (
           <div className="flex items-center space-x-4">
-            <span className="text-sm">Bonjour, {user?.name || "Utilisateur"}!</span>
+            <span className="text-sm">Hello, {user?.name || "Utilisateur"}!</span>
             <button
               onClick={handleLogout}
               className="bg-white text-teal-600 px-4 py-2 rounded-md shadow-md hover:bg-teal-700 hover:text-white"
             >
-              Déconnexion
+              Log out
             </button>
           </div>
         ) : (
@@ -100,7 +100,7 @@ export default function Header() {
             onClick={() => router.push("/auth/signup")}
             className="bg-white text-teal-600 px-4 py-2 rounded-md shadow-md hover:bg-teal-700 hover:text-white"
           >
-            S'inscrire
+            Sign Up
           </button>
         )}
       </div>

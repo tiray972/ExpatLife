@@ -117,7 +117,7 @@ export default function Login() {
       <Header />
       <div
         className="min-h-[90vh] flex items-center bg-contain bg-center justify-center bg-gray-100"
-        style={{ backgroundImage: 'url("/images/background-login.png")' }}
+        // style={{ backgroundImage: 'url("/images/200.png")' }}
       >
         <div>
           <form
@@ -125,7 +125,7 @@ export default function Login() {
             className="space-y-4 flex flex-col items-center justify-center bg-white p-6 rounded shadow-md w-96"
           >
             <CircleUserRound className="text-center text-teal-400" size={90} />
-            <h1 className="text-2xl font-bold text-center">Connexion</h1>
+            <h1 className="text-2xl font-bold text-center">Log in</h1>
 
             {error && <p className="text-red-500 text-sm text-center">{error}</p>}
             <input
@@ -137,7 +137,7 @@ export default function Login() {
             />
             <input
               type="password"
-              placeholder="Mot de passe"
+              placeholder="Password"
               className="border p-2 w-full rounded"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
@@ -166,7 +166,7 @@ export default function Login() {
               type="submit"
               disabled={isLoading}
             >
-              {isLoading ? "Connexion en cours..." : "Se connecter"}
+              {isLoading ? "Loading..." : "Log in"}
             </button>
             <div className="flex justify-center">
               <button
@@ -175,16 +175,16 @@ export default function Login() {
                 onClick={handleGoogleLogin}
                 disabled={isLoading}
               >
-                {isLoading ? "Connexion..." : "Connexion avec Google"}
+                {isLoading ? "Loading..." : "Login with Google"}
               </button>
             </div>
           </form> 
           <div className="flex justify-between">
-            <Link href={"/auth/signup"} className="underline">
-            new here ? SIGN UP
+            <Link href={"/auth/signup"} className="underline text-teal-500">
+            New here ? SIGN UP
             </Link>
-            <Link href={"#"} className="underline" >
-            forgot password
+            <Link href={"#"} className="underline text-teal-500" >
+            Forgot password
             </Link> 
           </div>
         </div>
