@@ -24,13 +24,15 @@ import {
 export default function AgentProfile() {
   const { user, loading } = useAuth();
   const router = useRouter();
+
   const [role, setRole] = useState("");
-  const [loadingRole, setLoadingRole] = useState(true); // Track role loading state
+  const [userData, setUserData] = useState({});
+  const [loadingData, setLoadingData] = useState(true); // Track role and user data loading state
 
   useEffect(() => {
-    const fetchUserRole = async () => {
+    const fetchUserData = async () => {
       if (!user) {
-        setLoadingRole(false);
+        setLoadingData(false);
         return;
       }
 
@@ -39,21 +41,23 @@ export default function AgentProfile() {
         const userSnap = await getDoc(userDocRef);
 
         if (userSnap.exists()) {
-          setRole(userSnap.data().role || "Role not set");
+          const data = userSnap.data();
+          setRole(data.role || "Role not set");
+          setUserData(data); // Store user data in state
         } else {
           console.error("User data not found in Firestore.");
         }
       } catch (error) {
         console.error("Error fetching user data:", error);
       } finally {
-        setLoadingRole(false);
+        setLoadingData(false);
       }
     };
 
-    fetchUserRole();
+    fetchUserData();
   }, [user]);
 
-  if (loading || loadingRole) {
+  if (loading || loadingData) {
     return <p>Loading...</p>;
   }
 
@@ -84,11 +88,17 @@ export default function AgentProfile() {
 
       {/* Main content */}
       <div className="flex flex-1 flex-col gap-4 p-4">
-        <h1 className="text-2xl font-bold mb-4">Agent Profile</h1>
-        <div className="bg-white grid grid-cols-1 md:grid-cols-3 shadow-md rounded-lg p-6">
-          <h2 className="text-xl font-semibold mb-2">User Details</h2>
+        <h1 className="text-2xl font-bold mb-4">Profile</h1>
+        <div className="bg-white shadow-md rounded-lg p-6">
+          <h2 className="text-xl font-semibold mb-4">User Details</h2>
           <p>
-            <strong>Name:</strong> {user.displayName || "Name not provided"}
+            <strong>Name:</strong> {userData.name || "Not provided"}
+          </p>
+          <p>
+            <strong>Surname:</strong> {userData.surname || "Not provided"}
+          </p>
+          <p>
+            <strong>Phone:</strong> {userData.phone || "Not provided"}
           </p>
           <p>
             <strong>Email:</strong> {user.email}
@@ -96,6 +106,40 @@ export default function AgentProfile() {
           <p>
             <strong>Role:</strong> {role}
           </p>
+
+          {/* Conditionally render additional fields based on role */}
+          {role === "agent" && (
+            <>
+              <h3 className="text-lg font-semibold mt-4">Agent Details</h3>
+              <p>
+                <strong>Agency:</strong> {userData.agency || "Not provided"}
+              </p>
+              <p>
+                <strong>RERA n°:</strong> {userData.rera || "Not provided"}
+              </p>
+            </>
+          )}
+
+          {role === "owner" && (
+            <>
+              <h3 className="text-lg font-semibold mt-4">Owner Details</h3>
+              <p>
+                <strong>Properties:</strong>{" "}
+                {userData.properties && Array.isArray(userData.properties)
+                  ? `${userData.properties.length} properties`
+                  : "No properties listed"}
+              </p>
+            </>
+          )}
+
+          {role === "client" && (
+            <>
+              <h3 className="text-lg font-semibold mt-4">Client Details</h3>
+              <p>
+                <strong>Interested In:</strong> {userData.interests || "No interests specified"}
+              </p>
+            </>
+          )}
         </div>
       </div>
     </SidebarInset>

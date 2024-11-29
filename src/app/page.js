@@ -274,6 +274,9 @@ export default function Home() {
            nous serons à vos côtés pour vous guider, que ce soit pour la constitution juridique, les démarches administratives,
             ou l’obtention des licences nécessaires.
           </p>
+          <p className="text-teal-500 mb-4">
+          SOYEZ PATIENTS NOUS ARRIVONS PROCHAINEMENT
+          </p>
           <button className="bg-teal-500 text-white font-bold py-2 px-4 rounded hover:bg-teal-600">
           PLUS D’INFORMATIONS
           </button>
