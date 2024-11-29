@@ -7,6 +7,7 @@ import { PropertyMap } from "@/components/properties/PropertyMap";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import ImageGallery from "@/components/images/ImageGalerie";
 
 export default function PropertyDetails({ property }) {
   const currentUrl = `https://expatlife-uae.com${usePathname()}`;
@@ -49,7 +50,7 @@ export default function PropertyDetails({ property }) {
               ))}
             </div>
           )}
-
+          <ImageGallery images={property.images} title={property.title} />
           <div className="p-8">
             {/* Titre et informations principales */}
             <div className="flex justify-between items-start mb-6">
