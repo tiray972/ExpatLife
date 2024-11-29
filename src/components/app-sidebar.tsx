@@ -26,10 +26,10 @@ export function AppSidebar({ activeKey, setActiveKey, ...props }) {
       {
         title: "Espace Agent",
         items: [
-          { title: "Mon Profil", url: "/dashboard/agent", key: "profile" },
-          { title: "Mes Proprieté", url: "/dashboard/agent", key: "properties" },
-          { title: "Assistance", url: "/dashboard/agent", key: "support" },
-          { title: "Déconnexion", url: "#", key: "logout" },
+          { title: "My Profil", url: "/dashboard/agent", key: "profile" },
+          { title: "My Properties", url: "/dashboard/agent", key: "properties" },
+          { title: "Support", url: "/dashboard/agent", key: "support" },
+          { title: "Logout", url: "#", key: "logout" },
         ],
       },
     ],

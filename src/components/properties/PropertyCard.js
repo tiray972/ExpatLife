@@ -48,7 +48,7 @@ export function PropertyCard({ property }) {
             </p>
           </div>
           <div className="text-xl font-bold text-teal-600">
-            {property.price} AED
+            {property.price} AED&nbsp;
             <span className="text-sm text-gray-500">{property.duration}</span>
           </div>
         </div>
@@ -65,7 +65,7 @@ export function PropertyCard({ property }) {
           </div>
           <div className="flex items-center gap-2">
             <Square className="w-4 h-4 text-gray-500" />
-            <span>{property.size}<span className="w-4 h-4 text-gray-500">SQRT</span></span>
+            <span>{property.size}<span className="w-4 h-4 text-gray-500">sqft</span></span>
           </div>
         </div>
         <div className="flex gap-2 mb-4">
@@ -78,12 +78,12 @@ export function PropertyCard({ property }) {
             </Badge>
           ))}
           <Badge variant={property.furnished ? "default" : "secondary"}>
-            {property.furnished ? "Meublé" : "Non meublé"}
+            {property.furnished ? "furnished" : "unfurnished"}
           </Badge>
         </div>
         <div className="grid grid-cols-2 space-x-2">
           <Link href={`/location/${property.id}`}>
-            <Button className="w-full">Display details</Button>
+            <Button className="w-full">More info</Button>
           </Link>
           <Link href={`https://wa.me/971568127898?text=Hello,+I+am+interested+in+the+property+available+at+the+following+address:+${encodeURIComponent(
     `https://expatlife-uae.com/location/${property.id}`

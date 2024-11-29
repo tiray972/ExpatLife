@@ -57,6 +57,7 @@ export default function CompleteProfile() {
       return;
     }
 
+
     try {
       const userDocRef = doc(db, "users", user.uid);
 
@@ -109,7 +110,7 @@ export default function CompleteProfile() {
               type="text"
               value={surname}
               onChange={(e) => setSurname(e.target.value)}
-              placeholder="Your surname"
+              placeholder="Surname"
               className="border p-2 w-full rounded"
             />
           </div>
@@ -123,7 +124,7 @@ export default function CompleteProfile() {
               type="tel"
               value={phone}
               onChange={(e) => setPhone(e.target.value)}
-              placeholder="Your phone number"
+              placeholder="Phone number"
               className="border p-2 w-full rounded"
             />
           </div>
@@ -139,7 +140,7 @@ export default function CompleteProfile() {
               className="border p-2 w-full rounded"
             >
               <option value="">Choose your role</option>
-              <option value="client">Client</option>
+              {/* <option value="client">Client</option> */}
               <option value="agent">Agent</option>
               <option value="owner">Owner</option>
             </select>
@@ -158,6 +159,7 @@ export default function CompleteProfile() {
                   onChange={(e) => setAgency(e.target.value)}
                   placeholder="Your agency name"
                   className="border p-2 w-full rounded"
+                  required
                 />
               </div>
               <div>
@@ -171,6 +173,7 @@ export default function CompleteProfile() {
                   onChange={(e) => setRera(e.target.value)}
                   placeholder="Your RERA number"
                   className="border p-2 w-full rounded"
+                  required
                 />
               </div>
             </>

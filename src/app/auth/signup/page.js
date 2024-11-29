@@ -165,7 +165,7 @@ export default function SignUp() {
             </div>
           </form>
           <div className="flex justify-between mt-4">
-            <Link href={"/auth/login"} className="text-sm text-teal-600">
+            <Link href={"/auth/login"} className="text-sm underline text-teal-600">
               Already registered? Log in
             </Link>
           </div>
