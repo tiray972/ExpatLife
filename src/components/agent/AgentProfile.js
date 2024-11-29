@@ -87,9 +87,9 @@ export default function AgentProfile() {
       </header>
 
       {/* Main content */}
-      <div className="flex flex-1 flex-col gap-4 p-4">
+      <div className="flex flex-1 flex-col gap-4 p-4 w-full">
         <h1 className="text-2xl font-bold mb-4">Profile</h1>
-        <div className="bg-white shadow-md rounded-lg p-6">
+        <div className="bg-white shadow-md rounded-lg p-6 w-full">
           <h2 className="text-xl font-semibold mb-4">User Details</h2>
           <p>
             <strong>Name:</strong> {userData.name || "Not provided"}
@@ -107,7 +107,6 @@ export default function AgentProfile() {
             <strong>Role:</strong> {role}
           </p>
 
-          {/* Conditionally render additional fields based on role */}
           {role === "agent" && (
             <>
               <h3 className="text-lg font-semibold mt-4">Agent Details</h3>
@@ -141,7 +140,8 @@ export default function AgentProfile() {
             </>
           )}
         </div>
-      </div>
+      </div>  
+
     </SidebarInset>
   );
 }

@@ -143,7 +143,7 @@ export default function Login() {
               onChange={(e) => setPassword(e.target.value)}
             />
 
-            {/* Sélecteur de rôle */}
+            {/* Sélecteur de rôle
             <div className="w-full">
               <label htmlFor="role" className="block mb-2 text-sm font-medium text-gray-700">
                 Rôle :
@@ -157,7 +157,7 @@ export default function Login() {
                 <option value="client">Client</option>
                 <option value="agent">Agent</option>
               </select>
-            </div>
+            </div> */}
 
             <button
               className={`bg-blue-500 text-white py-2 px-4 rounded w-full ${

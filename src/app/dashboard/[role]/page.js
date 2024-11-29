@@ -48,8 +48,8 @@ export default function Dashboard() {
   return (
     <SidebarProvider> {/* SidebarProvider encapsule ici */}
       <div className="flex">
-        <AppSidebar activeKey={activeKey} setActiveKey={setActiveKey} />
-        <div className="flex-1 p-4">{renderContent()}</div>
+        <AppSidebar activeKey={activeKey} setActiveKey={setActiveKey} className="w-64" />
+        <div className="flex-1 p-4 w-full">{renderContent()}</div>
       </div>
     </SidebarProvider>
   );
