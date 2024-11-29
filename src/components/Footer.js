@@ -100,7 +100,7 @@ export default function Footer() {
                         </div>
                     </div>
                 </div>
-                <div className="py-6 text-sm text-center text-gray-600">© Made with ❤️ By <Link href={"https://ugm-communication.com"} className="underline hover:text-teal-500" >UGM LLC</Link> All rights reserved.</div>
+                <div className="py-6 text-sm text-center text-gray-600">© Made with ❤️ By <Link href={"https://ugm-communication.com"} className="underline hover:text-teal-500" >UGM LLC</Link> All rights reserved. v1.0</div>
             </footer>
   );
 }
