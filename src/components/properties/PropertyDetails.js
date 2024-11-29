@@ -36,7 +36,7 @@ export default function PropertyDetails({ property }) {
           </div>
 
           {/* Galerie d'images */}
-          {property.images && property.images.length > 0 && (
+          {/* {property.images && property.images.length > 0 && (
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 p-4">
               {property.images.map((image, index) => (
                 <div key={index} className="relative h-[200px]">
@@ -49,7 +49,7 @@ export default function PropertyDetails({ property }) {
                 </div>
               ))}
             </div>
-          )}
+          )} */}
           <ImageGallery images={property.images} title={property.title} />
           <div className="p-8">
             {/* Titre et informations principales */}

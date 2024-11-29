@@ -79,7 +79,7 @@ export default function ImageUploader({ onImagesUpload }) {
           id="file-upload"
           type="file"
           onChange={handleFileChange}
-          accept="image/*"
+          accept="image/jpeg, image/png, image/gif"
           multiple
           className="hidden"
         />
