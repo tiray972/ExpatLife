@@ -11,8 +11,8 @@ export default async function Blog() {
   const articles = await getAllArticles();
 
   return (
-    <div className="bg-gray-100">
-      <Head>
+    <>
+    <Head>
         <title>Blog - Expatlife</title>
         <meta
           name="description"
@@ -20,6 +20,8 @@ export default async function Blog() {
         />
         <meta name="keywords" content="blog expatriation, logement Émirats, conseils expatlife" />
       </Head>
+    <div className="bg-gray-100">
+      
       <Header/>
       <header className="py-10 bg-teal-500 text-white text-center">
         <h1 className="text-4xl font-bold">Nos Articles de Blog</h1>
@@ -51,5 +53,7 @@ export default async function Blog() {
       </section>
       <Footer/>
     </div>
+    </>
+    
   );
 }
