@@ -61,56 +61,59 @@ export default function PropertyDetails({ property }) {
                   {property.location}
                 </p>
               </div>
-              <div className="text-3xl font-bold text-blue-600">
-                {property.price} AED
-                <span className="text-base text-gray-500">/mois</span>
+              <div className="text-3xl font-bold text-teal-500">
+                {property.price} AED &nbsp;
+                <span className="text-base text-gray-500">{property.duration}</span>
               </div>
             </div>
 
             {/* Détails de la propriété */}
             <div className="grid grid-cols-3 gap-6 mb-8">
               <div className="flex items-center gap-3">
-                <Home className="w-6 h-6 text-blue-600" />
+                <Home className="w-6 h-6 text-teal-500" />
                 <div>
                   <p className="text-sm text-gray-500">Type</p>
                   <p className="font-semibold">{property.type}</p>
                 </div>
               </div>
               <div className="flex items-center gap-3">
-                <Bed className="w-6 h-6 text-blue-600" />
+                <Bed className="w-6 h-6 text-teal-500" />
                 <div>
                   <p className="text-sm text-gray-500">Chambres</p>
                   <p className="font-semibold">{property.bedrooms}</p>
                 </div>
               </div>
               <div className="flex items-center gap-3">
-                <Square className="w-6 h-6 text-blue-600" />
+                <Square className="w-6 h-6 text-teal-500" />
                 <div>
                   <p className="text-sm text-gray-500">Surface</p>
-                  <p className="font-semibold">{property.size} m²</p>
+                  <p className="font-semibold">{property.size} <span className="text-gray-500">sqft</span></p>
                 </div>
               </div>
             </div>
 
             {/* Badges */}
             <div className="flex gap-3 mb-8">
-              <Badge variant={property.duration === "short" ? "default" : "secondary"}>
-                {property.duration === "short" ? "Court séjour" : "Long séjour"}
+              <Badge variant="default">
+                {property.duration}
               </Badge>
-              <Badge variant={property.furnished ? "default" : "secondary"}>
-                {property.furnished ? "Meublé" : "Non meublé"}
+              <Badge variant="default">
+                {property.furnished ? "Furnished" : "Unfurnished"}
               </Badge>
             </div>
 
              {/* Lien WhatsApp */}
-            <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
+             <div className="flex w-full justify-center items-center">
+              <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
               <Button
                 size="lg"
-                className="w-full bg-green-500 text-white hover:bg-green-600 mt-6"
+                className="w-full md:max-w-72 self-center bg-green-500 text-white hover:bg-green-600 my-6"
               >
                 Contacter via WhatsApp
               </Button>
-            </a>   
+            </a> 
+             </div>
+              
             {/* Description */}
             <div className="mb-8">
               <h2 className="text-xl font-semibold mb-4">Description</h2>

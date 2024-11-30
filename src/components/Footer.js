@@ -25,10 +25,10 @@ export default function Footer() {
                                     <a rel="noopener hover:text-teal-500 noreferrer" href="/blog">About</a>
                                 </li>
                                 <li>
-                                    <a rel="noopener hover:text-teal-500 noreferrer" href="/location">Property for rent</a>
+                                    <a rel="noopener hover:text-teal-500 noreferrer" href="/location">Properties for rent</a>
                                 </li>
                                 <li>
-                                    <a rel="noopener hover:text-teal-500 noreferrer" href="/Contact">Contact</a>
+                                    <a rel="noopener hover:text-teal-500 noreferrer" href="/contact">Contact</a>
                                 </li>
                             </ul>
                         </div>

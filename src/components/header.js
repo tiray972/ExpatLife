@@ -73,6 +73,9 @@ export default function Header() {
           <Link href="/blog">
             <div className="hover:text-teal-200">About</div>
           </Link>
+          <Link href="/location">
+            <div className="hover:text-teal-200">Properties for rent</div>
+          </Link>
           {isLoggedIn && (
             <Link href="/dashboard">
               <div className="hover:text-teal-200">Dashboard</div>
@@ -151,6 +154,11 @@ export default function Header() {
               <Link href="/blog">
                 <div className="hover:text-teal-200">About</div>
               </Link>
+            </li>
+            <li>
+            <Link href="/location">
+            <div className="hover:text-teal-200">Properties for rent</div>
+            </Link>
             </li>
             {isLoggedIn && (
               <li>

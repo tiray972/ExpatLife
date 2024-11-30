@@ -2,7 +2,7 @@
 
 import Map, { Marker, Popup } from 'react-map-gl';
 import { useState } from 'react';
-import { MapPin } from 'lucide-react';
+import { MapPin, MapPinHouse } from 'lucide-react';
 import { Card } from '../ui/card';
 import Image from 'next/image';
 import 'mapbox-gl/dist/mapbox-gl.css';
@@ -33,7 +33,7 @@ export function PropertyMap({ properties }) {
               setSelectedProperty(property);
             }}
           >
-            <MapPin className="w-6 h-6 text-blue-600 hover:text-blue-800 cursor-pointer" />
+            <MapPinHouse size={16} strokeWidth={3} className="w-6 h-6 hover:text-orange-500 text-teal-500 cursor-pointer" />
           </Marker>
         ))}
 

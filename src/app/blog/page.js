@@ -4,6 +4,8 @@ import Image from "next/image";
 
 // Fonction pour récupérer les articles depuis Firebase (exemple)
 import { getAllArticles } from "@/lib/firebase/articles";
+import Header from "@/components/header";
+import Footer from "@/components/Footer";
 
 export default async function Blog() {
   const articles = await getAllArticles();
@@ -18,7 +20,7 @@ export default async function Blog() {
         />
         <meta name="keywords" content="blog expatriation, logement Émirats, conseils expatlife" />
       </Head>
-
+      <Header/>
       <header className="py-10 bg-teal-500 text-white text-center">
         <h1 className="text-4xl font-bold">Nos Articles de Blog</h1>
         <p className="mt-2">Découvrez nos conseils et astuces pour une expatriation réussie.</p>
@@ -47,6 +49,7 @@ export default async function Blog() {
           </article>
         ))}
       </section>
+      <Footer/>
     </div>
   );
 }

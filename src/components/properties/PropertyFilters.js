@@ -59,7 +59,7 @@ export function PropertyFilters({filters, setFilters}) {
             </SelectTrigger>
             <SelectContent>
               <SelectItem value="all">All</SelectItem>
-              <SelectItem value="weekly">weekly</SelectItem>
+              <SelectItem value="weekly">Weekly</SelectItem>
               <SelectItem value="monthly">Monthly</SelectItem>
               <SelectItem value="yearly">Yearly</SelectItem>
             </SelectContent>
@@ -74,7 +74,7 @@ export function PropertyFilters({filters, setFilters}) {
               <Slider
                 value={filters.priceRange}
                 min={0}
-                max={5000000}
+                max={1000000}
                 step={1000}
                 onValueChange={(value) => setFilters({ ...filters, priceRange: value })}
               />
@@ -121,8 +121,8 @@ export function PropertyFilters({filters, setFilters}) {
             </SelectTrigger>
             <SelectContent>
               <SelectItem value="all">All</SelectItem>
-              <SelectItem value="yes">furnished</SelectItem>
-              <SelectItem value="no">unfurnished</SelectItem>
+              <SelectItem value="yes">Furnished</SelectItem>
+              <SelectItem value="no">Unfurnished</SelectItem>
             </SelectContent>
           </Select>
         </div>

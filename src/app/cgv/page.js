@@ -32,6 +32,7 @@ export default function CVGPage() {
             {/* Section 1 */}
             <div>
               <h2 className="text-2xl font-semibold text-gray-800 mb-3">1. Objet des CGV</h2>
+              <p>Les présentes conditions régissent les services proposés par la plateforme ExpatLife.com, notamment :</p>
               <ul className="list-disc pl-5 space-y-2 text-gray-700">
                 <li>La mise en relation entre propriétaires, agences et locataires.</li>
                 <li>La publication d'annonces immobilières.</li>
@@ -99,6 +100,7 @@ export default function CVGPage() {
             {/* Section 5 */}
             <div>
               <h2 className="text-2xl font-semibold text-gray-800 mb-3">5. Tarifs et Paiements</h2>
+              <p>Les utilisateurs professionnels peuvent publier gratuitement des annonces immobilières sur la plateforme ExpatLife.com, conformément aux règles de la RERA (Real Estate Regulatory Agency).</p>
               <div className="mb-4">
                 <h3 className="text-xl font-semibold text-gray-700">5.1 Commissions sur les locations</h3>
                 <ul className="list-disc pl-5 space-y-2 text-gray-700">
@@ -111,13 +113,13 @@ export default function CVGPage() {
                     versée par virement, chèque ou espèce.
                   </li>
                   <li>
-                    Pour les agences immobilières enregistrées, cette commission est partagée équitablement entre 
-                    ExpatLife.com et l'agence déposant l'annonce.
+                  Pour les agences immobilières enregistrées, cette commission est partagée équitablement entre ExpatLife.com et l'agence déposant l'annonce au titre de 2.5% pour l’un et 2.5% pour l’autre. La commission sera reversée sous 5 jours à l’agence par virement ou chèque bancaire.
                   </li>
                 </ul>
               </div>
               <div>
                 <h3 className="text-xl font-semibold text-gray-700">5.2 Deposit pour les locataires</h3>
+                <p>Conformément à la réglementation RERA :</p>
                 <ul className="list-disc pl-5 space-y-2 text-gray-700">
                   <li>
                     Le dépôt de garantie est une obligation pour le locataire et sert à couvrir d’éventuels dommages ou 
@@ -133,6 +135,20 @@ export default function CVGPage() {
                       <li>Jusqu’à 10 % du loyer pour les logements meublés.</li>
                     </ul>
                   </li>
+                  <li>Le propriétaire est tenu de restituer ce dépôt au locataire à la fin du contrat, sous réserve de l’état du logement et de l’absence de litiges.</li>
+                </ul>
+                <p>Cette mesure garantit la sécurité et la transparence des relations entre locataires et propriétaires.</p>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold text-gray-700">5.3 Modalités de paiement</h3>
+                <ul className="list-disc pl-5 space-y-2 text-gray-700">
+                  <li>
+                  Les paiements (commissions, deposits) doivent être effectués via des moyens conformes aux directives locales, tels que le virement bancaire ou des systèmes de paiement approuvés.
+                  </li>
+                  <li>
+                  Les paiements sont dus au moment de la signature du contrat de location.
+                  </li>
+                  
                 </ul>
               </div>
             </div>
