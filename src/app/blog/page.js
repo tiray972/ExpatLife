@@ -6,20 +6,19 @@ import Image from "next/image";
 import { getAllArticles } from "@/lib/firebase/articles";
 import Header from "@/components/header";
 import Footer from "@/components/Footer";
+export const metadata = {
+  title: "Blog - Expatlife",
+  description: "Retrouvez nos articles sur l'expatriation, la vie aux Émirats, et bien plus.",
+  keywords:"blog expatriation, logement Émirats, conseils expatlife",
+};
 
 export default async function Blog() {
   const articles = await getAllArticles();
 
+
   return (
     <>
-    <Head>
-        <title>Blog - Expatlife</title>
-        <meta
-          name="description"
-          content="Retrouvez nos articles sur l'expatriation, la vie aux Émirats, et bien plus."
-        />
-        <meta name="keywords" content="blog expatriation, logement Émirats, conseils expatlife" />
-      </Head>
+   
     <div className="bg-gray-100">
       
       <Header/>

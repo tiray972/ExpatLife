@@ -19,7 +19,7 @@ const geistMono = localFont({
 });
 
 export const metadata = {
-  title: "Home - Expatlife",
+  title: "Expatlife",
   description: "Expatlife vous accompagne dans votre installation aux Émirats : logement, visa, et démarches administratives.",
 };
 

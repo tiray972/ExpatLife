@@ -52,7 +52,7 @@ export function PropertyFilters({filters, setFilters}) {
           <Select
             value={filters.duration}
             onValueChange={(value) => setFilters({ ...filters, duration: value })}
-            disabled={!isEmirateIDProvided} // Désactivé si Emirate ID est OFF
+             // Désactivé si Emirate ID est OFF
           >
             <SelectTrigger>
               <SelectValue placeholder="Durée de location" />
@@ -67,24 +67,23 @@ export function PropertyFilters({filters, setFilters}) {
         </div>
 
         {/* Section Budget mensuel */}
-        {isEmirateIDProvided && (
-          <div>
-            <Label>Rent (AED)</Label>
-            <div className="pt-4">
-              <Slider
-                value={filters.priceRange}
-                min={0}
-                max={1000000}
-                step={1000}
-                onValueChange={(value) => setFilters({ ...filters, priceRange: value })}
-              />
-              <div className="flex justify-between mt-2 text-sm text-gray-600">
-                <span>{filters.priceRange[0]} AED</span>
-                <span>{filters.priceRange[1]} AED</span>
-              </div>
+        <div>
+          <Label>Rent (AED)</Label>
+          <div className="pt-4">
+            <Slider
+              value={filters.priceRange}
+              min={0}
+              max={1000000}
+              step={1000}
+              onValueChange={(value) => setFilters({ ...filters, priceRange: value })}
+            />
+            <div className="flex justify-between mt-2 text-sm text-gray-600">
+              <span>{filters.priceRange[0]} AED</span>
+              <span>{filters.priceRange[1]} AED</span>
             </div>
           </div>
-        )}
+        </div>
+        
 
         {/* Section Chambres */}
         <div>
