@@ -1,6 +1,7 @@
 import localFont from "next/font/local";
 import "./globals.css";
 import { TriggerRefreshProvider } from "@/providers/TriggerRefreshprovider";
+import { Analytics } from "@vercel/analytics/react"
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -31,6 +32,7 @@ export default function RootLayout({ children }) {
       >
         <TriggerRefreshProvider>
         {children}
+        <Analytics />
         </TriggerRefreshProvider>
       </body>
     </html>
