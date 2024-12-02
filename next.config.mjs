@@ -1,3 +1,5 @@
+import CopyPlugin from 'copy-webpack-plugin';
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
@@ -5,16 +7,28 @@ const nextConfig = {
       {
         protocol: 'https',
         hostname: 'images.unsplash.com',
-        port: '', // Leave empty if no specific port is required
-        pathname: '/**', // Allow all images from this domain
+        port: '',
+        pathname: '/**',
       },
       {
         protocol: 'https',
         hostname: 'firebasestorage.googleapis.com',
-        port: '', // Leave empty if no specific port is required
-        pathname: '/**', // Allow all images from this domain
+        port: '',
+        pathname: '/**',
       },
     ],
+  },
+  webpack: (config, { isServer }) => {
+    if (!isServer) {
+      config.plugins.push(
+        new CopyPlugin({
+          patterns: [
+            { from: 'public/sw.js', to: 'public/' },
+          ],
+        })
+      );
+    }
+    return config;
   },
 };
 
