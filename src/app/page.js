@@ -6,9 +6,8 @@ import Footer from '@/components/Footer';
 import FAQ from '@/components/faq';
 import GoogleReviews from '@/components/google/googlereviews';
 
-import Head from 'next/head';
-import ContactSection from '@/components/contact/contactHome';
 
+import ContactSection from '@/components/contact/contactHome';
 
 
 export default function Home() {
@@ -88,11 +87,8 @@ export default function Home() {
 
   return (
     <> 
-      <Head>
-        <title>Expatlife - Votre installation aux Émirats</title>
-        <meta name="description" content="Expatlife vous accompagne dans votre installation aux Émirats : logement, visa, et démarches administratives." />
-        <meta name="keywords" content="Expatlife, logement Émirats, visa, installation, expatrié" />
-      </Head>
+      
+      
       <div className="bg-gray-100 scroll-smooth">
         
         <Header />

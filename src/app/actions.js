@@ -20,7 +20,7 @@ export async function unsubscribeUser() {
   return { success: true };
 }
 
-export async function sendNotification(message) {
+export async function sendNotification(subscription, message) {
   if (!subscription) throw new Error('No subscription available');
   try {
     await webpush.sendNotification(subscription, JSON.stringify({
