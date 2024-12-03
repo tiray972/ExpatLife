@@ -18,6 +18,7 @@ self.addEventListener('push', (event) => {
   };
 
   // Show notification
+  console.log('Displaying notification:', data.title, options);
   event.waitUntil(
     self.registration.showNotification(data.title || 'Default title', options)
   );
