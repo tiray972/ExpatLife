@@ -1,13 +1,67 @@
+"use client"
 import Image from 'next/image';
 import Link from 'next/link';
 import Header from "@/components/header";
 import Footer from '@/components/Footer';
 import PushNotificationManager from '@/components/Notif/PushNotificationManager';
 import InstallPrompt from '@/components/Notif/InstallPrompt';
+import { useEffect, useState } from 'react';
+
 
 
 
 export default function Test() {
+    const [isSubscribed, setIsSubscribed] = useState(false);
+  const [message, setMessage] = useState("");
+  const [error, setError] = useState("");
+
+  useEffect(() => {
+    // Vérifier si l'utilisateur est inscrit aux notifications push
+    async function checkSubscription() {
+      if ('serviceWorker' in navigator && 'PushManager' in window) {
+        try {
+          const registration = await navigator.serviceWorker.ready;
+          const subscription = await registration.pushManager.getSubscription();
+          setIsSubscribed(!!subscription);
+        } catch (err) {
+          console.error("Error checking subscription:", err);
+        }
+      }
+    }
+
+    checkSubscription();
+  }, []);
+
+  async function sendNotification() {
+    if (!isSubscribed) {
+      setError("Vous n'êtes pas inscrit aux notifications push.");
+      return;
+    }
+
+    try {
+      // Envoyer une requête POST au serveur pour envoyer une notification
+      const response = await fetch("/api/send-notification", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          message,
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to send notification");
+      }
+
+      setMessage("");
+      setError("");
+      alert("Notification envoyée !");
+    } catch (err) {
+      console.error("Error sending notification:", err);
+      setError("Une erreur s'est produite lors de l'envoi de la notification.");
+    }
+  }
 
   const faqData = [
     {
