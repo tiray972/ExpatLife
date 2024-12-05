@@ -1,5 +1,6 @@
 import { doc, addDoc, collection, updateDoc, arrayUnion, getDoc, query, where, getDocs } from "firebase/firestore";
 import { db, auth } from "@/lib/firebase/firebase";
+import { sendAdminNotifications } from "@/components/Notif/sendAdminNotifications";
 
 // Ajouter une propriété pour l'agent
 export async function addPropertyForAgent(property) {
@@ -21,6 +22,7 @@ export async function addPropertyForAgent(property) {
     });
 
     alert("Successfully added! It will be reviewed within 48 hours by our team.");
+    notifyAdmins();
   } catch (error) {
     console.error("Error adding property: ", error);
   }
@@ -95,5 +97,20 @@ export async function fetchClientFavorites() {
     }
   } catch (error) {
     console.error("Error fetching favorites: ", error);
+  }
+}
+async function notifyAdmins() {
+  const title = "Nouvelle location ajoutée";
+  const message = "Une nouvelle location vient d'être ajoutée sur la plateforme.";
+  const additionalData = {
+    locationId: "12345",
+    addedBy: "userId",
+  };
+
+  try {
+    await sendAdminNotifications(title, message, additionalData);
+    console.log("Notification envoyée aux admins.");
+  } catch (error) {
+    console.error("Erreur lors de l'envoi des notifications :", error);
   }
 }

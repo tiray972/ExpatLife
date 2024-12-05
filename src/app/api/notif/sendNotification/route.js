@@ -17,17 +17,17 @@ webPush.setVapidDetails(
 export async function POST(req) {
   try {
     // Récupérer le message et les abonnements du corps de la requête
-    const { message, subscriptions } = await req.json();
-
+    const { message, subscriptions,title } = await req.json();
+    console.log(title)
     // Vérifier si le message est présent
-    if (!message || !subscriptions || subscriptions.length === 0) {
+    if (!message || !subscriptions || !title || subscriptions.length === 0) {
       return NextResponse.json({ error: "Le message et les abonnements sont requis." }, { status: 400 });
     }
 
     // Envoyer des notifications à tous les abonnés
     const notificationPromises = subscriptions.map((subscription) =>
       webPush
-        .sendNotification(subscription, JSON.stringify({ title: "Notification", body: message }))
+        .sendNotification(subscription, JSON.stringify({ title: title, body: message }))
         .catch((err) => {
           console.error("Erreur lors de l'envoi de la notification :", err);
         })

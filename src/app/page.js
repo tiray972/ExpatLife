@@ -8,6 +8,7 @@ import GoogleReviews from '@/components/google/googlereviews';
 
 
 import ContactSection from '@/components/contact/contactHome';
+import PushNotificationManager from '@/components/Notif/PushNotificationManager';
 
 
 export default function Home() {
@@ -88,7 +89,7 @@ export default function Home() {
 
   return (
     <> 
-      
+      <PushNotificationManager />
       
       <div className="bg-gray-100 scroll-smooth">
         
