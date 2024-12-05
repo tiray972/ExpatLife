@@ -1,6 +1,5 @@
 import { doc, addDoc, collection, updateDoc, arrayUnion, getDoc, query, where, getDocs } from "firebase/firestore";
 import { db, auth } from "@/lib/firebase/firebase";
-import { useTriggerRefresh } from "@/providers/TriggerRefreshprovider";
 
 // Ajouter une propriété pour l'agent
 export async function addPropertyForAgent(property) {
