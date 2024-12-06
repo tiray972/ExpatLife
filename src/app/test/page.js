@@ -6,6 +6,7 @@ import Footer from '@/components/Footer';
 import PushNotificationManager from '@/components/Notif/PushNotificationManager';
 import InstallPrompt from '@/components/Notif/InstallPrompt';
 import { useEffect, useState } from 'react';
+import SubscribeButton from '@/components/Notif/SubscribeButton';
 
 
 
@@ -140,6 +141,7 @@ export default function Test() {
     <> 
       <PushNotificationManager />
       <InstallPrompt />
+      <SubscribeButton/>
       
       <div className="bg-gray-100 scroll-smooth">
         

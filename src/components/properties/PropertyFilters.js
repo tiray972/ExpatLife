@@ -97,7 +97,7 @@ export function PropertyFilters({filters, setFilters}) {
             </SelectTrigger>
             <SelectContent>
               <SelectItem value="all">All</SelectItem>
-              <SelectItem value="studio">Studio</SelectItem>
+              <SelectItem value="Studio">Studio</SelectItem>
               <SelectItem value="1">1 Bed</SelectItem>
               <SelectItem value="2">2 Beds</SelectItem>
               <SelectItem value="3">3 Beds</SelectItem>

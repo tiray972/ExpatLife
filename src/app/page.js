@@ -11,6 +11,7 @@ import ContactSection from '@/components/contact/contactHome';
 import PushNotificationManager from '@/components/Notif/PushNotificationManager';
 
 
+
 export default function Home() {
 
   const faqData = [

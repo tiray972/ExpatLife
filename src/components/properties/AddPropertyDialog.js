@@ -198,16 +198,25 @@ export default function AddPropertyDialog() {
 
             {/* Chambres */}
             <div>
-              <Label htmlFor="bedrooms">Beds</Label>
-              <Input
-                id="bedrooms"
-                name="bedrooms"
-                type="number"
-                value={formData.bedrooms}
-                onChange={handleChange}
-                placeholder="Bedrooms"
-                className="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-teal-500"
-              />
+            <Label htmlFor="bedrooms">Beds</Label>
+            <Select
+              
+              value={formData.bedrooms}
+              onValueChange={(value) => setFormData({ ...formData, bedrooms: value })}
+            >
+              <SelectTrigger>
+              {formData.bedrooms || "Beds"}
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="all">All</SelectItem>
+                <SelectItem value="Studio">Studio</SelectItem>
+                <SelectItem value="1">1 Bed</SelectItem>
+                <SelectItem value="2">2 Beds</SelectItem>
+                <SelectItem value="3">3 Beds</SelectItem>
+                <SelectItem value="4+">4+ Beds</SelectItem>
+              </SelectContent>
+            </Select>
+              
             </div>
 
             {/* Taille */}
