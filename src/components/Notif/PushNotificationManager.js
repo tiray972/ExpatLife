@@ -98,9 +98,6 @@ export default function PushNotificationManager() {
   if (!isSupported) {
     return (
       <div>
-        <p>
-          Les notifications push ne sont pas supportées par votre navigateur.
-        </p>
       </div>
     );
   }
