@@ -11,16 +11,31 @@ export default function SubscribeButton() {
   const [isSubscribed, setIsSubscribed] = useState(false);
   const [error, setError] = useState("");
 
-  // Vérifier la compatibilité seulement côté client
   useEffect(() => {
-    if (typeof window !== "undefined" && "serviceWorker" in navigator && "PushManager" in window) {
+    // Vérifiez si les notifications push sont supportées
+    if (
+      typeof window !== "undefined" &&
+      "serviceWorker" in navigator &&
+      "PushManager" in window
+    ) {
       setIsSupported(true);
+      checkSubscriptionStatus(); // Vérifie si une souscription existe déjà
     } else {
       setIsSupported(false);
     }
   }, []);
 
-  // Fonction pour gérer l'abonnement aux notifications push
+  // Vérifiez si une souscription existe déjà côté navigateur
+  async function checkSubscriptionStatus() {
+    try {
+      const registration = await navigator.serviceWorker.ready;
+      const subscription = await registration.pushManager.getSubscription();
+      setIsSubscribed(!!subscription); // Met à jour l'état si une souscription existe
+    } catch (err) {
+      console.error("Erreur lors de la vérification de l'abonnement :", err);
+    }
+  }
+
   async function subscribeToPush() {
     if (!isSupported) {
       setError("Les notifications push ne sont pas supportées par votre navigateur.");
@@ -45,6 +60,16 @@ export default function SubscribeButton() {
 
     try {
       const registration = await navigator.serviceWorker.ready;
+
+      // Vérifiez si une souscription existe déjà
+      const existingSubscription = await registration.pushManager.getSubscription();
+      if (existingSubscription) {
+        setIsSubscribed(true); // Mise à jour de l'état
+        console.log("Une souscription existe déjà :", existingSubscription);
+        return; // N'ajoutez pas une nouvelle souscription en base
+      }
+
+      // Créez une nouvelle souscription
       const sub = await registration.pushManager.subscribe({
         userVisibleOnly: true,
         applicationServerKey: urlBase64ToUint8Array(
@@ -52,19 +77,18 @@ export default function SubscribeButton() {
         ),
       });
 
+      // Sérialisez la souscription et enregistrez-la en base
       const serializedSub = serializePushSubscription(sub);
-      await subscribeUser(serializedSub);
       const role = await getUserRole();
       const deviceType = /Mobi/.test(navigator.userAgent) ? "mobile" : "desktop";
-      await saveSubscription(serializedSub, role, deviceType);
 
+      await saveSubscription(serializedSub, role, deviceType);
       setIsSubscribed(true);
     } catch (err) {
       setError("Erreur lors de la souscription.");
     }
   }
 
-  // Sérialisation de la souscription push
   function serializePushSubscription(subscription) {
     return {
       endpoint: subscription.endpoint,

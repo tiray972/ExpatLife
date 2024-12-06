@@ -140,7 +140,7 @@ export default function Test() {
   return (
     <> 
       <PushNotificationManager />
-      <InstallPrompt />
+      {/* <InstallPrompt /> */}
       <SubscribeButton/>
       
       <div className="bg-gray-100 scroll-smooth">
