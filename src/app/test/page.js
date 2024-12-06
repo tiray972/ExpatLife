@@ -141,7 +141,7 @@ export default function Test() {
     <> 
       <PushNotificationManager />
       <InstallPrompt />
-      <SubscribeButton/>
+      
       
       <div className="bg-gray-100 scroll-smooth">
         
