@@ -16,25 +16,31 @@ webPush.setVapidDetails(
 
 export async function POST(req) {
   try {
-    // Récupérer le message et les abonnements du corps de la requête
-    const { message, subscriptions,title } = await req.json();
-    console.log(title)
-    // Vérifier si le message est présent
-    if (!message || !subscriptions || !title || subscriptions.length === 0) {
-      return NextResponse.json({ error: "Le message et les abonnements sont requis." }, { status: 400 });
+    // Récupérer le body et les abonnements du corps de la requête
+    const { notification, subscriptions } = await req.json();
+
+    // Extraire les champs de la notification
+    const { title, body, ...additionalFields } = notification;
+
+    // Vérifier si les champs nécessaires sont présents
+    if (!title || !body || !subscriptions || subscriptions.length === 0) {
+      return NextResponse.json({ error: "Le titre, le corps, et les abonnements sont requis." }, { status: 400 });
     }
 
     // Envoyer des notifications à tous les abonnés
     const notificationPromises = subscriptions.map((subscription) =>
       webPush
-        .sendNotification(subscription, JSON.stringify({ title: title, body: message }))
+        .sendNotification(
+          subscription,
+          JSON.stringify({ title, body, ...additionalFields })
+        )
         .catch((err) => {
           console.error("Erreur lors de l'envoi de la notification :", err);
         })
     );
 
     await Promise.all(notificationPromises);
-    return NextResponse.json({ message: "Notifications envoyées avec succès." });
+    return NextResponse.json({ body: "Notifications envoyées avec succès." });
   } catch (error) {
     console.error("Erreur lors de l'envoi des notifications :", error);
     return NextResponse.json({ error: "Erreur lors de l'envoi des notifications." }, { status: 500 });

@@ -13,7 +13,7 @@ import PushNotificationManager from '@/components/Notif/PushNotificationManager'
 
 
 export default function Home() {
-
+  
   const faqData = [
     {
       question: "Quels services propose Expatlife ?",

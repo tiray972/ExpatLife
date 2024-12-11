@@ -1,0 +1,8 @@
+{
+  "websiteName": "ExpatLife",
+  "websitePushID": "web.com.expatlife-uae.app",
+  "allowedDomains": ["https://expatlife-uae.com"],
+  "urlFormatString": "https://expatlife-uae.com/%@",
+  "authenticationToken": "your-authentication-token",
+  "webServiceURL": "https://example.com/push"
+}
