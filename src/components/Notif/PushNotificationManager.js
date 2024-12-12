@@ -98,6 +98,7 @@ export default function PushNotificationManager() {
   if (!isSupported) {
     return (
       <div>
+        
       </div>
     );
   }
