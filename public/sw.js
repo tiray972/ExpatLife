@@ -1,33 +1,3 @@
-// BrowserPetsWorker.js
-
-// Handle messages sent to the service worker
-function handleMessageEvent(event) {
-  console.log("Message event received:", event.data);
-  // Add your custom message handling logic here
-}
-self.addEventListener('message', (event) => {
-  handleMessageEvent(event);
-});
-
-// Prime caches during the install event
-function primeCaches() {
-  console.log("Priming caches...");
-  // Add logic to cache essential assets here
-}
-self.addEventListener('install', (event) => {
-  event.waitUntil(primeCaches());
-});
-
-// Serve resources from cache during fetch events
-self.addEventListener('fetch', (event) => {
-  event.respondWith(
-    caches.match(event.request).then((response) => {
-      return response || fetch(event.request);
-    })
-  );
-});
-
-// Handle push events and display notifications
 self.addEventListener('push', (event) => {
   let data;
   try {
@@ -54,11 +24,10 @@ self.addEventListener('push', (event) => {
   );
 });
 
-// Handle notification click events
 self.addEventListener('notificationclick', (event) => {
   console.log('Notification clicked:', event.notification);
 
-  // Close the notification
+  // Close notification
   event.notification.close();
 
   // Redirect to the specified URL or homepage
@@ -77,10 +46,8 @@ self.addEventListener('notificationclick', (event) => {
   );
 });
 
-// Handle "SKIP_WAITING" message to update service worker immediately
 self.addEventListener('message', (event) => {
   if (event.data && event.data.type === 'SKIP_WAITING') {
-    console.log("Skipping waiting phase...");
     self.skipWaiting();
   }
 });
