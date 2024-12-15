@@ -3,6 +3,7 @@ import { db, auth } from "@/lib/firebase/firebase";
 
 export async function getUserRole() {
   const user = auth.currentUser;
+  console.log("ffff",user)
   if (!user) return "client"; // Si non connecté, par défaut "client"
 
   try {

@@ -8,8 +8,35 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import ImageGallery from "@/components/images/ImageGalerie";
+import { getUserRole } from "@/lib/firebase/getUserRole";
+import { doc, updateDoc } from "firebase/firestore";
+import { db } from "@/lib/firebase/firebase";
+import { useEffect, useState } from "react";
+
+
+async function verifyProperty(propertyId) {
+  try {
+    const propertyRef = doc(db, "properties", propertyId);
+    await updateDoc(propertyRef, { isverified: true });
+    alert("Property has been verified!");
+  } catch (error) {
+    console.error("Error verifying property:", error);
+    alert("Failed to verify the property. Please try again.");
+  }
+}
+
 
 export default function PropertyDetails({ property }) {
+  const [role, setRole] = useState("client");
+
+  useEffect(() => {
+    const fetchRole = async () => {
+      const userRole = await getUserRole();
+      setRole(userRole);
+    };
+
+    fetchRole();
+  }, []);
   const currentUrl = `https://expatlife-uae.com${usePathname()}`;
   const whatsappUrl = `https://wa.me/971568127898?text=Hello,+I+am+interested+in+the+property+available+at+the+following+address:+${encodeURIComponent(
     currentUrl
@@ -23,7 +50,15 @@ export default function PropertyDetails({ property }) {
             ← Retour aux locations
           </Button>
         </Link>
-
+        {role === "admin" && !property.isverified && (
+          <Button
+            variant="default"
+            onClick={() => verifyProperty(property.id)} // Appel de la fonction avec l'ID
+            className="my-4"
+          >
+            Verify Property
+          </Button>
+        )}
         <div className="bg-white rounded-lg shadow-lg overflow-hidden">
           {/* Image principale */}
           <div className="relative h-[400px] border-b border-gray-200">

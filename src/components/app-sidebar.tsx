@@ -1,6 +1,6 @@
 "use client";
 
-import * as React from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
@@ -16,22 +16,47 @@ import {
   SidebarMenuItem,
   SidebarRail,
 } from "@/components/ui/sidebar";
+import { getUserRole } from "@/lib/firebase/getUserRole";
 
 export function AppSidebar({ activeKey, setActiveKey, ...props }) {
+  const [role, setRole] = useState("client");
   const router = useRouter();
 
-  // Navigation dynamique
+  // Récupérer le rôle de l'utilisateur
+  useEffect(() => {
+    const fetchRole = async () => {
+      const userRole = await getUserRole();
+      setRole(userRole);
+    };
+
+    fetchRole();
+  }, []);
+
+  // Navigation dynamique basée sur le rôle
   const navData = {
-    navMain: [
-      {
-        title: "Espace Agent",
-        items: [
-          { title: "My Profil", url: "/dashboard/agent", key: "profile" },
-          { title: "My Properties", url: "/dashboard/agent", key: "properties" },
-          { title: "Support", url: "/dashboard/agent", key: "support" },
-          { title: "Logout", url: "#", key: "logout" },
-        ],
-      },
+    admin: [
+      { title: "Dashboard", url: "/dashboard/admin", key: "dashboard" },
+      { title: "My Properties", url: "/dashboard/admin", key: "properties" },
+      { title: "Manage Users", url: "/dashboard/admin", key: "users" },
+      { title: "Reports", url: "/dashboard/admin", key: "reports" },
+      { title: "Logout", url: "#", key: "logout" },
+    ],
+    agent: [
+      { title: "My Profile", url: "/dashboard/agent", key: "profile" },
+      { title: "My Properties", url: "/dashboard/agent", key: "properties" },
+      { title: "Support", url: "/dashboard/agent", key: "support" },
+      { title: "Logout", url: "#", key: "logout" },
+    ],
+    owner: [
+      { title: "My Profile", url: "/dashboard/agent", key: "profile" },
+      { title: "My Properties", url: "/dashboard/agent", key: "properties" },
+      { title: "Support", url: "/dashboard/agent", key: "support" },
+      { title: "Logout", url: "#", key: "logout" },
+    ],
+    client: [
+      { title: "Browse Properties", url: "/dashboard/client", key: "properties" },
+      { title: "Contact Support", url: "/dashboard/client", key: "support" },
+      { title: "Logout", url: "#", key: "logout" },
     ],
   };
 
@@ -39,6 +64,8 @@ export function AppSidebar({ activeKey, setActiveKey, ...props }) {
     setActiveKey(key);
     if (url) router.push(url);
   };
+
+  const currentNav = navData[role] || navData.client; // Récupère les données de navigation pour le rôle
 
   return (
     <Sidebar {...props}>
@@ -56,26 +83,24 @@ export function AppSidebar({ activeKey, setActiveKey, ...props }) {
 
       {/* Sidebar Content */}
       <SidebarContent>
-        {navData.navMain.map((group) => (
-          <SidebarGroup key={group.title}>
-            <SidebarGroupLabel>{group.title}</SidebarGroupLabel>
-            <SidebarGroupContent>
-              <SidebarMenu>
-                {group.items.map((item) => (
-                  <SidebarMenuItem key={item.key}>
-                    <SidebarMenuButton
-                      asChild
-                      isActive={activeKey === item.key}
-                      onClick={() => handleNavigation(item.url, item.key)}
-                    >
-                      <span>{item.title}</span>
-                    </SidebarMenuButton>
-                  </SidebarMenuItem>
-                ))}
-              </SidebarMenu>
-            </SidebarGroupContent>
-          </SidebarGroup>
-        ))}
+        <SidebarGroup>
+          <SidebarGroupLabel>{`Espace ${role.charAt(0).toUpperCase() + role.slice(1)}`}</SidebarGroupLabel>
+          <SidebarGroupContent>
+            <SidebarMenu>
+              {currentNav.map((item) => (
+                <SidebarMenuItem key={item.key}>
+                  <SidebarMenuButton
+                    asChild
+                    isActive={activeKey === item.key}
+                    onClick={() => handleNavigation(item.url, item.key)}
+                  >
+                    <span>{item.title}</span>
+                  </SidebarMenuButton>
+                </SidebarMenuItem>
+              ))}
+            </SidebarMenu>
+          </SidebarGroupContent>
+        </SidebarGroup>
       </SidebarContent>
 
       {/* Optional Sidebar Rail */}

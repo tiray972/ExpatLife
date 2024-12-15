@@ -1,4 +1,4 @@
-import { doc, addDoc, collection, updateDoc, arrayUnion, getDoc, query, where, getDocs } from "firebase/firestore";
+import { doc, addDoc, collection, updateDoc, arrayUnion, getDoc, query, where, getDocs, orderBy } from "firebase/firestore";
 import { db, auth } from "@/lib/firebase/firebase";
 import { sendAdminNotifications } from "@/components/Notif/sendAdminNotifications";
 
@@ -112,5 +112,46 @@ async function notifyAdmins() {
     console.log("Notification envoyée aux admins.");
   } catch (error) {
     console.error("Erreur lors de l'envoi des notifications :", error);
+  }
+}
+
+// Récupérer toutes les propriétés triées par date d'ajout
+export async function fetchAllProperties() {
+  try {
+    const q = query(collection(db, "properties"), orderBy("createdAt", "desc"));
+    const querySnapshot = await getDocs(q);
+
+    const properties = querySnapshot.docs.map((doc) => ({
+      id: doc.id,
+      ...doc.data(),
+    }));
+
+    return properties;
+  } catch (error) {
+    console.error("Erreur lors de la récupération des propriétés :", error);
+    return [];
+  }
+}
+
+
+export async function verifyProperty(propertyId) {
+  try {
+    const propertyRef = doc(db, "properties", propertyId);
+    await updateDoc(propertyRef, { isverified: true });
+    alert("Property has been verified!");
+  } catch (error) {
+    console.error("Error verifying property:", error);
+    alert("Failed to verify the property. Please try again.");
+  }
+}
+
+export async function deleteProperty(propertyId) {
+  try {
+    const propertyRef = doc(db, "properties", propertyId);
+    await updateDoc(propertyRef, { isverified: false , delete:true });
+    alert("Property has been verified!");
+  } catch (error) {
+    console.error("Error verifying property:", error);
+    alert("Failed to verify the property. Please try again.");
   }
 }
