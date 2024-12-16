@@ -2,8 +2,6 @@
 
 import { useEffect, useState } from "react";
 import urlBase64ToUint8Array from "./urlBase64ToUint8Array";
-import { subscribeUser } from "@/app/actions";
-import { getUserRole } from "@/lib/firebase/getUserRole";
 import { saveSubscription } from "./saveSubscriptionDB";
 
 export default function SubscribeButton() {
@@ -11,60 +9,121 @@ export default function SubscribeButton() {
   const [isSubscribed, setIsSubscribed] = useState(false);
   const [error, setError] = useState("");
 
-  // Vérifier la compatibilité seulement côté client
   useEffect(() => {
     if (typeof window !== "undefined" && "serviceWorker" in navigator && "PushManager" in window) {
       setIsSupported(true);
+      checkSubscriptionStatus(); // Vérifie si une souscription existe déjà
+    } else if (isSafari() && "Notification" in window) {
+      setIsSupported(true); // Support basique pour Safari
     } else {
       setIsSupported(false);
     }
   }, []);
 
-  // Fonction pour gérer l'abonnement aux notifications push
-  async function subscribeToPush() {
-    if (!isSupported) {
-      setError("Les notifications push ne sont pas supportées par votre navigateur.");
-      return;
-    }
+  function isSafari() {
+    return /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+  }
 
-    if (Notification.permission === "default") {
-      try {
-        const permission = await Notification.requestPermission();
+  async function checkSubscriptionStatus() {
+    try {
+      if (isSafari() && window.safari && safari.pushNotification) {
+        const permissionData = safari.pushNotification.permission("web.com.expatlife-uae.app");
+        setIsSubscribed(permissionData.permission === "granted");
+      } else {
+        const registration = await navigator.serviceWorker.ready;
+        const subscription = await registration.pushManager.getSubscription();
+        setIsSubscribed(!!subscription);
+      }
+    } catch (err) {
+      console.error("Erreur lors de la vérification de l'abonnement :", err);
+    }
+  }
+
+  function handleSubscribe() {
+    if (isSafari() && "safari" in window) {
+      handleSafariSubscription();
+    } else {
+      handleBrowserSubscription();
+    }
+  }
+
+  function handleSafariSubscription() {
+    const permissionData = safari.pushNotification.permission("web.com.expatlife-uae.app");
+
+    if (permissionData.permission === "default") {
+      safari.pushNotification.requestPermission(
+        "https://expatlife-uae.com", // Votre domaine
+        "web.com.expatlife-uae.app", // Votre ID de site
+        { title: "Notifications Push" }, // Informations supplémentaires
+        (newPermissionData) => {
+          if (newPermissionData.permission === "granted") {
+            saveSubscription(
+              { deviceToken: newPermissionData.deviceToken },
+              "role", // À remplacer par votre logique
+              "deviceType", // Détection du type d'appareil
+              true // Appareil Apple
+            );
+            setIsSubscribed(true);
+          } else {
+            setError("Les notifications sont désactivées dans Safari.");
+          }
+        }
+      );
+    } else if (permissionData.permission === "granted") {
+      setIsSubscribed(true);
+    } else {
+      setError("Les notifications sont désactivées dans Safari.");
+    }
+  }
+
+  function handleBrowserSubscription() {
+    Notification.requestPermission()
+      .then((permission) => {
         if (permission !== "granted") {
           setError("Vous avez refusé les notifications.");
           return;
         }
-      } catch (err) {
+
+        navigator.serviceWorker.ready
+          .then((registration) => registration.pushManager.getSubscription())
+          .then((existingSubscription) => {
+            if (existingSubscription) {
+              setIsSubscribed(true);
+              return null;
+            }
+
+            return navigator.serviceWorker.ready.then((registration) => {
+              return registration.pushManager.subscribe({
+                userVisibleOnly: true,
+                applicationServerKey: urlBase64ToUint8Array(
+                  process.env.NEXT_PUBLIC_VAPID_PUBLIC_KEY
+                ),
+              });
+            });
+          })
+          .then((sub) => {
+            if (!sub) return;
+
+            const subscriptionData = serializePushSubscription(sub);
+            saveSubscription(
+              subscriptionData,
+              "role", // À remplacer par votre logique
+              "deviceType", // Détection du type d'appareil
+              false // Pas un appareil Apple
+            );
+            setIsSubscribed(true);
+          })
+          .catch((err) => {
+            console.error("Erreur lors de la souscription :", err);
+            setError("Erreur lors de la souscription.");
+          });
+      })
+      .catch((err) => {
+        console.error("Erreur lors de la demande de permission :", err);
         setError("Erreur lors de la demande de permission.");
-        return;
-      }
-    } else if (Notification.permission === "denied") {
-      setError("Vous avez bloqué les notifications pour ce site.");
-      return;
-    }
-
-    try {
-      const registration = await navigator.serviceWorker.ready;
-      const sub = await registration.pushManager.subscribe({
-        userVisibleOnly: true,
-        applicationServerKey: urlBase64ToUint8Array(
-          process.env.NEXT_PUBLIC_VAPID_PUBLIC_KEY
-        ),
       });
-
-      const serializedSub = serializePushSubscription(sub);
-      await subscribeUser(serializedSub);
-      const role = await getUserRole();
-      const deviceType = /Mobi/.test(navigator.userAgent) ? "mobile" : "desktop";
-      await saveSubscription(serializedSub, role, deviceType);
-
-      setIsSubscribed(true);
-    } catch (err) {
-      setError("Erreur lors de la souscription.");
-    }
   }
 
-  // Sérialisation de la souscription push
   function serializePushSubscription(subscription) {
     return {
       endpoint: subscription.endpoint,
@@ -88,9 +147,11 @@ export default function SubscribeButton() {
   return (
     <div>
       {isSupported ? (
-        <button onClick={subscribeToPush} disabled={isSubscribed}>
-          {isSubscribed ? "Déjà inscrit" : "S'inscrire aux notifications"}
-        </button>
+        isSubscribed ? (
+          <button disabled>Déjà inscrit</button>
+        ) : (
+          <button onClick={handleSubscribe}>S'inscrire aux notifications</button>
+        )
       ) : (
         <p>Les notifications push ne sont pas supportées par votre navigateur.</p>
       )}
