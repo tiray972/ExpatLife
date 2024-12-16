@@ -10,6 +10,7 @@ import { useParams, useRouter } from "next/navigation"; // Pour redirection
 import { auth } from "@/lib/firebase/firebase"; // Firebase Auth instance
 import { signOut } from "firebase/auth"; // Déconnexion Firebase
 import ManageProperties from "@/components/admin/ManageProperties";
+import ManageUsers from "@/components/admin/ManageUsers";
 
 
 
@@ -41,6 +42,8 @@ export default function Dashboard() {
         return <AgentSupport />;
       case "dashboard":
         return <ManageProperties/>
+      case "users":
+        return <ManageUsers/>
       case "logout":
         handleLogout()
         return <p>Logout...</p>; // Gérer la déconnexion
