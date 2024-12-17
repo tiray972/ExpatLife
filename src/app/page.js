@@ -9,6 +9,7 @@ import GoogleReviews from '@/components/google/googlereviews';
 
 import ContactSection from '@/components/contact/contactHome';
 import PushNotificationManager from '@/components/Notif/PushNotificationManager';
+import LatestArticles from '@/components/articles/LatestArticles';
 
 
 
@@ -363,81 +364,8 @@ export default function Home() {
 
 
         {/* Blog Section */}
-        <section className="bg-gray-100 py-16 px-6 md:px-20">
-          <h2 className="text-3xl font-bold text-center mb-10 text-gray-900">Derniers Articles</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Blog Article 1 */}
-            <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-              <Image
-                src="/images/200.png"
-                alt="Astuces pour bien s'installer aux Émirats"
-                width={800}
-                height={500}
-                className="w-full h-48 object-cover"
-              />
-              <div className="p-6">
-                <h3 className="text-xl font-semibold mb-4 text-gray-800">
-                  Astuces pour bien s'installer aux Émirats
-                </h3>
-                <p className="text-gray-700 mb-4">
-                  Découvrez nos conseils pratiques pour réussir votre installation aux Émirats en toute sérénité.
-                </p>
-                <Link href="/blog/astuces-installation">
-                  <button className="text-teal-500 font-medium hover:underline">
-                    Lire la suite
-                  </button>
-                </Link>
-              </div>
-            </div>
-            {/* Blog Article 2 */}
-            <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-              <Image
-                src="/images/200.png"
-                alt="Comment choisir le bon logement à Dubaï"
-                width={800}
-                height={500}
-                className="w-full h-48 object-cover"
-              />
-              <div className="p-6">
-                <h3 className="text-xl font-semibold mb-4 text-gray-800">
-                  Comment choisir le bon logement à Dubaï
-                </h3>
-                <p className="text-gray-700 mb-4">
-                  Un guide complet pour vous aider à trouver le logement idéal selon vos besoins et votre budget.
-                </p>
-                <Link href="/blog/choisir-logement-dubai">
-                  <button className="text-teal-500 font-medium hover:underline">
-                    Lire la suite
-                  </button>
-                </Link>
-              </div>
-            </div>
-            {/* Blog Article 3 */}
-            <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-              <Image
-                src="/images/200.png"
-                alt="Les démarches pour obtenir un visa aux Émirats"
-                width={800}
-                height={500}
-                className="w-full h-48 object-cover"
-              />
-              <div className="p-6">
-                <h3 className="text-xl font-semibold mb-4 text-gray-800">
-                  Les démarches pour obtenir un visa aux Émirats
-                </h3>
-                <p className="text-gray-700 mb-4">
-                  Tout ce que vous devez savoir pour obtenir un visa aux Émirats sans stress.
-                </p>
-                <Link href="/blog/demarches-visa-emirats">
-                  <button className="text-teal-500 font-medium hover:underline">
-                    Lire la suite
-                  </button>
-                </Link>
-              </div>
-            </div>
-          </div>
-        </section>
-        
+        <LatestArticles/>
+
         {/* section FAQ */}
         <FAQ faqData={faqData}/>
         {/* Section Contact */}
