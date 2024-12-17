@@ -37,6 +37,7 @@ export function AppSidebar({ activeKey, setActiveKey, ...props }) {
     admin: [
       { title: "Dashboard", url: "/dashboard/admin", key: "dashboard" },
       { title: "My Properties", url: "/dashboard/admin", key: "properties" },
+      { title: "BLOGS", url: "/dashboard/admin", key: "blog" },
       { title: "Manage Users", url: "/dashboard/admin", key: "users" },
       { title: "Reports", url: "/dashboard/admin", key: "reports" },
       { title: "Logout", url: "#", key: "logout" },

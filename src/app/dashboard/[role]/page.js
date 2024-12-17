@@ -11,6 +11,7 @@ import { auth } from "@/lib/firebase/firebase"; // Firebase Auth instance
 import { signOut } from "firebase/auth"; // Déconnexion Firebase
 import ManageProperties from "@/components/admin/ManageProperties";
 import ManageUsers from "@/components/admin/ManageUsers";
+import AddArticleForm from "@/components/articles/AddArticleForm";
 
 
 
@@ -44,6 +45,8 @@ export default function Dashboard() {
         return <ManageProperties/>
       case "users":
         return <ManageUsers/>
+      case "blog" : 
+        return <AddArticleForm/>
       case "logout":
         handleLogout()
         return <p>Logout...</p>; // Gérer la déconnexion
