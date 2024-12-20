@@ -96,6 +96,8 @@ export default function AddPropertyDialog() {
       image: "",
       images: [],
       duration: "",
+      isverified:false,
+      createdAt: new Date(),
       furnished: false,
       needEmirateID: false,
       coordinates: { lat: "", lng: "" },

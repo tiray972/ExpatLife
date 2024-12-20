@@ -23,7 +23,8 @@ export default function ImageUploader({ onImagesUpload }) {
   // Fonction pour gérer l'upload des images
   const uploadImage = (file) => {
     const userId = currentUser.uid;
-    const storageRef = ref(storage, `images/${userId}/${file.name}`);
+    const datime = new Date().toISOString().replace(/[:.-]/g, "");
+    const storageRef = ref(storage, `images/${userId}/${datime}_${file.name}`);
     const uploadTask = uploadBytesResumable(storageRef, file);
 
     // Mise à jour de la progression de l'upload
