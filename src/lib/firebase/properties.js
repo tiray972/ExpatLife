@@ -30,35 +30,21 @@ export async function addPropertyForAgent(property) {
 
 // Récupérer les propriétés de l'agent
 export async function fetchAgentProperties() {
-  const user = auth.currentUser;
+  const user = auth.currentUser; // Récupère l'utilisateur actuellement connecté
   if (!user) return alert("Please log in.");
 
   try {
-    // Récupérer le document de l'agent
-    const agentRef = doc(db, "users", user.uid);
-    const agentSnap = await getDoc(agentRef);
+    // Requête pour récupérer les propriétés basées sur l'agentId
+    const q = query(collection(db, "properties"), where("agentId", "==", user.uid));
+    const querySnapshot = await getDocs(q);
 
-    if (agentSnap.exists()) {
-      const { properties } = agentSnap.data();
+    // Créez une liste des propriétés avec leurs données et ID
+    const propertyList = querySnapshot.docs.map((doc) => ({
+      id: doc.id, // ID unique de la propriété
+      ...doc.data(), // Données de la propriété
+    }));
 
-      // Vérifier si le champ `properties` existe et est un tableau
-      if (Array.isArray(properties) && properties.length > 0) {
-        // Récupérer toutes les propriétés référencées
-        const q = query(collection(db, "properties"), where("__name__", "in", properties));
-        const querySnapshot = await getDocs(q);
-
-        const propertyList = querySnapshot.docs.map((doc) => ({
-          id: doc.id,  // Ajout de l'ID de la propriété
-          ...doc.data() // Récupération des données de la propriété
-        }));
-
-        return propertyList;  // Retourner la liste des propriétés de l'agent
-      } else {
-        console.log("Aucune propriété trouvée pour cet users.");
-      }
-    } else {
-      console.log("Aucun document agent trouvé.");
-    }
+    return propertyList; // Retourne la liste des propriétés
   } catch (error) {
     console.error("Error fetching properties: ", error);
   }
