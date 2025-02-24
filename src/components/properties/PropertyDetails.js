@@ -12,6 +12,7 @@ import { getUserRole } from "@/lib/firebase/getUserRole";
 import { doc, updateDoc } from "firebase/firestore";
 import { db } from "@/lib/firebase/firebase";
 import { useEffect, useState } from "react";
+import { useParams } from "next/navigation";
 
 
 async function verifyProperty(propertyId) {
@@ -28,7 +29,8 @@ async function verifyProperty(propertyId) {
 
 export default function PropertyDetails({ property }) {
   const [role, setRole] = useState("client");
-
+  const params = useParams();  // Récupère params correctement
+  const Lang = params.Lang;  // Maintenant lang est disponible
   useEffect(() => {
     const fetchRole = async () => {
       const userRole = await getUserRole();
@@ -45,7 +47,7 @@ export default function PropertyDetails({ property }) {
   return (
     <main className="min-h-screen bg-gray-50 py-12">
       <div className="container mx-auto px-4">
-        <Link href="/location">
+        <Link href={`/${Lang}/location`}>
           <Button variant="outline" className="mb-6">
             ← Retour aux locations
           </Button>

@@ -6,6 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { Bed, Home, MapPin, MessageCircleMore, Square } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
+import { useParams } from "next/navigation";
 
 export function PropertyCard({ property }) {
   const durationLabels = {
@@ -13,7 +14,8 @@ export function PropertyCard({ property }) {
     monthly: "Monthly",
     weekly: "weekly",
   };
-
+  const params = useParams();  // Récupère params correctement
+  const Lang = params.Lang;  // Maintenant lang est disponible
   // Normaliser `property.duration` pour toujours être un tableau
   const durations = Array.isArray(property.duration)
     ? property.duration
@@ -82,7 +84,7 @@ export function PropertyCard({ property }) {
           </Badge>
         </div>
         <div className="grid grid-cols-2 space-x-2">
-          <Link href={`/location/${property.id}`}>
+          <Link href={`location/${property.id}`}>
             <Button className="w-full">More info</Button>
           </Link>
           <Link href={`https://wa.me/971568127898?text=Hello,+I+am+interested+in+the+property+available+at+the+following+address:+${encodeURIComponent(
