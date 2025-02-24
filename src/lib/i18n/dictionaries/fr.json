@@ -1,0 +1,157 @@
+{
+  "hero": {
+    "title": "LYVIO MARINE",
+    "subtitle": "Spécialisé en équipements électriques dans le secteur maritime",
+    "tagline": "À votre service depuis 1949"
+  },
+  "services": {
+    "title": "Nos Services",
+    "items": [
+      { "image": "/images/ServiceCible.png", "text": "Atteignez vos objectifs efficacement." },
+      { "image": "/images/ServiceBonhomme.png", "text": "Un accompagnement personnalisé pour chaque étape." },
+      { "image": "/images/ServiceEclair.png", "text": "Des solutions rapides et performantes." },
+      { "image": "/images/ServiceMains.png", "text": "Une collaboration basée sur la confiance." },
+      { "image": "/images/ServiceOutils.png", "text": "Des outils modernes adaptés à vos besoins." },
+      { "image": "/images/ServicePouce.png", "text": "Des résultats qui font la différence." }
+    ]
+  },
+  "brands": {
+    "title": "Marques Distribuées",
+    "desc": "Plus de 70 marques sélectionnées parmi les meilleures du secteur."
+  },
+  "stats": {
+    "values": ["0", "+0", "0%", "0"],
+    "labels": [
+      "Années d'activité",
+      "Produits gérés",
+      "Clients satisfaits",
+      "Marques distribuées"
+    ]
+  },
+  "productsAcceuil": {
+    "title": "Nos Meilleurs Produits",
+    "items": [
+      { "name": "KOHLER GM91570", "price": "124.00€", "image": "/images/product1.jpg" },
+      { "name": "Connecteur Metal Taille.6", "price": "38.00€", "image": "/images/product2.jpg" },
+      { "name": "GIANNESCHI POMPE", "price": "650.00€", "image": "/images/product3.jpg" }
+    ]
+  },
+  "about": {
+    "title": "Notre Entreprise",
+    "description": "LYVIO MARINE, entreprise familiale à Antibes depuis 1949, est spécialisée en électricité marine. À 1 minute du port Vauban, elle propose pièces détachées, réparations et commandes en ligne avec livraison internationale.",
+    "address": "Retrouvez-nous au 4 Avenue Frédéric Mistral, 06600 Antibes."
+  },
+  "faq": {
+    "title": "FAQ - besoin d'aide ?",
+    "questions": [
+      {
+        "question": "Quels services propose Lyvio ?",
+        "answer": "Lyvio est spécialisée dans les systèmes de navigation et l’électricité maritime. Nous proposons :\n\nInstallation de systèmes électriques maritimes : Mise en place de systèmes de navigation, de communication, et d’alimentation à bord des navires.\nMaintenance et réparation : Entretien régulier et réparations pour assurer le bon fonctionnement de vos systèmes électriques et de navigation.\nConseil et optimisation : Consultation pour optimiser l’efficacité de vos systèmes maritimes, en fonction de vos besoins spécifiques."
+      },
+      {
+        "question": "Sur quels types de navires Lyvio intervient-elle ?",
+        "answer": "Nous travaillons sur une large variété de navires, y compris les yachts, les bateaux de pêche, les navires commerciaux, et les bateaux de plaisance. Nos experts sont qualifiés pour intervenir sur des équipements variés, en s’adaptant aux spécificités de chaque type de navire."
+      },
+      {
+        "question": "Quelle est votre zone d'intervention ?",
+        "answer": "Lyvio intervient principalement dans la région Provence-Alpes-Côte d’Azur. Nous pouvons également nous déplacer à l’international pour des projets spécifiques. Contactez-nous pour discuter des interventions possibles en dehors de notre zone habituelle."
+      },
+      {
+        "question": "Proposez-vous un service d'urgence pour les pannes ?",
+        "answer": "Oui, Lyvio offre un service d’urgence disponible 24/7 pour les pannes électriques et les problèmes critiques de navigation. En cas de besoin, vous pouvez nous joindre rapidement, et nous enverrons une équipe pour résoudre le problème dans les meilleurs délais."
+      },
+      {
+        "question": "Comment obtenir un devis personnalisé chez Lyvio ?",
+        "answer": "Pour obtenir un devis, vous pouvez nous contacter via le formulaire de contact sur notre site, par téléphone ou par e-mail. Nous vous poserons quelques questions sur votre projet pour comprendre vos besoins et nous fournirons un devis détaillé sous 48 heures."
+      },
+      {
+        "question": "Comment puis-je suivre l'avancement de mon projet ?",
+        "answer": "Nous fournissons des rapports réguliers et détaillés sur l’avancement des travaux. Vous avez également la possibilité de contacter directement votre chef de projet pour toute question ou mise à jour supplémentaire."
+      },
+      {
+        "question": "Comment contacter Lyvio ?",
+        "answer": "Vous pouvez nous joindre par téléphone au +33 (4) 93 34 18 89 ou +33 (6) 29 69 58 65, par e-mail à contact@lyviomarine.fr, ou via le formulaire de contact sur notre site internet. Nous sommes disponibles pour répondre à vos questions, discuter de vos projets, ou organiser une consultation."
+      }
+    ]
+  },
+  "common": {
+    "service":"services",
+    "contact":"contact",
+    "cart": "Panier",
+    "search": "Rechercher",
+    "menu": "Menu",
+    "account": "Compte",
+    "login": "Connexion",
+    "register": "S'inscrire",
+    "logout": "Déconnexion",
+    "home": "Accueil",
+    "products": "Produits",
+    "categories": "Catégories",
+    "store": "Boutique",
+    "language": "Changer de langue",
+    "name": "Nom",
+    "slug": "Slug",
+    "description": "Description",
+    "parentCategory": "Catégorie parente",
+    "noParent": "Aucun parent",
+    "displayType": "Type d'affichage",
+    "default": "Par défaut",
+    "thumbnail": "Vignette",
+    "create": "Créer",
+    "save": "Enregistrer",
+    "sku": "Référence produit",
+    "barcode": "Code-barres",
+    "weight": "Poids",
+    "dimensions": "Dimensions",
+    "priceHT": "Prix HT",
+    "priceTTC": "Prix TTC",
+    "promoPrice": "Prix promotionnel",
+    "stock": "Stock",
+    "tags": "Mots-clés",
+    "visibility": "Visibilité",
+    "visible":"visible",
+    "hidden":"caché",
+    "brand": "Marque",
+    "category":"Categories",
+    "warranty": "Garantie",
+    "relatedCategories": "Catégories associées",
+    "similarProducts": "Produits similaires",
+    "spareParts": "Pièces détachées",
+    "images": "Images",
+    "shippingClass": "Classe d'expédition"
+  },
+  "admin": {
+    "dashboard": "Dashboard",
+    "products": "Products",
+    "categories": "Categories",
+    "orders": "Orders",
+    "customers": "Customers",
+    "settings": "Settings",
+    "totalRevenue": "Total Revenue",
+    "newCustomers": "New Customers",
+    "productsInStock": "Products in Stock",
+    "pendingOrders": "Pending Orders",
+    "recentOrders": "Recent Orders",
+    "orderNumber": "Order Number",
+    "customer": "Customer",
+    "date": "Date",
+    "status": "Status",
+    "total": "Total",
+    "actions": "Actions"
+  },
+  "product": {
+    "addToCart": "Ajouter au panier",
+    "outOfStock": "Rupture de stock",
+    "price": "Prix",
+    "description": "Description",
+    "details": "Détails du produit",
+    "discover": "Découvrez notre collection",
+    "quality": "Des produits de qualité pour tous les styles"
+  },
+  "cart": {
+    "empty": "Votre panier est vide",
+    "checkout": "Commander",
+    "total": "Total",
+    "remove": "Supprimer"
+  }
+}

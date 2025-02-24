@@ -1,0 +1,144 @@
+{ 
+  "hero": {
+    "title": "LYVIO MARINE",
+    "subtitle": "Specialized in electrical equipment for the maritime sector",
+    "tagline": "At your service since 1949"
+  },
+  "services": {
+  "title": "Our Services",
+  "items": [
+    { "image": "/images/ServiceCible.png", "text": "Achieve your goals efficiently." },
+    { "image": "/images/ServiceBonhomme.png", "text": "Personalized support at every step." },
+    { "image": "/images/ServiceEclair.png", "text": "Fast and effective solutions." },
+    { "image": "/images/ServiceMains.png", "text": "Collaboration based on trust." },
+    { "image": "/images/ServiceOutils.png", "text": "Modern tools tailored to your needs." },
+    { "image": "/images/ServicePouce.png", "text": "Results that make a difference." }
+    ]
+  },
+  "brands": {
+    "title": "Distributed Brands",
+    "desc": "Over 70 brands carefully selected from the best in the industry."
+  },"stats": {
+    "values": ["0", "+0", "0%", "0"],
+    "labels": [
+      "Years in business",
+      "Products managed",
+      "Satisfied customers",
+      "Brands distributed"
+    ]
+  },
+  "productsAcceuil": {
+    "title": "Our Best Products",
+    "items": [
+      { "name": "KOHLER GM91570", "price": "€124.00", "image": "/images/product1.jpg" },
+      { "name": "Metal Connector Size.6", "price": "€38.00", "image": "/images/product2.jpg" },
+      { "name": "GIANNESCHI PUMP", "price": "€650.00", "image": "/images/product3.jpg" }
+    ]
+  },"about": {
+    "title": "About Our Company",
+    "description": "LYVIO MARINE, a family business in Antibes since 1949, specializes in marine electricity. Just 1 minute from the Vauban port, it offers spare parts, repairs, and online orders with international delivery.",
+    "address": "Find us at 4 Avenue Frédéric Mistral, 06600 Antibes."
+  },"faq": {
+    "title": "FAQ - Need help?",
+    "questions": [
+      {
+        "question": "What services does Lyvio offer?",
+        "answer": "Lyvio specializes in navigation systems and marine electricity. We offer:\n\nInstallation of marine electrical systems: Setting up navigation, communication, and power systems aboard vessels.\nMaintenance and repair: Regular maintenance and repairs to ensure the proper functioning of your electrical and navigation systems.\nConsultation and optimization: Tailored consultations to optimize the efficiency of your maritime systems, according to your specific needs."
+      },
+      {
+        "question": "What types of vessels does Lyvio work on?",
+        "answer": "We work on a wide range of vessels, including yachts, fishing boats, commercial ships, and leisure boats. Our experts are qualified to handle various equipment, adapting to the specifics of each type of vessel."
+      },
+      {
+        "question": "What is your service area?",
+        "answer": "Lyvio mainly operates in the Provence-Alpes-Côte d’Azur region. We can also travel internationally for specific projects. Contact us to discuss interventions outside our usual area."
+      },
+      {
+        "question": "Do you offer an emergency service for breakdowns?",
+        "answer": "Yes, Lyvio provides a 24/7 emergency service for electrical breakdowns and critical navigation issues. If needed, you can contact us quickly, and we will send a team to resolve the issue as soon as possible."
+      },
+      {
+        "question": "How can I get a personalized quote from Lyvio?",
+        "answer": "To get a quote, you can contact us through the contact form on our website, by phone, or by email. We will ask you a few questions about your project to understand your needs and provide a detailed quote within 48 hours."
+      },
+      {
+        "question": "How can I track the progress of my project?",
+        "answer": "We provide regular and detailed reports on the progress of the work. You can also contact your project manager directly for any additional questions or updates."
+      },
+      {
+        "question": "How can I contact Lyvio?",
+        "answer": "You can reach us by phone at +33 (4) 93 34 18 89 or +33 (6) 29 69 58 65, by email at contact@lyviomarine.fr, or through the contact form on our website. We are available to answer your questions, discuss your projects, or arrange a consultation."
+      }
+    ]
+  },    
+  "common": {
+    "service":"services",
+    "contact":"contact",
+    "cart": "Cart",
+    "search": "Search",
+    "menu": "Menu",
+    "account": "Account",
+    "login": "Login",
+    "register": "Register",
+    "logout": "Logout",
+    "home": "Home",
+    "products": "Products",
+    "categories": "Categories",
+    "store": "Store",
+    "language": "Change language",
+    "theme": "Toggle theme",
+    "light": "Light",
+    "dark": "Dark",
+    "system": "System",
+    "notifications": "Notifications",
+    "name": "Name",
+    "slug": "Slug",
+    "description": "Description",
+    "parentCategory": "Parent Category",
+    "noParent": "No Parent",
+    "displayType": "Display Type",
+    "default": "Default",
+    "thumbnail": "Thumbnail",
+    "create": "Create",
+    "save": "Save",
+    "sku": "SKU",
+    "barcode": "Barcode",
+    "weight": "Weight",
+    "dimensions": "Dimensions",
+    "shippingClass": "Shipping Class",
+    "tags": "Tags",
+    "visibility": "Visibility",
+    "brand": "Brand",
+    "warranty": "Warranty",
+    "relatedCategories": "Related Categories"
+  },
+  "admin": {
+    "dashboard": "Dashboard",
+    "products": "Products",
+    "categories": "Categories",
+    "orders": "Orders",
+    "customers": "Customers",
+    "settings": "Settings",
+    "totalRevenue": "Total Revenue",
+    "newCustomers": "New Customers",
+    "productsInStock": "Products in Stock",
+    "pendingOrders": "Pending Orders",
+    "recentOrders": "Recent Orders",
+    "orderNumber": "Order Number",
+    "customer": "Customer",
+    "date": "Date",
+    "status": "Status",
+    "total": "Total",
+    "actions": "Actions"
+  },
+  "product": {
+    "addToCart": "Add to Cart",
+    "outOfStock": "Out of Stock",
+    "price": "Price",
+    "priceHT": "Price HT",
+    "description": "Description",
+    "details": "Product Details",
+    "discover": "Discover our collection",
+    "quality": "Quality products for every style"
+  }
+}

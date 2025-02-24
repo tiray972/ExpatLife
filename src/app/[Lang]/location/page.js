@@ -9,12 +9,13 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { MapIcon, List } from "lucide-react";
 import Header from "@/components/header";
 import { metadata as pageMetadata } from "./locationMetadata";
+import { useParams } from "next/navigation";
 import Head from "next/head";
 
 console.log(pageMetadata) 
 
 
-export default function LocationsPage() {
+export default  function LocationsPage() {
   const [filters, setFilters] = useState({
     emirateID: true, // Initialisé à true
     type: "all",
@@ -23,7 +24,8 @@ export default function LocationsPage() {
     duration: "all",
     furnished: "all",
   });
-
+  const params = useParams();  // Récupère params correctement
+  const Lang = params.Lang;  // Maintenant lang est disponible
   const { properties, isLoading } = useProperties();
   
 
@@ -43,7 +45,7 @@ export default function LocationsPage() {
       </Head>
       
       <main className="min-h-screen bg-gray-50">
-        <Header />
+        <Header lang={Lang} />
         <div className="container mx-auto px-4 py-12">
           <h1 className="text-4xl font-bold mb-8">Properties for Rent</h1>
           <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">

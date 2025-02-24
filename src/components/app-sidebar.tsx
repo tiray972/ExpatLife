@@ -35,28 +35,28 @@ export function AppSidebar({ activeKey, setActiveKey, ...props }) {
   // Navigation dynamique basée sur le rôle
   const navData = {
     admin: [
-      { title: "Dashboard", url: "/dashboard/admin", key: "dashboard" },
-      { title: "My Properties", url: "/dashboard/admin", key: "properties" },
-      { title: "BLOGS", url: "/dashboard/admin", key: "blog" },
-      { title: "Manage Users", url: "/dashboard/admin", key: "users" },
-      { title: "Reports", url: "/dashboard/admin", key: "reports" },
+      { title: "Dashboard", url: "/en/dashboard//admin", key: "dashboard" },
+      { title: "My Properties", url: "/en/dashboard//admin", key: "properties" },
+      { title: "BLOGS", url: "/en/dashboard//admin", key: "blog" },
+      { title: "Manage Users", url: "/en/dashboard//admin", key: "users" },
+      { title: "Reports", url: "/en/dashboard//admin", key: "reports" },
       { title: "Logout", url: "#", key: "logout" },
     ],
     agent: [
-      { title: "My Profile", url: "/dashboard/agent", key: "profile" },
-      { title: "My Properties", url: "/dashboard/agent", key: "properties" },
-      { title: "Support", url: "/dashboard/agent", key: "support" },
+      { title: "My Profile", url: "/en/dashboard//agent", key: "profile" },
+      { title: "My Properties", url: "/en/dashboard//agent", key: "properties" },
+      { title: "Support", url: "/en/dashboard//agent", key: "support" },
       { title: "Logout", url: "#", key: "logout" },
     ],
     owner: [
-      { title: "My Profile", url: "/dashboard/agent", key: "profile" },
-      { title: "My Properties", url: "/dashboard/agent", key: "properties" },
-      { title: "Support", url: "/dashboard/agent", key: "support" },
+      { title: "My Profile", url: "/en/dashboard//agent", key: "profile" },
+      { title: "My Properties", url: "/en/dashboard//agent", key: "properties" },
+      { title: "Support", url: "/en/dashboard//agent", key: "support" },
       { title: "Logout", url: "#", key: "logout" },
     ],
     client: [
-      { title: "Browse Properties", url: "/dashboard/client", key: "properties" },
-      { title: "Contact Support", url: "/dashboard/client", key: "support" },
+      { title: "Browse Properties", url: "/en/dashboard//client", key: "properties" },
+      { title: "Contact Support", url: "/en/dashboard//client", key: "support" },
       { title: "Logout", url: "#", key: "logout" },
     ],
   };

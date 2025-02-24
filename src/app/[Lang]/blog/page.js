@@ -12,8 +12,9 @@ export const metadata = {
   keywords:"blog expatriation, logement Émirats, conseils expatlife",
 };
 
-export default async function Blog() {
+export default async function Blog({params}) {
   const articles = await getAllArticles();
+  const { Lang } = await params;
 
 
   return (
@@ -21,7 +22,7 @@ export default async function Blog() {
    
     <div className="bg-gray-100">
       
-      <Header/>
+      <Header lang={Lang}/>
       <header className="py-10 bg-teal-500 text-white text-center">
         <h1 className="text-4xl font-bold">Nos Articles de Blog</h1>
         <p className="mt-2">Découvrez nos conseils et astuces pour une expatriation réussie.</p>

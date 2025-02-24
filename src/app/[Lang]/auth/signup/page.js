@@ -71,7 +71,7 @@ export default function SignUp() {
       await saveUserToFirestore(user);
 
       // Redirect to the dashboard or another page
-      router.push("/auth/signup2");
+      router.push("en/auth/signup2");
     } catch (error) {
       console.error("Sign-up error:", error);
       if (error.code === "auth/email-already-in-use") {
@@ -97,7 +97,7 @@ export default function SignUp() {
       await saveUserToFirestore(user);
 
       // Redirect to the dashboard or another page
-      router.push("/auth/signup2");
+      router.push("en/auth/signup2");
     } catch (error) {
       console.error("Google sign-up error:", error);
       setError("An error occurred during Google sign-up.");
@@ -165,7 +165,7 @@ export default function SignUp() {
             </div>
           </form>
           <div className="flex justify-between mt-4">
-            <Link href={"/auth/login"} className="text-sm underline text-teal-600">
+            <Link href={"en/auth/login"} className="text-sm underline text-teal-600">
               Already registered? Log in
             </Link>
           </div>
