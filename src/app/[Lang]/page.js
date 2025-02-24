@@ -74,11 +74,11 @@ export default async function  Home({params}) {
   ];
   const reviews = [
     {
-      authorName: "Alya Benkasi",
+      authorName: "illidio audel",
       profilePhoto: "/images/default-avatar.png", // Mettre des avatars corrects
       text: "Expatlife m'a aidé à trouver un logement parfait en un temps record. Je recommande à 100% !",
       rating: 5,
-      relativeTime: "il y a 2 jours",
+      relativeTime: "il y a 1 jours",
     },
     {
       authorName: "Nicolas Belford",
@@ -123,17 +123,18 @@ export default async function  Home({params}) {
         />
       </div>
       <h2 className="text-2xl sm:text-3xl md:text-5xl font-extrabold mb-6 leading-tight">
-        Trouvez votre logement aux ÉMIRATS, grâce à un accompagnement personnalisé pour une arrivée sereine et réussie.
+        
+        {dictionary.home.hero_title}
       </h2>
       <div className="flex flex-col sm:flex-row justify-center gap-4">
         <Link href="/location">
           <button className="bg-black text-white font-medium py-3 px-6 rounded-lg hover:bg-gray-800 transition">
-            TROUVER UN LOGEMENT
+          {dictionary.home.hero_find_home}
           </button>
         </Link>
         <Link href="#CONTACT">
           <button className="bg-teal-500 text-black font-medium py-3 px-6 rounded-lg hover:bg-teal-600 transition">
-            NOUS CONTACTER
+          {dictionary.home.hero_contact_us}
           </button>
         </Link>
       </div>
@@ -145,13 +146,14 @@ export default async function  Home({params}) {
         <section className="flex flex-col-reverse md:flex-row items-center justify-between px-4 sm:px-6 md:px-20 2xl:px-96 space-y-8 md:space-y-0 md:space-x-8 py-10 bg-white">
     <div className="max-w-lg text-center md:text-left">
       <h2 className="text-xl sm:text-2xl md:text-4xl font-bold mb-4">
-        Chaque nouvel arrivant sur le territoire des Émirats rencontre le même problème,
+      {dictionary.home.problem_title}
       </h2>
       <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-teal-500 mb-6">
-        TROUVER UN LOGEMENT RAPIDE !
+      {dictionary.home.problem_subtitle}
+        
       </h3>
       <p className="text-base sm:text-lg text-gray-700">
-        Sans visa ou en attente de celui-ci, il est difficile de se loger car le plus régulièrement, la location est annuelle et la seule solution est de se tourner vers des hôtels ou logements de vacances.
+      {dictionary.home.problem_text}
       </p>
     </div>
     <div className="w-full md:w-auto flex justify-center">
@@ -169,7 +171,7 @@ export default async function  Home({params}) {
 
         {/* Our Priorities Section */}
         <section className="bg-gray-100 py-16">
-    <h2 className="text-center text-2xl sm:text-3xl font-bold mb-10">NOTRE PRIORITÉ</h2>
+    <h2 className="text-center text-2xl sm:text-3xl font-bold mb-10">{dictionary.home.our_priority}</h2>
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-4 sm:px-6 md:px-20">
       {/* Card 1 */}
       <a href="#ACCOMPAGNEMENT">
@@ -177,7 +179,7 @@ export default async function  Home({params}) {
           <div className="text-teal-500 text-3xl sm:text-4xl mb-4 flex justify-start w-full">
             <Users />
           </div>
-          <h3 className="font-bold text-lg sm:text-xl mb-4 text-center">VOTRE ACCOMPAGNEMENT</h3>
+          <h3 className="font-bold text-lg sm:text-xl mb-4 text-center">{dictionary.home.your_support}</h3>
           <p className="text-gray-700 text-justify sm:text-start">
             Nous vous mettons à disposition la création de votre visa personnel, celui de votre famille et également votre société ainsi que toutes démarches administratives pour votre installation.
           </p>
@@ -189,7 +191,7 @@ export default async function  Home({params}) {
           <div className="text-teal-500 text-3xl sm:text-4xl mb-4 flex justify-start w-full">
             <Briefcase />
           </div>
-          <h3 className="font-bold text-lg sm:text-xl mb-4 text-center">VOTRE INSTALLATION</h3>
+          <h3 className="font-bold text-lg sm:text-xl mb-4 text-center">{dictionary.home.your_installation}</h3>
           <p className="text-gray-700 text-justify sm:text-start">
             Avec ou sans visa, trouvez votre 1er logement, petite ou longue durée et installez-vous en toute sérénité grâce à nos partenaires et propriétaires triés sur le volet.
           </p>
@@ -201,7 +203,7 @@ export default async function  Home({params}) {
           <div className="text-teal-500 text-3xl sm:text-4xl mb-4 flex justify-start w-full">
             <Handshake />
           </div>
-          <h3 className="font-bold text-lg sm:text-xl mb-4 text-center">VOTRE CONFIANCE</h3>
+          <h3 className="font-bold text-lg sm:text-xl mb-4 text-center">{dictionary.home.your_trust}</h3>
           <p className="text-gray-700 text-justify sm:text-start">
             Notre expérience de plusieurs années en relation publique vous permettra d'être soutenu dans n'importe quelle démarche qu'elle soit administrative ou autre ici aux Émirats.
           </p>
@@ -221,14 +223,11 @@ export default async function  Home({params}) {
         EXPATLIFE.COM
       </h2>
       <h3 className="text-lg sm:text-xl font-bold text-teal-600 mb-6">
-        QUI SOMMES NOUS ?
+      {dictionary.home.about_us}
       </h3>
       <p className="text-gray-800 mb-6">
-        L'accompagnement des expatriés aux UAE est aujourd'hui une priorité pour
-        nous. Après plusieurs années de maîtrise dans la relation publique et la
-        communication, expatlife.com a été fondé pour apporter une solution aux
-        nouveaux expatriés afin de leur garantir une installation sereine et
-        complète.
+      {dictionary.home.expatlife_intro}
+        
       </p>
       <Link href="#CONTACT">
         <button className="bg-teal-500 text-white font-bold py-2 px-4 rounded-lg hover:bg-teal-600 transition">
@@ -266,7 +265,7 @@ export default async function  Home({params}) {
           </div>
           <div className="md:w-1/2">
             <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
-              VOTRE INSTALLATION
+            {dictionary.home.your_installation}
             </h2>
             <p className="text-teal-500 font-semibold mb-4">
               NOTRE PRIORITÉ : OFFRIR UNE EXPERTISE COMPLÈTE AU-DELÀ DE LA SIMPLE
@@ -296,7 +295,7 @@ export default async function  Home({params}) {
         >
           <div className="md:w-1/2">
             <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
-              VOTRE ACCOMPAGNEMENT
+            {dictionary.home.your_support}
             </h2>
             <p className="text-teal-500 font-semibold mb-4">
               NOTRE PRIORITÉ : RENDRE VOTRE INSTALLATION AUX ÉMIRATS PLUS ACCESSIBLES
@@ -348,7 +347,7 @@ export default async function  Home({params}) {
           </div>
           <div className="md:w-1/2">
             <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
-              VOTRE CONFIANCE
+            {dictionary.home.your_trust}
             </h2>
             <p className="text-teal-500 font-semibold mb-4">
               NOTRE PRIORITÉ : SIMPLIFIER VOS DÉMARCHES IMPRÉVUES GRÂCE À NOTRE

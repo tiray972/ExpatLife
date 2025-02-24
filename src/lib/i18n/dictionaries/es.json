@@ -1,134 +1,17 @@
 {
-  "hero": {
-    "title": "LYVIO MARINE",
-    "subtitle": "Especializado en equipos eléctricos para el sector marítimo",
-    "tagline": "A su servicio desde 1949"
-  },
-  "services": {
-    "title": "Nos Services",
-    "items": [
-      { "image": "/images/ServiceCible.png", "text": "Atteignez vos objectifs efficacement." },
-      { "image": "/images/ServiceBonhomme.png", "text": "Un accompagnement personnalisé pour chaque étape." },
-      { "image": "/images/ServiceEclair.png", "text": "Des solutions rapides et performantes." },
-      { "image": "/images/ServiceMains.png", "text": "Une collaboration basée sur la confiance." },
-      { "image": "/images/ServiceOutils.png", "text": "Des outils modernes adaptés à vos besoins." },
-      { "image": "/images/ServicePouce.png", "text": "Des résultats qui font la différence." }
-    ]
-  },
-  "brands": {
-    "title": "Marcas Distribuidas",
-    "desc": "Más de 70 marcas cuidadosamente seleccionadas entre las mejores del sector."
-  },"stats": {
-    "values": ["0", "+0", "0%", "0"],
-    "labels": [
-      "Años de actividad",
-      "Productos gestionados",
-      "Clientes satisfechos",
-      "Marcas distribuidas"
-    ]
-  },
-  "productsAcceuil": {
-    "title": "Nuestros Mejores Productos",
-    "items": [
-      { "name": "KOHLER GM91570", "price": "124,00€", "image": "/images/product1.jpg" },
-      { "name": "Conector Metálico Tamaño 6", "price": "38,00€", "image": "/images/product2.jpg" },
-      { "name": "BOMBA GIANNESCHI", "price": "650,00€", "image": "/images/product3.jpg" }
-    ]
-  },"about": {
-    "title": "Nuestra Empresa",
-    "description": "LYVIO MARINE, una empresa familiar en Antibes desde 1949, está especializada en electricidad marina. A solo 1 minuto del puerto Vauban, ofrece repuestos, reparaciones y pedidos en línea con entrega internacional.",
-    "address": "Encuéntranos en 4 Avenue Frédéric Mistral, 06600 Antibes."
-  },"faq": {
-    "title": "FAQ - ¿Necesitas ayuda?",
-    "questions": [
-      {
-        "question": "¿Qué servicios ofrece Lyvio?",
-        "answer": "Lyvio está especializada en sistemas de navegación y electricidad marítima. Ofrecemos:\n\nInstalación de sistemas eléctricos marítimos: Configuración de sistemas de navegación, comunicación y alimentación a bordo de embarcaciones.\nMantenimiento y reparación: Mantenimiento regular y reparaciones para garantizar el correcto funcionamiento de sus sistemas eléctricos y de navegación.\nAsesoramiento y optimización: Consultoría para optimizar la eficiencia de sus sistemas marítimos según sus necesidades específicas."
-      },
-      {
-        "question": "¿En qué tipos de embarcaciones trabaja Lyvio?",
-        "answer": "Trabajamos en una amplia variedad de embarcaciones, incluyendo yates, barcos de pesca, embarcaciones comerciales y barcos de recreo. Nuestros expertos están capacitados para trabajar en equipos variados, adaptándose a las especificidades de cada tipo de embarcación."
-      },
-      {
-        "question": "¿Cuál es su zona de actuación?",
-        "answer": "Lyvio opera principalmente en la región de Provenza-Alpes-Costa Azul. También podemos desplazarnos internacionalmente para proyectos específicos. Contáctenos para hablar sobre posibles intervenciones fuera de nuestra zona habitual."
-      },
-      {
-        "question": "¿Ofrecen un servicio de emergencia para averías?",
-        "answer": "Sí, Lyvio ofrece un servicio de emergencia disponible 24/7 para averías eléctricas y problemas críticos de navegación. En caso de necesidad, puede contactarnos rápidamente, y enviaremos un equipo para resolver el problema lo antes posible."
-      },
-      {
-        "question": "¿Cómo obtener un presupuesto personalizado con Lyvio?",
-        "answer": "Para obtener un presupuesto, puede contactarnos a través del formulario de contacto en nuestro sitio web, por teléfono o por correo electrónico. Le haremos algunas preguntas sobre su proyecto para entender sus necesidades y le proporcionaremos un presupuesto detallado en un plazo de 48 horas."
-      },
-      {
-        "question": "¿Cómo puedo hacer un seguimiento del progreso de mi proyecto?",
-        "answer": "Proporcionamos informes regulares y detallados sobre el progreso del trabajo. También tiene la posibilidad de contactar directamente con su jefe de proyecto para cualquier pregunta o actualización adicional."
-      },
-      {
-        "question": "¿Cómo puedo contactar con Lyvio?",
-        "answer": "Puede comunicarse con nosotros por teléfono al +33 (4) 93 34 18 89 o +33 (6) 29 69 58 65, por correo electrónico a contact@lyviomarine.fr, o a través del formulario de contacto en nuestro sitio web. Estamos disponibles para responder a sus preguntas, hablar sobre sus proyectos u organizar una consulta."
-      }
-    ]
-  },  
-  "common": {
-    "service":"services",
-    "contact":"contact",
-    "cart": "Carrito",
-    "search": "Buscar",
-    "menu": "Menú",
-    "account": "Cuenta",
-    "login": "Iniciar sesión",
-    "register": "Registrarse",
-    "logout": "Cerrar sesión",
-    "home": "Inicio",
-    "products": "Productos",
-    "categories": "Categorías",
-    "store": "Tienda",
-    "language": "Cambiar idioma",
-    "name": "Nombre",
-    "slug": "Slug",
-    "description": "Descripción",
-    "parentCategory": "Categoría padre",
-    "noParent": "Sin padre",
-    "displayType": "Tipo de visualización",
-    "default": "Por defecto",
-    "thumbnail": "Miniatura",
-    "create": "Crear",
-    "save": "Guardar"
-  },
-  "admin": {
-    "dashboard": "Dashboard",
-    "products": "Products",
-    "categories": "Categories",
-    "orders": "Orders",
-    "customers": "Customers",
-    "settings": "Settings",
-    "totalRevenue": "Total Revenue",
-    "newCustomers": "New Customers",
-    "productsInStock": "Products in Stock",
-    "pendingOrders": "Pending Orders",
-    "recentOrders": "Recent Orders",
-    "orderNumber": "Order Number",
-    "customer": "Customer",
-    "date": "Date",
-    "status": "Status",
-    "total": "Total",
-    "actions": "Actions"
-  },
-  "product": {
-    "addToCart": "Añadir al carrito",
-    "outOfStock": "Agotado",
-    "price": "Precio",
-    "description": "Descripción",
-    "details": "Detalles del producto",
-    "discover": "Descubre nuestra colección",
-    "quality": "Productos de calidad para todos los estilos"
-  },
-  "cart": {
-    "empty": "Tu carrito está vacío",
-    "checkout": "Pagar",
-    "total": "Total",
-    "remove": "Eliminar"
+  "home":{
+    "hero_title": "Encuentra tu hogar en los Emiratos con un acompañamiento personalizado para una llegada exitosa y sin preocupaciones.",
+    "hero_find_home": "ENCONTRAR UNA VIVIENDA",
+    "hero_contact_us": "CONTACTANOS",
+    "problem_title": "Cada recién llegado a los Emiratos enfrenta el mismo problema,",
+    "problem_subtitle": "¡ENCONTRAR UNA VIVIENDA RÁPIDAMENTE!",
+    "problem_text": "Sin visa o en espera de una, es difícil encontrar alojamiento, ya que la mayoría de los alquileres son anuales. La única solución es recurrir a hoteles o alojamientos vacacionales.",
+    "our_priority": "NUESTRA PRIORIDAD",
+    "your_support": "TU ACOMPAÑAMIENTO",
+    "your_installation": "TU INSTALACIÓN",
+    "your_trust": "TU CONFIANZA",
+    "about_us": "¿QUIÉNES SOMOS?",
+    "expatlife_intro": "Ayudar a los expatriados en los Emiratos Árabes Unidos es ahora una prioridad para nosotros. Después de varios años de experiencia en relaciones públicas y comunicación, expatlife.com fue fundado para ofrecer una solución a los nuevos expatriados, garantizando una instalación completa y sin estrés.",
+    "faq_title": "Frequently Asked Questions"
   }
 }
