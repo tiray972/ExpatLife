@@ -4,7 +4,8 @@ import Header from "@/components/header";
 import { Instagram, Facebook, MessageCircle } from "lucide-react";
 import { useState } from "react";
 
-export default function Contact() {
+export default async function Contact({params}) {
+  const { Lang } = await params;
     const [formData, setFormData] = useState({
         name: "",
         surname: "",
@@ -38,7 +39,7 @@ export default function Contact() {
     <div className="relative items-center justify-center bg-cover bg-center"
     style={{ backgroundImage: 'url("/images/200.png")' }}
     >
-        <Header />
+        <Header lang={Lang} />
         <div className="min-h-screen flex items-center justify-center py-10 px-4">
             <div className="max-w-4xl w-full bg-white shadow-lg rounded-lg p-6">
                 {/* Header */}
