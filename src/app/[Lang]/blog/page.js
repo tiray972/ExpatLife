@@ -44,7 +44,7 @@ export default async function Blog({params}) {
               <p className="text-sm text-gray-500">
                 Par {article.author} - {new Date(article.publishedDate).toLocaleDateString("fr-FR")}
               </p>
-              <Link href={`/blog/${article.slug}`} className="text-teal-500 font-semibold mt-4 block hover:underline">
+              <Link href={`/${Lang}/blog/${article.slug}`} className="text-teal-500 font-semibold mt-4 block hover:underline">
                 Lire l'article
               </Link>
             </div>
