@@ -2,10 +2,13 @@
 import Footer from "@/components/Footer";
 import Header from "@/components/header";
 import { Instagram, Facebook, MessageCircle } from "lucide-react";
+import { useParams } from "next/navigation";
 import { useState } from "react";
 
-export default async function Contact({params}) {
-  const { Lang } = await params;
+export default  function Contact() {
+  // const { Lang } = await params;
+    const params = useParams();  // Récupère params correctement
+    const Lang = params.Lang;  // Maintenant lang est disponible
     const [formData, setFormData] = useState({
         name: "",
         surname: "",
@@ -39,7 +42,7 @@ export default async function Contact({params}) {
     <div className="relative items-center justify-center bg-cover bg-center"
     style={{ backgroundImage: 'url("/images/200.png")' }}
     >
-        <Header lang={Lang} />
+        <Header lang={Lang} />  
         <div className="min-h-screen flex items-center justify-center py-10 px-4">
             <div className="max-w-4xl w-full bg-white shadow-lg rounded-lg p-6">
                 {/* Header */}
