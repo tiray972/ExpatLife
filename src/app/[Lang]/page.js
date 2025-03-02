@@ -181,7 +181,7 @@ export default async function  Home({params}) {
           </div>
           <h3 className="font-bold text-lg sm:text-xl mb-4 text-center">{dictionary.home.your_support}</h3>
           <p className="text-gray-700 text-justify sm:text-start">
-            Nous vous mettons à disposition la création de votre visa personnel, celui de votre famille et également votre société ainsi que toutes démarches administratives pour votre installation.
+          {dictionary.home.your_support_p}
           </p>
         </div>
       </a>
@@ -193,7 +193,7 @@ export default async function  Home({params}) {
           </div>
           <h3 className="font-bold text-lg sm:text-xl mb-4 text-center">{dictionary.home.your_installation}</h3>
           <p className="text-gray-700 text-justify sm:text-start">
-            Avec ou sans visa, trouvez votre 1er logement, petite ou longue durée et installez-vous en toute sérénité grâce à nos partenaires et propriétaires triés sur le volet.
+          {dictionary.home.your_installation_p}
           </p>
         </div>
       </a>
@@ -205,7 +205,7 @@ export default async function  Home({params}) {
           </div>
           <h3 className="font-bold text-lg sm:text-xl mb-4 text-center">{dictionary.home.your_trust}</h3>
           <p className="text-gray-700 text-justify sm:text-start">
-            Notre expérience de plusieurs années en relation publique vous permettra d'être soutenu dans n'importe quelle démarche qu'elle soit administrative ou autre ici aux Émirats.
+          {dictionary.home.your_trust_p}
           </p>
         </div>
       </a>
@@ -231,7 +231,7 @@ export default async function  Home({params}) {
       </p>
       <Link href="#CONTACT">
         <button className="bg-teal-500 text-white font-bold py-2 px-4 rounded-lg hover:bg-teal-600 transition">
-          NOUS CONTACTER
+          {dictionary.home.hero_contact_us}
         </button>
       </Link>
     </div>
@@ -268,21 +268,14 @@ export default async function  Home({params}) {
             {dictionary.home.your_installation}
             </h2>
             <p className="text-teal-500 font-semibold mb-4">
-              NOTRE PRIORITÉ : OFFRIR UNE EXPERTISE COMPLÈTE AU-DELÀ DE LA SIMPLE
-              RECHERCHE DE LOGEMENT, EN VOUS ACCOMPAGNANT DANS CHAQUE ÉTAPE DE VOTRE
-              INSTALLATION AUX ÉMIRATS.
+              {dictionary.home.your_installation_p1}
             </p>
             <p className="text-gray-700 mb-4">
-              Grâce à Expatlife.com, nous vous proposons une sélection rigoureuse de
-              logements aux Émirats, soigneusement triés par nos équipes pour garantir
-              une qualité optimale dès votre arrivée. Que vous recherchiez une solution
-              pour un court ou un long séjour, avec ou sans visa, et pour tout budget,
-              chaque logement sera adapté à vos besoins, que vous soyez seul ou
-              accompagné de votre famille.
+              {dictionary.home.your_installation_p2}
             </p>
             <Link href="/location">
               <button className="bg-teal-500 text-white font-bold py-2 px-4 rounded hover:bg-teal-600">
-                TROUVER UN LOGEMENT
+                {dictionary.home.hero_find_home}
               </button>
             </Link>
           </div>
@@ -298,25 +291,15 @@ export default async function  Home({params}) {
             {dictionary.home.your_support}
             </h2>
             <p className="text-teal-500 font-semibold mb-4">
-              NOTRE PRIORITÉ : RENDRE VOTRE INSTALLATION AUX ÉMIRATS PLUS ACCESSIBLES
-              GRÂCE À UN ACCOMPAGNEMENT PERSONNALISÉ ET UN RÉSEAU DE PARTENAIRES
-              DÉDIÉS.
+            {dictionary.home.your_support_p1}
             </p>
             <p className="text-gray-700 mb-4">
-              Nos partenaires se chargeront intégralement de la création de vos visas,
-              si votre entreprise actuelle ne prend pas cette démarche en charge. La
-              question du visa est une étape clé pour s’installer aux Émirats Arabes
-              Unis, c’est pourquoi nous veillons à ce que le processus soit simple,
-              rapide et conforme aux réglementations en vigueur. Si vous êtes en pleine
-              réflexion sur le lancement de votre propre entreprise ou prêt à
-              concrétiser ce projet, nous serons à vos côtés pour vous guider, que ce
-              soit pour la constitution juridique, les démarches administratives, ou
-              l’obtention des licences nécessaires.
+            {dictionary.home.your_support_p2}
             </p>
-            <p className="text-teal-500 mb-4">SOYEZ PATIENTS NOUS ARRIVONS PROCHAINEMENT</p>
+            <p className="text-teal-500 mb-4">{dictionary.home.be_patient}</p>
             <Link href={"mailto:contact@expatlife-uae.com"}>
               <button className="bg-teal-500 text-white font-bold py-2 px-4 rounded hover:bg-teal-600">
-                PLUS D’INFORMATIONS
+                {dictionary.home.more_info}
               </button>
             </Link>
           </div>
@@ -350,22 +333,15 @@ export default async function  Home({params}) {
             {dictionary.home.your_trust}
             </h2>
             <p className="text-teal-500 font-semibold mb-4">
-              NOTRE PRIORITÉ : SIMPLIFIER VOS DÉMARCHES IMPRÉVUES GRÂCE À NOTRE
-              EXPERTISE LOCALE ET UN RÉSEAU DE PARTENAIRES FIABLES.
+              
+              {dictionary.home.your_trust_p1}
             </p>
             <p className="text-gray-700 mb-4">
-              Après votre installation, il est fréquent de se retrouver face à des
-              démarches ou des questions imprévues concernant la vie quotidienne, comme
-              l'achat d'une voiture, le choix d'une école ou la souscription à une
-              assurance. Expatlife.com vous accompagne sur toutes vos demandes,
-              qu'elles concernent votre vie actuelle ou vos projets futurs aux Émirats
-              Arabes Unis. Grâce à notre solide expérience sur le territoire et à un
-              réseau de partenaires fiables, nous vous apportons des solutions adaptées
-              et un soutien constant.
+            {dictionary.home.your_trust_p2}
             </p>
             <Link href="/contact">
               <button className="bg-teal-500 text-white font-bold py-2 px-4 rounded hover:bg-teal-600">
-                NOUS CONTACTER
+              {dictionary.home.hero_contact_us}
               </button>
             </Link>
           </div>

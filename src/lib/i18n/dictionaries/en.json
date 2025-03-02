@@ -1,17 +1,28 @@
 {
-  "home":{
-    "hero_title": "Find your home in the UAE with personalized support for a smooth and successful arrival.",
+  "home": {
+    "hero_title": "Find your home in the EMIRATES with personalized support for a smooth and successful arrival.",
     "hero_find_home": "FIND A HOME",
     "hero_contact_us": "CONTACT US",
-    "problem_title": "Every newcomer to the UAE faces the same problem,",
+    "problem_title": "Every newcomer to the Emirates faces the same problem,",
     "problem_subtitle": "FINDING A HOME QUICKLY!",
-    "problem_text": "Without a visa or while waiting for one, it is difficult to find accommodation as most rentals are annual. The only solution is to turn to hotels or vacation rentals.",
+    "problem_text": "Without a visa or while waiting for one, it is difficult to find accommodation as most rentals are annual. The only solution is often to turn to hotels or vacation rentals.",
     "our_priority": "OUR PRIORITY",
     "your_support": "YOUR SUPPORT",
-    "your_installation": "YOUR INSTALLATION",
+    "your_support_p": "We assist you in obtaining your personal visa, your family's visa, and even your business visa, along with all the necessary administrative procedures for your settlement.",
+    "your_support_p1": "OUR PRIORITY: MAKING YOUR SETTLEMENT IN THE EMIRATES MORE ACCESSIBLE THROUGH PERSONALIZED SUPPORT AND A NETWORK OF DEDICATED PARTNERS.",
+    "your_support_p2": "Our partners will fully handle your visa processing if your current company does not cover this step. Obtaining a visa is a key step in settling in the UAE, which is why we ensure the process is simple, fast, and compliant with current regulations. If you are considering launching your own business or are ready to make it a reality, we will guide you through the legal structuring, administrative processes, and obtaining the necessary licenses.",
+    "your_installation": "YOUR SETTLEMENT",
+    "your_installation_p": "With or without a visa, find your first home for short or long stays and settle in with peace of mind thanks to our carefully selected partners and landlords.",
+    "your_installation_p1": "OUR PRIORITY: PROVIDING A COMPLETE EXPERTISE BEYOND JUST FINDING A HOME, BY SUPPORTING YOU AT EVERY STEP OF YOUR SETTLEMENT IN THE EMIRATES.",
+    "your_installation_p2": "Through Expatlife.com, we offer a carefully selected range of accommodations in the Emirates, handpicked by our team to ensure the best quality from the moment you arrive. Whether you need short-term or long-term housing, with or without a visa, and regardless of your budget, every accommodation will be tailored to your needs—whether you are alone or with your family.",
     "your_trust": "YOUR TRUST",
+    "be_patient": "BE PATIENT, WE ARE COMING SOON",
+    "more_info": "MORE INFORMATION",
+    "your_trust_p": "Our years of experience in public relations will provide you with support for any process, whether administrative or otherwise, in the Emirates.",
+    "your_trust_p1": "OUR PRIORITY: SIMPLIFYING YOUR UNEXPECTED PROCEDURES THROUGH OUR LOCAL EXPERTISE AND A NETWORK OF RELIABLE PARTNERS.",
+    "your_trust_p2": "After settling in, you may encounter unexpected procedures or questions about daily life, such as buying a car, choosing a school, or getting insurance. Expatlife.com assists you with all your needs, whether related to your current life or future projects in the UAE. Thanks to our solid experience in the region and a network of trusted partners, we provide tailored solutions and continuous support.",
     "about_us": "WHO ARE WE?",
-    "expatlife_intro": "Helping expatriates in the UAE is now a priority for us. After several years of expertise in public relations and communication, expatlife.com was founded to provide a solution for new expatriates, ensuring a smooth and complete relocation.",
+    "expatlife_intro": "Supporting expatriates in the UAE is now a priority for us. After several years of expertise in public relations and communication, expatlife.com was founded to provide a solution for new expatriates, ensuring them a smooth and complete settlement.",
     "faq_title": "Frequently Asked Questions"
   }
 }
