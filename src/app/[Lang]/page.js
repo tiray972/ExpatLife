@@ -293,7 +293,7 @@ export default async function  Home({params}) {
             <p className="text-gray-700 mb-4">
             {dictionary.home.your_trust_p2}
             </p>
-            <Link href="/contact">
+            <Link href={`/${Lang}/contact`}>
               <button className="bg-teal-500 text-white font-bold py-2 px-4 rounded hover:bg-teal-600">
               {dictionary.home.hero_contact_us}
               </button>
