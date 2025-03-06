@@ -12,6 +12,7 @@ import PushNotificationManager from '@/components/Notif/PushNotificationManager'
 import LatestArticles from '@/components/articles/LatestArticles';
 import { getDictionary } from '@/lib/i18n/get-dictionary';
 import { locales } from '@/lib/i18n/config';
+import BandeauContact from '@/components/contact/BandeauContact';
 
 export async function generateStaticParams() {
   return locales.map((Lang) => ({
@@ -60,6 +61,7 @@ export default async function  Home({params}) {
       <div className="bg-gray-100 scroll-smooth">
         
         <Header lang={Lang}  />
+        <BandeauContact/>
         {/* Hero Section */}
         <section
     className="relative min-h-12 py-8 flex items-center justify-center bg-cover bg-center"

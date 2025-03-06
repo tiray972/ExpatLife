@@ -43,13 +43,13 @@ export default async function  acompagnementpage({params}) {
           </div>
           <div className="md:w-1/2">
             <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
-            {dictionary.home.your_installation}
+            {dictionary.home.your_support}
             </h2>
             <p className="text-teal-500 font-semibold mb-4">
-              {dictionary.home.your_installation_p1}
+              {dictionary.home.your_support_p1}
             </p>
             <p className="text-gray-700 mb-4">
-              {dictionary.home.your_installation_p2}
+              {dictionary.home.your_support_p2}
             </p>
             <Link href="/location">
               <button className="bg-teal-500 text-white font-bold py-2 px-4 rounded hover:bg-teal-600">
