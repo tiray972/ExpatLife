@@ -23,6 +23,90 @@
     "your_trust_p2": "After settling in, you may encounter unexpected procedures or questions about daily life, such as buying a car, choosing a school, or getting insurance. Expatlife.com assists you with all your needs, whether related to your current life or future projects in the UAE. Thanks to our solid experience in the region and a network of trusted partners, we provide tailored solutions and continuous support.",
     "about_us": "WHO ARE WE?",
     "expatlife_intro": "Supporting expatriates in the UAE is now a priority for us. After several years of expertise in public relations and communication, expatlife.com was founded to provide a solution for new expatriates, ensuring them a smooth and complete settlement.",
-    "faq_title": "Frequently Asked Questions"
+    "faq_title": "Frequently Asked Questions",
+    "faq":[
+      {
+        "question": "What services does Expatlife offer?",
+        "answer":
+          "Expatlife helps expatriates settle in the United Arab Emirates, including finding housing, obtaining visas, and providing administrative guidance."
+      },
+      {
+        "question": "Can I find housing without a visa?",
+        "answer":
+          "Yes, Expatlife offers solutions to find housing whether you have a visa or not."
+      },
+      {
+        "question": "What types of housing are available?",
+        "answer":
+          "Expatlife offers a range of accommodations to suit different needs, for both short and long stays, with options for every budget."
+      },
+      {
+        "question": "Do you help obtain a visa or an Emirates ID?",
+        "answer":
+          "Yes, our specialized partners can assist you in obtaining your visa and Emirates ID, even if your company does not handle this process."
+      },
+      {
+        "question": "Can I get assistance to start my own business?",
+        "answer":
+          "Absolutely, Expatlife provides support for business creation, from the initial planning to official registration."
+      },
+      {
+        "question": "What does the support after installation include?",
+        "answer":
+          "We assist with common procedures such as buying a vehicle, choosing a school, or subscribing to insurance, thanks to our expertise and reliable partners."
+      },
+      {
+        "question": "Is there a customer service to answer my questions?",
+        "answer":
+          "Yes, our team is available to answer your questions and assist you with all your procedures in the Emirates."
+      },
+      {
+        "question": "Can I use your services if I don’t speak English or Arabic?",
+        "answer":
+          "Yes, we offer multilingual support to facilitate your transition to the Emirates."
+      },
+      {
+        "question": "What are the costs associated with your services?",
+        "answer":
+          "Costs vary depending on the requested services. Contact our team for a personalized quote."
+      }
+    ]
+  },
+  "contact": {
+    "title": "Ready to Start Your New Life in the Emirates?",
+    "subtitle": "Contact us today for personalized support in your project.",
+    "name": "First Name",
+    "surname": "Last Name",
+    "message": "Message",
+    "button": "Contact Us",
+    "sending": "Sending...",
+    "success": "Message sent successfully!",
+    "error": "Failed to send the message. Please try again."
+  },
+  "form": {
+    "title": "Support Form",
+    "country": "Current Country of Residence",
+    "profession": "Profession",
+    "companyExists": "Have you already established a company in the UAE?",
+    "activity": "What will be the activity?",
+    "startDate": "When do you wish to start the activity?",
+    "needsVisa": "Do you need a Visa?",
+    "familySponsorship": "Do you need to sponsor your family?",
+    "assistance": "Do you need assistance with:",
+    "accounting": "Accounting and taxation",
+    "legal": "Legal compliance",
+    "marketing": "Marketing and communication",
+    "recruitment": "Personnel recruitment",
+    "name": "Last Name",
+    "surname": "First Name",
+    "email": "Email",
+    "phone": "Phone",
+    "yes": "Yes",
+    "no": "No",
+    "next": "Next",
+    "previous": "Previous",
+    "submit": "Submit",
+    "select": "Select...",
+    "needsFamilySponsorship": "Do you need to sponsor your family?"
   }
 }

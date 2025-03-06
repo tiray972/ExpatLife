@@ -23,6 +23,91 @@
     "your_trust_p2": "Después de instalarte, es común encontrarse con trámites o preguntas inesperadas sobre la vida cotidiana, como la compra de un coche, la elección de una escuela o la contratación de un seguro. Expatlife.com te acompaña en todas tus necesidades, ya sea en relación con tu vida actual o tus proyectos futuros en los Emiratos Árabes Unidos. Gracias a nuestra sólida experiencia en el territorio y a una red de socios confiables, te proporcionamos soluciones adaptadas y un apoyo constante.",
     "about_us": "¿QUIÉNES SOMOS?",
     "expatlife_intro": "El apoyo a los expatriados en los EAU es hoy una prioridad para nosotros. Después de varios años de experiencia en relaciones públicas y comunicación, expatlife.com fue fundado para ofrecer una solución a los nuevos expatriados, asegurando una instalación tranquila y completa.",
-    "faq_title": "Preguntas Frecuentes"
+    "faq_title": "Preguntas Frecuentes",
+    "faq":[
+      {
+        "question": "¿Qué servicios ofrece Expatlife?",
+        "answer":
+          "Expatlife ayuda a los expatriados a establecerse en los Emiratos Árabes Unidos, incluyendo la búsqueda de vivienda, la obtención de visas y la orientación administrativa."
+      },
+      {
+        "question": "¿Puedo encontrar una vivienda sin visa?",
+        "answer":
+          "Sí, Expatlife ofrece soluciones para encontrar vivienda, ya sea que tenga una visa o no."
+      },
+      {
+        "question": "¿Qué tipos de viviendas están disponibles?",
+        "answer":
+          "Expatlife ofrece una variedad de alojamientos adaptados a diferentes necesidades, tanto para estancias cortas como largas, con opciones para todos los presupuestos."
+      },
+      {
+        "question": "¿Ayudan a obtener una visa o una Emirates ID?",
+        "answer":
+          "Sí, nuestros socios especializados pueden ayudarle a obtener su visa y Emirates ID, incluso si su empresa no se encarga de este proceso."
+      },
+      {
+        "question": "¿Puedo recibir asistencia para crear mi empresa?",
+        "answer":
+          "Absolutamente, Expatlife ofrece apoyo en los trámites de creación de empresas, desde la planificación inicial hasta el registro oficial."
+      },
+      {
+        "question": "¿Qué incluye el apoyo después de la instalación?",
+        "answer":
+          "Ayudamos con trámites comunes como la compra de un vehículo, la elección de una escuela o la contratación de un seguro, gracias a nuestra experiencia y socios confiables."
+      },
+      {
+        "question": "¿Hay un servicio de atención al cliente para responder mis preguntas?",
+        "answer":
+          "Sí, nuestro equipo está disponible para responder a sus preguntas y ayudarle en todos sus trámites en los Emiratos."
+      },
+      {
+        "question": "¿Puedo usar sus servicios si no hablo inglés o árabe?",
+        "answer":
+          "Sí, ofrecemos asistencia multilingüe para facilitar su transición a los Emiratos."
+      },
+      {
+        "question": "¿Cuáles son los costos asociados con sus servicios?",
+        "answer":
+          "Los costos varían según los servicios solicitados. Contacte a nuestro equipo para obtener un presupuesto personalizado."
+      }
+    ]
+  },
+  "contact": {
+    "title": "¿Listo para comenzar tu nueva vida en los Emiratos?",
+    "subtitle": "Contáctanos hoy para recibir apoyo personalizado en tu proyecto.",
+    "name": "Nombre",
+    "surname": "Apellido",
+    "message": "Mensaje",
+    "button": "Contáctanos",
+    "sending": "Enviando...",
+    "success": "¡Mensaje enviado con éxito!",
+    "error": "Error al enviar el mensaje. Inténtalo de nuevo."
+  },
+  "form": {
+    "title": "Formulario de Acompañamiento",
+    "country": "País de residencia actual",
+    "profession": "Profesión",
+    "companyExists": "¿Ha creado ya una empresa en los EAU?",
+    "activity": "¿Cuál será la actividad?",
+    "startDate": "¿Cuándo desea iniciar la actividad?",
+    "needsVisa": "¿Necesita una visa?",
+    "familySponsorship": "¿Necesita patrocinar a su familia?",
+    "assistance": "¿Necesita asistencia para:",
+    "accounting": "Contabilidad y fiscalidad",
+    "legal": "Cumplimiento legal",
+    "marketing": "Marketing y comunicación",
+    "recruitment": "Reclutamiento de personal",
+    "name": "Apellido",
+    "surname": "Nombre",
+    "email": "Correo electrónico",
+    "phone": "Teléfono",
+    "yes": "Sí",
+    "no": "No",
+    "next": "Siguiente",
+    "previous": "Anterior",
+    "submit": "Enviar",
+    "select": "Seleccionar...",
+    "needsFamilySponsorship": "¿Necesita patrocinar a su familia?"
   }
+
 }

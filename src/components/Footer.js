@@ -1,6 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
-export default function Footer() {
+const defaultLocales = ['fr', 'en','es'];
+export default function Footer({lang = "fr" ,locales = defaultLocales,}) {
+    
     return (
             <footer className="px-4 divide-y bg-gray-100 text-gray-800">
                 <div className="container flex flex-col justify-between py-10 mx-auto space-y-8 lg:flex-row lg:space-y-0">
@@ -19,16 +21,16 @@ export default function Footer() {
                             <h3 className="tracking-wide uppercase text-gray-900">Website</h3>
                             <ul className="space-y-1 ">
                                 <li>
-                                    <a rel="noopener hover:text-teal-500 noreferrer" href="/">Home</a>
+                                    <a rel="noopener hover:text-teal-500 noreferrer" href={`${lang}/`}>Home</a>
                                 </li>
                                 <li>
-                                    <a rel="noopener hover:text-teal-500 noreferrer" href="/blog">About</a>
+                                    <a rel="noopener hover:text-teal-500 noreferrer" href={`${lang}/blog`}>About</a>
                                 </li>
                                 <li>
-                                    <a rel="noopener hover:text-teal-500 noreferrer" href="/location">Properties for rent</a>
+                                    <a rel="noopener hover:text-teal-500 noreferrer" href={`${lang}/location`}>Properties for rent</a>
                                 </li>
                                 <li>
-                                    <a rel="noopener hover:text-teal-500 noreferrer" href="/contact">Contact</a>
+                                    <a rel="noopener hover:text-teal-500 noreferrer" href={`${lang}/contact`}>Contact</a>
                                 </li>
                             </ul>
                         </div>
@@ -36,7 +38,7 @@ export default function Footer() {
                             <h3 className="tracking-wide uppercase text-gray-900">Company</h3>
                             <ul className="space-y-1">
                                 <li>
-                                    <a rel="noopener hover:text-teal-500 noreferrer" href="/cgv">cgv</a>
+                                    <a rel="noopener hover:text-teal-500 noreferrer" href={`${lang}/cgv"`}>cgv</a>
                                 </li>
                                 <li>
                                     <a rel="noopener hover:text-teal-500 noreferrer" href="#">Terms of Service</a>

@@ -23,6 +23,90 @@
     "your_trust_p2":"Après votre installation, il est fréquent de se retrouver face à des démarches ou des questions imprévues concernant la vie quotidienne, comme l'achat d'une voiture, le choix d'une école ou la souscription à une assurance. Expatlife.com vous accompagne sur toutes vos demandes, qu'elles concernent votre vie actuelle ou vos projets futurs aux Émirats Arabes Unis. Grâce à notre solide expérience sur le territoire et à un réseau de partenaires fiables, nous vous apportons des solutions adaptées et un soutien constant.",
     "about_us": "QUI SOMMES NOUS ?",
     "expatlife_intro": "L'accompagnement des expatriés aux UAE est aujourd'hui une priorité pour nous. Après plusieurs années de maîtrise dans la relation publique et la communication, expatlife.com a été fondé pour apporter une solution aux nouveaux expatriés afin de leur garantir une installation sereine et complète.",
-    "faq_title": "Foire Aux Questions"
+    "faq_title": "Foire Aux Questions",
+    "faq":[
+      {
+        "question": "Quels services propose Expatlife ?",
+        "answer":
+          "Expatlife accompagne les expatriés dans leur installation aux Émirats Arabes Unis, notamment dans la recherche de logements, la création de visas, et le conseil en démarches administratives."
+      },
+      {
+        "question": "Puis-je trouver un logement sans visa ?",
+        "answer":
+          "Oui, Expatlife offre des solutions pour trouver des logements, que vous disposiez d'un visa ou non."
+      },
+      {
+        "question": "Quels types de logements sont disponibles ?",
+        "answer":
+          "Expatlife propose une gamme de logements adaptés à différents besoins, pour des durées courtes ou longues, avec des options pour tout budget."
+      },
+      {
+        "question": "Aidez-vous à obtenir un visa ou une Emirates ID ?",
+        "answer":
+          "Oui, nos partenaires spécialisés peuvent vous aider à créer votre visa et obtenir votre Emirates ID, même si votre entreprise ne prend pas en charge ce processus."
+      },
+      {
+        "question": "Puis-je bénéficier d'une assistance pour créer ma société ?",
+        "answer":
+          "Absolument, Expatlife propose un accompagnement pour les démarches de création d'entreprise, de la réflexion initiale à l'enregistrement officiel."
+      },
+      {
+        "question": "Que comprend l’accompagnement après l’installation ?",
+        "answer":
+          "Nous aidons pour des démarches courantes comme l'achat d'un véhicule, le choix d'une école, ou la souscription à une assurance, grâce à notre expertise et nos partenaires fiables."
+      },
+      {
+        "question": "Y a-t-il un service client pour répondre à mes questions ?",
+        "answer":
+          "Oui, notre équipe est disponible pour répondre à vos questions et vous accompagner dans toutes vos démarches aux Émirats."
+      },
+      {
+        "question": "Est-ce que je peux bénéficier de vos services si je ne parle pas anglais ou arabe ?",
+        "answer":
+          "Oui, nous offrons un accompagnement multilingue pour faciliter votre transition aux Émirats."
+      },
+      {
+        "question": "Quels sont les coûts associés à vos services ?",
+        "answer":
+          "Les coûts varient selon les services demandés. Contactez notre équipe pour un devis personnalisé."
+      }
+    ]
+  },
+  "contact": {
+    "title": "Prêt à Commencer Votre Nouvelle Vie aux Émirats ?",
+    "subtitle": "Contactez-nous dès aujourd'hui pour un accompagnement personnalisé dans votre projet.",
+    "name": "Nom",
+    "surname": "Prénom",
+    "message": "Message",
+    "button": "Nous Contacter",
+    "sending": "Envoi en cours...",
+    "success": "Message envoyé avec succès !",
+    "error": "Échec de l'envoi du message. Veuillez réessayer."
+  },
+  "form": {
+    "title": "Formulaire d'Accompagnement",
+    "country": "Pays de résidence actuel",
+    "profession": "Profession",
+    "companyExists": "Avez-vous déjà créé une société au UAE ?",
+    "activity": "Quelle sera l’activité ?",
+    "startDate": "Quand souhaitez-vous démarrer l’activité ?",
+    "needsVisa": "Avez-vous besoin de Visa ?",
+    "familySponsorship": "Devez-vous sponsoriser votre famille ?",
+    "assistance": "Avez-vous besoin d’une assistance pour :",
+    "accounting": "La comptabilité et fiscalité",
+    "legal": "La mise en conformité légale",
+    "marketing": "Le marketing et la communication",
+    "recruitment": "Le recrutement de personnel",
+    "name": "Nom",
+    "surname": "Prénom",
+    "email": "Email",
+    "phone": "Téléphone",
+    "yes": "Oui",
+    "no": "Non",
+    "next": "Suivant",
+    "previous": "Précédent",
+    "submit": "Envoyer",
+    "select": "Sélectionnez...",
+    "needsFamilySponsorship":"devez-vous sponsoriser votre famille ?"
   }
 }
