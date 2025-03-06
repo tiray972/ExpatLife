@@ -81,7 +81,7 @@ export default async function  Home({params}) {
         {dictionary.home.hero_title}
       </h2>
       <div className="flex flex-col sm:flex-row justify-center gap-4">
-        <Link href="/location">
+        <Link href={`/${Lang}/location`}>
           <button className="bg-black text-white font-medium py-3 px-6 rounded-lg hover:bg-gray-800 transition">
           {dictionary.home.hero_find_home}
           </button>
@@ -303,7 +303,7 @@ export default async function  Home({params}) {
 
 
         {/* Blog Section */}
-        <LatestArticles/>
+        <LatestArticles lang={Lang}/>
 
         {/* section FAQ */}
         <FAQ faqData={faqData}/>

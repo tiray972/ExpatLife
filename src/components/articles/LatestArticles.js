@@ -4,7 +4,7 @@ import Image from "next/image";
 // Fonction pour récupérer les articles depuis Firebase
 import { getAllArticles } from "@/lib/firebase/articles";
 
-export default async function LatestArticles() {
+export default async function LatestArticles({lang}) {
   const articles = await getAllArticles();
 
   // Trier les articles par date (plus récent en premier) et récupérer les 3 derniers
@@ -45,7 +45,7 @@ export default async function LatestArticles() {
                 {cleanSummary(article.summary || article.content)}  {/* Nettoyage du texte */}
               </p>
               <Link
-                href={`/blog/${article.slug}`}
+                href={`/${lang}/blog/${article.slug}`}
                 className="text-teal-500 font-medium hover:underline"
               >
                 Lire la suite
