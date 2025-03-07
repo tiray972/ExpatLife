@@ -1,9 +1,13 @@
+import Link from "next/link";
+
 const BandeauContact = () => {
     return (
       <div className="bg-teal-200 flex items-center justify-between px-6 py-3 rounded-lg shadow-md">
-        <p className="text-white font-semibold">
+        <p className="text-teal-800 font-semibold">
           Obtenir des conseils rapidement par un conseiller{" "}
-          <span className="text-teal-800 font-bold pl-5">+971 56 812 7898</span>
+          <Link href="tel:+971 56 812 7898">
+          <span className="text-teal-800 font-bold pl-5 underline">+971 56 812 7898</span>
+          </Link>
         </p>
         <a
           href="https://wa.me/971568127898"

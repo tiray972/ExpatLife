@@ -122,7 +122,7 @@ export default function MultiStepForm({ dictionary }) {
   ];
 
   return (
-    <Card className="w-full max-w-2xl mx-auto p-6">
+    <Card className="w-full max-w-2xl border-teal-500 mx-auto p-6">
       <CardContent>
         <h2 className="text-2xl font-bold text-teal-600 mb-4">{dictionary.form.title}</h2>
 

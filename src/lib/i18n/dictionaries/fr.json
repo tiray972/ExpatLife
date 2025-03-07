@@ -108,5 +108,25 @@
     "submit": "Envoyer",
     "select": "Sélectionnez...",
     "needsFamilySponsorship":"devez-vous sponsoriser votre famille ?"
+  },
+  "support":{
+    "titre_herro":"Créez votre société et obtenez votre visa aux Émirats arabes unis",
+    "subtitle_herro":"Un accompagnement personnalisé",
+    "p_herro":"Notre équipe d'experts est là pour vous guider à chaque étape du processus, en vous offrant un service sur mesure adapté à vos besoins spécifiques.",
+    "your_support_p1":"VOTRE ACCOMPAGNEMENT",
+    "why_choose":"Pourquoi choisir les Émirats arabes unis ?",
+    "why_choose1":"FISCALITÉ ATTRACTIVE",
+    "why_choose1_p":"Les UAE offrent un cadre fiscal parmi les plus avantageux au monde. Contrairement à de nombreux pays, ils ne prélèvent aucun impôt sur le revenu des particuliers et appliquent un taux d'impôt sur les sociétés de seulement 9%,  aux entreprises générant plus de 375 000 AED de bénéfices. ",
+    "why_choose2":"Infrastructures",
+    "why_choose2_p":"Les UAE sont reconnus pour leurs infrastructures ultramodernes qui facilitent la croissance des entreprises. Ils disposent d’un réseau de transports et de logistique avancé, avec des ports maritimes les plus performants au monde, des aéroports internationaux et un accès aux principales capitales mondiales. ",
+    "why_choose3":"Économie dynamique",
+    "why_choose3_p":"Les UAE possèdent une économie résiliente et diversifiée, soutenue par des secteurs en forte expansion. Grâce à une politique économique favorable aux investisseurs et à une réglementation simplifiée, le pays attire chaque année des milliers d'entreprises internationales et de start-ups.",
+    "service":"NOTRE SERVICE",
+    "servi_subtittle":"un accompagnement clé en main",
+    "servi_p":"Pour la création de votre entreprise aux Émirats arabes unis, nous prendrons en charge toutes les étapes du processus afin de vous garantir une installation rapide, efficace et conforme aux réglementations locales.Nous analyserons votre projet et vos objectifs afin de définir la meilleure structure juridique pour votre entreprise parmi la FREEZONE, la MAINLAND, OFF SHORE etc...",
+    "your_com":"communication et visibilité",
+    "your_com_p1":"se démarquer grâce à nos partenaires",
+    "your_com_p2":"Nous vous accompagnons dans la structuration de votre communication et le développement de votre présence.Cela passe par la création et l’optimisation de votre identité visuelle (logo, branding), la conception de votre site web et la gestion de votre e-réputation. Nous mettonsen place des stratégies digitales sur les réseaux sociaux, la publicité ciblée et les campagnes de communication. Nous vous connectons avec des experts reconnus afin d’amplifier votre notoriété et d’assurer la croissance de votre activité.",
+    "fghf":"" 
   }
 }

@@ -108,5 +108,25 @@
     "submit": "Submit",
     "select": "Select...",
     "needsFamilySponsorship": "Do you need to sponsor your family?"
-  }
+  },
+  "support": {
+    "titre_herro": "Create your company and get your visa in the United Arab Emirates",
+    "subtitle_herro": "Personalized support",
+    "p_herro": "Our team of experts is here to guide you every step of the way, offering you a tailor-made service adapted to your specific needs.",
+    "your_support_p1": "YOUR SUPPORT",
+    "why_choose": "Why choose the United Arab Emirates?",
+    "why_choose1": "ATTRACTIVE TAXATION",
+    "why_choose1_p": "The UAE offers one of the most advantageous tax frameworks in the world. Unlike many countries, they do not levy any income tax on individuals and apply a corporate tax rate of only 9% on businesses generating more than 375,000 AED in profits.",
+    "why_choose2": "Infrastructure",
+    "why_choose2_p": "The UAE is known for its state-of-the-art infrastructure that facilitates business growth. They have an advanced transport and logistics network, with some of the most efficient seaports in the world, international airports, and access to key global capitals.",
+    "why_choose3": "Dynamic Economy",
+    "why_choose3_p": "The UAE has a resilient and diversified economy, supported by rapidly expanding sectors. With an investor-friendly economic policy and simplified regulations, the country attracts thousands of international companies and startups each year.",
+    "service": "OUR SERVICE",
+    "servi_subtittle": "A turnkey support",
+    "servi_p": "For the creation of your company in the United Arab Emirates, we will handle all the steps of the process to ensure a fast, efficient, and compliant setup according to local regulations. We will analyze your project and objectives to define the best legal structure for your company, whether it's FREEZONE, MAINLAND, OFFSHORE, etc.",
+    "your_com": "Communication and Visibility",
+    "your_com_p1": "Stand out with our partners",
+    "your_com_p2": "We assist you in structuring your communication and developing your presence. This includes creating and optimizing your visual identity (logo, branding), designing your website, and managing your e-reputation. We implement digital strategies on social media, targeted advertising, and communication campaigns. We connect you with recognized experts to boost your visibility and ensure the growth of your business.",
+    "fghf": ""
+  }  
 }
