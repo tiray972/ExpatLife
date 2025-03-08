@@ -54,7 +54,7 @@ export default async function  acompagnementpage({params}) {
               {dictionary.support.p_herro}
             </p>
             <Link href="https://wa.me/971568127898">
-              <button className="bg-teal-500 text-white font-bold py-2 px-4 rounded hover:bg-teal-600">
+              <button className="bg-teal-500 text-white font-bold py-2 px-4 uppercase rounded hover:bg-teal-600">
                 {dictionary.support.creatSas}
               </button>
             </Link>
