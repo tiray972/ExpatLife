@@ -38,7 +38,7 @@ export default function Footer({lang = "fr" ,locales = defaultLocales,}) {
                             <h3 className="tracking-wide uppercase text-gray-900">Company</h3>
                             <ul className="space-y-1">
                                 <li>
-                                    <a rel="noopener hover:text-teal-500 noreferrer" href={`${lang}/cgv"`}>cgv</a>
+                                    <a rel="noopener hover:text-teal-500 noreferrer" href={`${lang}/cgv`}>cgv</a>
                                 </li>
                                 <li>
                                     <a rel="noopener hover:text-teal-500 noreferrer" href="#">Terms of Service</a>

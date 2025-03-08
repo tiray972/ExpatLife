@@ -84,7 +84,7 @@ export default function Timeline() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: index * 0.2 }}
-            className={`flex items-center w-full justify-center ${index % 2 === 0 ? "md:flex-row-reverse" : "flex-row"}`}
+            className={`flex items-center w-full justify-center ${index % 2 === 0 ? "flex-row-reverse" : "flex-row"}`}
           >
             <Card className="bg-white shadow-lg p-6 rounded-lg max-w-xl">
               <CardContent>
