@@ -1,10 +1,11 @@
 import Header from "@/components/header";
 import Footer from "@/components/Footer";
 
-export default function CVGPage() {
+export default async function CVGPage({params}) {
+  const { Lang } = await params;
     return (
         <>
-        <Header className="shadow-sm"/>
+        <Header lang={Lang} className="shadow-sm"/>
       <div className="bg-gradient-to-b from-gray-100 to-gray-50 py-10 px-6 sm:px-10 lg:px-20">
         <div className="max-w-4xl mx-auto">
           <h1 className="text-3xl font-bold text-teal-600 mb-4">
@@ -183,7 +184,7 @@ export default function CVGPage() {
         </div>
         
       </div>
-      <Footer/>
+      <Footer lang={Lang}/>
      </>
     );
   }

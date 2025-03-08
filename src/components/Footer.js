@@ -21,16 +21,16 @@ export default function Footer({lang = "fr" ,locales = defaultLocales,}) {
                             <h3 className="tracking-wide uppercase text-gray-900">Website</h3>
                             <ul className="space-y-1 ">
                                 <li>
-                                    <a rel="noopener hover:text-teal-500 noreferrer" href={`${lang}/`}>Home</a>
+                                    <a rel="noopener hover:text-teal-500 noreferrer" href={`/${lang}/`}>Home</a>
                                 </li>
                                 <li>
-                                    <a rel="noopener hover:text-teal-500 noreferrer" href={`${lang}/blog`}>About</a>
+                                    <a rel="noopener hover:text-teal-500 noreferrer" href={`/${lang}/blog`}>About</a>
                                 </li>
                                 <li>
-                                    <a rel="noopener hover:text-teal-500 noreferrer" href={`${lang}/location`}>Properties for rent</a>
+                                    <a rel="noopener hover:text-teal-500 noreferrer" href={`/${lang}/location`}>Properties for rent</a>
                                 </li>
                                 <li>
-                                    <a rel="noopener hover:text-teal-500 noreferrer" href={`${lang}/contact`}>Contact</a>
+                                    <a rel="noopener hover:text-teal-500 noreferrer" href={`/${lang}/contact`}>Contact</a>
                                 </li>
                             </ul>
                         </div>
@@ -38,10 +38,10 @@ export default function Footer({lang = "fr" ,locales = defaultLocales,}) {
                             <h3 className="tracking-wide uppercase text-gray-900">Company</h3>
                             <ul className="space-y-1">
                                 <li>
-                                    <a rel="noopener hover:text-teal-500 noreferrer" href={`${lang}/cgv`}>cgv</a>
+                                    <a rel="noopener hover:text-teal-500 noreferrer" href={`/${lang}/cgv`}>cgv</a>
                                 </li>
                                 <li>
-                                    <a rel="noopener hover:text-teal-500 noreferrer" href="#">Terms of Service</a>
+                                    <a rel="noopener hover:text-teal-500 noreferrer" href={`/${lang}/termofuse`}>Terms of Service</a>
                                 </li>
                             </ul>
                         </div>
