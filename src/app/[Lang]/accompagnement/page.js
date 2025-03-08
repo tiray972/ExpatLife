@@ -53,9 +53,9 @@ export default async function  acompagnementpage({params}) {
             <p className="text-gray-700 mb-4">
               {dictionary.support.p_herro}
             </p>
-            <Link href="/location">
+            <Link href="https://wa.me/971568127898">
               <button className="bg-teal-500 text-white font-bold py-2 px-4 rounded hover:bg-teal-600">
-                {dictionary.home.hero_find_home}
+                {dictionary.support.creatSas}
               </button>
             </Link>
           </div>
@@ -70,7 +70,7 @@ export default async function  acompagnementpage({params}) {
             <h2 className="text-center text-2xl sm:text-3xl uppercase font-bold mb-10">{dictionary.support.why_choose}</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-4 sm:px-6 md:px-20">
             {/* Card 1 */}
-            <a href="#ACCOMPAGNEMENT">
+            <a href="#timeline">
                 <div className="bg-white hover:scale-105 transition-transform p-6 border rounded-lg shadow-md flex flex-col items-start h-full">
                 <div className="text-teal-500 text-3xl sm:text-4xl mb-4 flex justify-start w-full">
                     <Users />
@@ -82,7 +82,7 @@ export default async function  acompagnementpage({params}) {
                 </div>
             </a>
             {/* Card 2 */}
-            <a href="#INSTALLATION">
+            <a href="#timeline">
                 <div className="bg-white hover:scale-105 transition-transform p-6 border rounded-lg shadow-md flex flex-col items-start h-full">
                 <div className="text-teal-500 text-3xl sm:text-4xl mb-4 flex justify-start w-full">
                     <Briefcase />
@@ -94,7 +94,7 @@ export default async function  acompagnementpage({params}) {
                 </div>
             </a>
             {/* Card 3 */}
-            <a href="#CONFIANCE">
+            <a href="#timeline">
                 <div className="bg-white hover:scale-105 transition-transform p-6 border rounded-lg shadow-md flex flex-col items-start h-full">
                 <div className="text-teal-500 text-3xl sm:text-4xl mb-4 flex justify-start w-full">
                     <Handshake />
@@ -108,7 +108,7 @@ export default async function  acompagnementpage({params}) {
             </div>
         </section>
 
-        {/* Section formulaire  */}
+        {/* Section service  */}
         <section
           id=""
           className="bg-white rounded-lg shadow-lg py-8 px-4 sm:px-6 md:px-20 2xl:px-96 flex flex-col md:flex-row md:space-x-8 space-y-8 md:space-y-0"

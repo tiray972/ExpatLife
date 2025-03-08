@@ -83,6 +83,7 @@ export default function Header({ lang = "fr" ,locales = defaultLocales,}) {
         <nav className="hidden md:flex space-x-6">
           <Link href={`/${lang}`} className="hover:text-teal-200">Home</Link>
           <Link href={`/${lang}/blog`} className="hover:text-teal-200">About</Link>
+          <Link href={`/${lang}/accompagnement`} className="hover:text-teal-200">Visa & bisness</Link>
           <Link href={`/${lang}/location`} className="hover:text-teal-200">Properties for rent</Link>
           {isLoggedIn && <Link href={`/${lang}/dashboard`} className="hover:text-teal-200">Dashboard</Link>}
           <Link href={`/${lang}/contact`} className="hover:text-teal-200">Contact</Link>
@@ -161,6 +162,7 @@ export default function Header({ lang = "fr" ,locales = defaultLocales,}) {
           <ul className="flex flex-col items-start space-y-4 px-4 py-6">
             <li><Link href={`/${lang}`} className="hover:text-teal-200">Home</Link></li>
             <li><Link href={`/${lang}/blog`} className="hover:text-teal-200">About</Link></li>
+            <li><Link href={`/${lang}/accompagnement`} className="hover:text-teal-200">Visa & bisness</Link></li>
             <li><Link href={`/${lang}/location`} className="hover:text-teal-200">Properties for rent</Link></li>
             {isLoggedIn && <li><Link href={`/${lang}/dashboard`} className="hover:text-teal-200">Dashboard</Link></li>}
             <li><Link href={`/${lang}/contact`} className="hover:text-teal-200">Contact</Link></li>

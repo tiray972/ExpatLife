@@ -70,7 +70,7 @@ export default function Timeline() {
   const { scrollYProgress } = useScroll();
 
   return (
-    <div className="relative min-h-screen bg-teal-200 flex flex-col items-center justify-center py-20 px-6">
+    <div id="timeline" className="relative min-h-screen bg-teal-200 flex flex-col items-center justify-center py-20 px-6">
       <motion.div
         className="absolute left-1/2 transform -translate-x-1/2 h-full w-[4px] bg-white"
         style={{ scaleY: scrollYProgress }}
