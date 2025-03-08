@@ -123,9 +123,9 @@ export default async function  acompagnementpage({params}) {
             <p className="text-gray-700 mb-4">
               {dictionary.support.servi_p}
             </p>
-            <Link href="/location">
+            <Link href="mailto:contact@expatlife-uae.com">
               <button className="bg-teal-500 text-white font-bold py-2 px-4 rounded hover:bg-teal-600">
-                {dictionary.home.hero_find_home}
+                {dictionary.home.more_info}
               </button>
             </Link>
           </div>
@@ -160,7 +160,7 @@ export default async function  acompagnementpage({params}) {
             {dictionary.support.your_com_p2}
             </p>
             {/* <p className="text-teal-500 mb-4">{dictionary.home.be_patient}</p> */}
-            <Link href={"mailto:contact@expatlife-uae.com"}>
+            <Link href={"ugm-communication.com"}>
               <button className="bg-teal-500 text-white font-bold py-2 px-4 rounded hover:bg-teal-600">
                 {dictionary.home.more_info}
               </button>
