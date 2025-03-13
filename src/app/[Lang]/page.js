@@ -89,7 +89,7 @@ export default async function  Home({params}) {
           </button>
         </Link>
         <Link href="#CONTACT">
-          <button className="bg-teal-500 text-black font-medium py-3 px-6 rounded-lg hover:bg-teal-600 transition">
+          <button className="bg-teal-500 text-white font-medium py-3 px-6 rounded-lg hover:bg-teal-600 transition">
           {dictionary.home.hero_contact_us}
           </button>
         </Link>

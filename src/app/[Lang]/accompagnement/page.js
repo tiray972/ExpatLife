@@ -11,8 +11,9 @@ import Image from 'next/image';
 import Timeline from '@/components/animation/timeline';
 import FAQ from '@/components/faq';
 import ContactSection from '@/components/contact/contactHome';
-import CalendlyPopup from '@/components/contact/calendar';
+
 import BandeauContact from '@/components/contact/BandeauContact';
+import OneReviews from '@/components/google/onereviews';
 
 export async function generateStaticParams() {
   return locales.map((Lang) => ({
@@ -28,7 +29,13 @@ export default async function  acompagnementpage({params}) {
   const dictionary = await getDictionary(Lang)
   const faqData = dictionary.home.faq;
   
-
+  const reviews = {
+      authorName: "Kenan .H",
+      profilePhoto: "/images/default-avatar.png", // Mettre des avatars corrects
+      text: "“Un accompagnement efficace et complet !Grâce à leur expertise, j’ai pu créer mon entreprise aux Émirats sans stress. De la structuration juridique à l’ouverture de mon compte bancaire, tout a été pris en charge avec professionnalisme. Leur suivi post-création (comptabilité, fiscalité, gestion RH) est un vrai plus ! Je recommande vivement pour un accompagnement sérieux et efficace.”",
+      rating: 5,
+      relativeTime: "il y a 1 mois",
+    };
   
   
 
@@ -147,6 +154,7 @@ export default async function  acompagnementpage({params}) {
         </section>
         {/* timeline  */}
         <Timeline dictionary={dictionary} Lang={Lang}/>
+        <OneReviews review={reviews}/>
 
         {/* Section communication et visibilité */}
         <section
