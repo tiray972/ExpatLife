@@ -127,7 +127,66 @@
     "your_com": "Comunicación y Visibilidad",
     "your_com_p1": "Destáquese con nuestros socios",
     "your_com_p2": "Lo acompañamos en la estructuración de su comunicación y el desarrollo de su presencia. Esto incluye la creación y optimización de su identidad visual (logotipo, branding), el diseño de su sitio web y la gestión de su e-reputación. Implementamos estrategias digitales en redes sociales, publicidad dirigida y campañas de comunicación. Lo conectamos con expertos reconocidos para amplificar su visibilidad y asegurar el crecimiento de su negocio.",
-    "creatSas":"Creer ma société" 
+    "creatSas":"crear mi empresa",
+    "our_steps":"NUESTROS PASOS",
+    "steps":[
+      { 
+        "step_name": "Paso 1",
+        "id": 1,
+        "title": "Gestión completa de los trámites legales y administrativos",
+        "intro": "GESTIÓN DE TODOS LOS TRÁMITES RELACIONADOS CON LA CREACIÓN DE SU EMPRESA",
+        "description": [
+          "Redacción de estatutos legales y documentos de incorporación.",
+          "Registro de su empresa ante las autoridades competentes.",
+          "Obtención de su licencia comercial según su sector de actividad.",
+          "Asistencia para el alquiler de una oficina física o una dirección virtual según sus necesidades."
+        ],
+        "image": "/images/passport.png",
+        "icon": "file-text"
+      },
+      {
+        "step_name": "Paso 2",
+        "id": 2,
+        "title": "Obtención de visados para usted y su familia",
+        "intro": "APOYO EN TODOS LOS TRÁMITES RELACIONADOS CON SU VISADO DE RESIDENCIA, ASÍ COMO PARA SU FAMILIA Y EMPLEADOS SI ES NECESARIO",
+        "description": [
+          "Preparación para su entrada al país.",
+          "Solicitud, seguimiento y entrega de su Emirates ID.",
+          "Trámites médicos obligatorios: análisis de sangre, huellas dactilares, etc.",
+          "Patrocinio de sus familiares y empleados."
+        ],
+        "image": "/images/215.png",
+        "icon": "heart-pulse"
+      },
+      {
+        "step_name": "Paso 3",
+        "id": 3,
+        "title": "Apertura de una cuenta bancaria profesional",
+        "intro": "APERTURA DE SU CUENTA BANCARIA EMPRESARIAL DE MANERA SENCILLA Y SEGURA",
+        "description": [
+          "Elección del banco más adecuado a sus necesidades entre nuestros socios.",
+          "Asistencia en la preparación de la documentación requerida.",
+          "Conexión con asesores bancarios especializados.",
+          "Asistencia post-apertura y gestión bancaria para optimizar el uso y manejar eficientemente las transacciones."
+        ],
+        "image": "/images/bank.png",
+        "icon": "banknote"
+      },
+      {
+        "step_name": "Paso 4",
+        "id": 4,
+        "title": "Soporte y asistencia post-creación",
+        "intro": "PERMANECEMOS A SU LADO PARA GARANTIZAR UNA GESTIÓN EMPRESARIAL FLUIDA Y CUMPLIMIENTO NORMATIVO",
+        "description": [
+          "Asistencia contable para una gestión financiera segura.",
+          "Apoyo en el crecimiento y expansión con socios estratégicos.",
+          "Soporte administrativo y de RRHH para optimizar la gestión de su empresa.",
+          "Supervisión de obligaciones legales y fiscales, renovación de licencias, gestión de visados y cumplimiento tributario."
+        ],
+        "image": "/images/215.png",
+        "icon": "briefcase-business"
+      }
+    ]
   }
   
 

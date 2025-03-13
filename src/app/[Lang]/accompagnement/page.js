@@ -11,6 +11,7 @@ import Image from 'next/image';
 import Timeline from '@/components/animation/timeline';
 import FAQ from '@/components/faq';
 import ContactSection from '@/components/contact/contactHome';
+import CalendlyPopup from '@/components/contact/calendar';
 
 export async function generateStaticParams() {
   return locales.map((Lang) => ({
@@ -58,6 +59,7 @@ export default async function  acompagnementpage({params}) {
                 {dictionary.support.creatSas}
               </button>
             </Link>
+            <CalendlyPopup url="https://calendly.com/jojolala972/30min" />
           </div>
           <div className="md:w-1/2">
             {/* formulaire  */}
@@ -142,7 +144,7 @@ export default async function  acompagnementpage({params}) {
           
         </section>
         {/* timeline  */}
-        <Timeline/>
+        <Timeline dictionary={dictionary}/>
 
         {/* Section communication et visibilité */}
         <section

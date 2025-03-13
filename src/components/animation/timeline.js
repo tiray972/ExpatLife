@@ -6,11 +6,11 @@ import { PlaneTakeoff, FileText, HeartPulse, Banknote, BriefcaseBusiness } from 
 import { Card, CardContent } from "@/components/ui/card";
 import Image from "next/image";
 
-const steps = [
+let steps = [
     {
       id: 1,
       title: "PRISE EN CHARGE DE TOUTES LES FORMALITÉS",
-      into: "PRISE EN CHARGE DE TOUTES LES FORMALITÉS LIÉES À LA CRÉATION DE VOTRE SOCIÉTÉ",
+      intro: "PRISE EN CHARGE DE TOUTES LES FORMALITÉS LIÉES À LA CRÉATION DE VOTRE SOCIÉTÉ",
       description: [
         "Rédaction des statuts juridiques et documents d’incorporation.",
         "Enregistrement de votre entreprise auprès des autorités compétentes.",
@@ -24,7 +24,7 @@ const steps = [
     {
       id: 2,
       title: "ACCOMPAGNEMENT POUR LE VISA DE RÉSIDENCE",
-      into: "ACCOMPAGNEMENT DANS TOUTES LES DÉMARCHES LIÉES À VOTRE VISA DE RÉSIDENCE, AINSI QUE CEUX DE VOTRE FAMILLE ET DE VOS EMPLOYÉS SI BESOIN",
+      intro: "ACCOMPAGNEMENT DANS TOUTES LES DÉMARCHES LIÉES À VOTRE VISA DE RÉSIDENCE, AINSI QUE CEUX DE VOTRE FAMILLE ET DE VOS EMPLOYÉS SI BESOIN",
       description: [
         "La préparation à votre entrée sur le territoire.",
         "La demande, le suivi et la livraison de votre Emirates ID.",
@@ -38,7 +38,7 @@ const steps = [
     {
       id: 3,
       title: "OUVERTURE DE COMPTE BANCAIRE",
-      into: "OUVERTURE DE VOTRE COMPTE BANCAIRE PROFESSIONNEL EN TOUTE SÉRÉNITÉ ET SANS COMPLICATIONS",
+      intro: "OUVERTURE DE VOTRE COMPTE BANCAIRE PROFESSIONNEL EN TOUTE SÉRÉNITÉ ET SANS COMPLICATIONS",
       description: [
         "Un choix de la banque la plus adaptée à vos besoins, parmi nos partenaires.",
         "Un accompagnement pour la constitution du dossier.",
@@ -52,7 +52,7 @@ const steps = [
     {
       id: 4,
       title: "SUPPORT ET ACCOMPAGNEMENT POST-CRÉATION",
-      into: "NOUS RESTONS À VOS CÔTÉS POUR VOUS ASSURER UNE GESTION FLUIDE ET CONFORME DE VOTRE ACTIVITÉ",
+      intro: "NOUS RESTONS À VOS CÔTÉS POUR VOUS ASSURER UNE GESTION FLUIDE ET CONFORME DE VOTRE ACTIVITÉ",
       description: [
         "Accompagnement en comptabilité, pour une gestion financière sereine.",
         "Assistance pour la croissance et l’expansion avec des partenaires stratégiques.",
@@ -66,11 +66,22 @@ const steps = [
   ];
   
 
-export default function Timeline() {
+export default function Timeline({ dictionary }) {
   const { scrollYProgress } = useScroll();
+  if (dictionary.support.steps) {
+    steps = dictionary.support.steps;
+    
 
+  }
+  const iconMap = {
+    "file-text": <FileText size={24} />,
+    "heart-pulse": <HeartPulse size={24} />,
+    "banknote": <Banknote size={24} />,
+    "briefcase-business": <BriefcaseBusiness size={24} />
+  };
   return (
     <div id="timeline" className="relative min-h-screen bg-teal-200 flex flex-col items-center justify-center py-20 px-6">
+      <h2 className="text-2xl sm:text-3xl font-bold uppercase text-gray-900 mb-4" >{dictionary.support.our_steps}</h2>
       <motion.div
         className="absolute left-1/2 transform -translate-x-1/2 h-full w-[4px] bg-white"
         style={{ scaleY: scrollYProgress }}
@@ -88,8 +99,9 @@ export default function Timeline() {
           >
             <Card className="bg-white shadow-lg p-6 rounded-lg max-w-xl">
               <CardContent>
-                <h3 className="text-lg font-semibold text-gray-700">{step.title}</h3>
-                <p className="text-sm text-teal-500 mt-2">{step.into}</p>
+                <p className="text-2xl text-teal-700 uppercase my-2" >{step.step_name}</p>
+                <h3 className="text-lg font-semibold uppercase text-gray-700">{step.title}</h3>
+                <p className="text-sm text-teal-500 uppercase mt-2">{step.intro}</p>
                 <ul className="text-sm text-gray-500 mt-2 list-disc list-inside">
                     {step.description.map((item, i) => (
                       <li key={i}>{item}</li>
@@ -99,7 +111,7 @@ export default function Timeline() {
             </Card>
 
             <div className="relative md:w-14 w-44 h-14 flex items-center justify-center bg-white text-green-600 rounded-full shadow-lg mx-4 md:mx-8">
-              {step.icon}
+            {iconMap[step.icon]}
             </div>
             <Image
             src={step.image}

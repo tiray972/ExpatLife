@@ -1,47 +1,34 @@
 "use client";
 
+import { useState } from "react";
 import { PropertyList } from "@/components/properties/PropertyList";
 import { PropertyFilters } from "@/components/properties/PropertyFilters";
-import { PropertyMap } from "@/components/properties/PropertyMap";
-import { useState } from "react";
-import { useProperties } from "@/hooks/useProperties";
+import { PropertySorting } from "@/components/properties/PropertySorting";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { MapIcon, List } from "lucide-react";
 import Header from "@/components/header";
-import { metadata as pageMetadata } from "./locationMetadata";
 import { useParams } from "next/navigation";
 import Head from "next/head";
 
-console.log(pageMetadata) 
-
-
-export default  function LocationsPage() {
+export default function LocationsPage() {
   const [filters, setFilters] = useState({
-    emirateID: true, // Initialisé à true
+    emirateID: true,
     type: "all",
     priceRange: [0, 1000000],
     bedrooms: "all",
     duration: "all",
     furnished: "all",
+    sortBy: "price-asc",
   });
-  const params = useParams();  // Récupère params correctement
-  const Lang = params.Lang;  // Maintenant lang est disponible
-  const { properties, isLoading } = useProperties();
-  
+
+  const params = useParams();
+  const Lang = params.Lang;
 
   return (
     <>
-      {/* Métadonnées dynamiques */}
       <Head>
         <title>Properties for Rent - Expatlife</title>
-        <meta
-          name="description"
-          content="Retrouvez les propriétés disponibles directement sur Expatlife et bien plus."
-        />
-        <meta
-          name="keywords"
-          content="logement Émirats, logement à louer, conseils expatriés, expatlife, immobilier Émirats"
-        />
+        <meta name="description" content="Retrouvez les propriétés disponibles directement sur Expatlife et bien plus." />
       </Head>
       
       <main className="min-h-screen bg-gray-50">
@@ -63,18 +50,8 @@ export default  function LocationsPage() {
                   </TabsTrigger>
                 </TabsList>
                 <TabsContent value="list">
-                  {isLoading ? (
-                    <p>Loading...</p>
-                  ) : (
-                    <PropertyList filters={filters} />
-                  )}
-                </TabsContent>
-                <TabsContent value="map">
-                  {isLoading ? (
-                    <p>Loading...</p>
-                  ) : (
-                    <PropertyMap properties={properties} />
-                  )}
+                  <PropertySorting filters={filters} setFilters={setFilters} />
+                  <PropertyList filters={filters} />
                 </TabsContent>
               </Tabs>
             </div>

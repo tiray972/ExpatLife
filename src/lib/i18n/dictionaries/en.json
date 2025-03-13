@@ -127,7 +127,66 @@
     "your_com": "Communication and Visibility",
     "your_com_p1": "Stand out with our partners",
     "your_com_p2": "We assist you in structuring your communication and developing your presence. This includes creating and optimizing your visual identity (logo, branding), designing your website, and managing your e-reputation. We implement digital strategies on social media, targeted advertising, and communication campaigns. We connect you with recognized experts to boost your visibility and ensure the growth of your business.",
-    "creatSas":"Creer ma société" 
+    "creatSas":"Create my company",
+    "our_steps":"OUR STEPS",
+    "steps": [
+      { 
+        "step_name": "Step 1",
+        "id": 1,
+        "title": "Complete management of legal and administrative procedures",
+        "intro": "HANDLING ALL FORMALITIES RELATED TO THE CREATION OF YOUR COMPANY",
+        "description": [
+          "Drafting legal statutes and incorporation documents.",
+          "Registering your company with the relevant authorities.",
+          "Obtaining your business license based on your industry sector.",
+          "Assistance with renting a physical office or a virtual address as needed."
+        ],
+        "image": "/images/passport.png",
+        "icon": "file-text"
+      },
+      {
+        "step_name": "Step 2",
+        "id": 2,
+        "title": "Obtaining visas for you and your family",
+        "intro": "SUPPORT IN ALL PROCEDURES RELATED TO YOUR RESIDENCE VISA, AS WELL AS THOSE FOR YOUR FAMILY AND EMPLOYEES IF NEEDED",
+        "description": [
+          "Preparation for your entry into the country.",
+          "Application, tracking, and delivery of your Emirates ID.",
+          "Mandatory medical formalities: blood tests, fingerprints, etc.",
+          "Sponsorship of your relatives and employees."
+        ],
+        "image": "/images/215.png",
+        "icon": "heart-pulse"
+      },
+      {
+        "step_name": "Step 3",
+        "id": 3,
+        "title": "Opening a professional bank account",
+        "intro": "OPENING YOUR BUSINESS BANK ACCOUNT WITH EASE AND PEACE OF MIND",
+        "description": [
+          "Choosing the most suitable bank for your needs from our partners.",
+          "Assistance in preparing the required documents.",
+          "Connecting you with specialized banking advisors.",
+          "Post-opening assistance and banking management to optimize usage and efficiently handle transactions."
+        ],
+        "image": "/images/bank.png",
+        "icon": "banknote"
+      },
+      {
+        "step_name": "Step 4",
+        "id": 4,
+        "title": "Support and post-creation assistance",
+        "intro": "WE STAY BY YOUR SIDE TO ENSURE SMOOTH AND COMPLIANT BUSINESS MANAGEMENT",
+        "description": [
+          "Accounting support for a secure financial management.",
+          "Assistance with business growth and expansion through strategic partners.",
+          "Administrative and HR support to optimize your business operations.",
+          "Monitoring legal and tax obligations, license renewal, visa management, and tax compliance."
+        ],
+        "image": "/images/215.png",
+        "icon": "briefcase-business"
+      }
+    ]
     
   }  
 }

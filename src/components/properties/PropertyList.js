@@ -17,13 +17,25 @@ export function PropertyList({ filters }) {
     return true;
   });
 
+  // Appliquer le tri sur une copie des propriétés filtrées
+  const sortedProperties = [...filteredProperties].sort((a, b) => {
+    if (filters.sortBy === "price-asc") {
+      return a.price - b.price;
+    } else if (filters.sortBy === "price-desc") {
+      return b.price - a.price;
+    } else if (filters.sortBy === "bedrooms") {
+      return a.bedrooms - b.bedrooms;
+    }
+    return 0;
+  });
+
   if (isLoading) {
     return <div>Chargement...</div>;
   }
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-      {filteredProperties.map((property) => (
+      {sortedProperties.map((property) => (
         <PropertyCard key={property.id} property={property} />
       ))}
     </div>
