@@ -188,5 +188,9 @@
         "icon": "briefcase-business"
       }
     ]
+  },
+  "calendar":{
+    "Schedule_time_with_me":"prendre rendez-vous ",
+    "take_rdv":"prendre rendez-vous "
   }
 }

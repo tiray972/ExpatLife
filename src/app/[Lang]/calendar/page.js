@@ -1,4 +1,5 @@
 import Footer from "@/components/Footer";
+import CalendlyWidget from "@/components/contact/CalendlyWidget";
 import Header from "@/components/header"
 import { locales } from '@/lib/i18n/config';
 
@@ -15,9 +16,8 @@ export default async function calendarPage({params}) {
         <>
             <Header lang={ Lang }/>
             <div className="min-h-full">
-                Test 
                 
-               
+                <CalendlyWidget/>
 
             </div>
             <Footer lang={ Lang }/>

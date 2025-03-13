@@ -5,6 +5,7 @@ import { motion, useScroll } from "framer-motion";
 import { PlaneTakeoff, FileText, HeartPulse, Banknote, BriefcaseBusiness } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import Image from "next/image";
+import Link from "next/link";
 
 let steps = [
     {
@@ -66,7 +67,7 @@ let steps = [
   ];
   
 
-export default function Timeline({ dictionary }) {
+export default function Timeline({ dictionary,Lang }) {
   const { scrollYProgress } = useScroll();
   if (dictionary.support.steps) {
     steps = dictionary.support.steps;
@@ -81,7 +82,7 @@ export default function Timeline({ dictionary }) {
   };
   return (
     <div id="timeline" className="relative min-h-screen bg-teal-200 flex flex-col items-center justify-center py-20 px-6">
-      <h2 className="text-2xl sm:text-3xl font-bold uppercase text-gray-900 mb-4" >{dictionary.support.our_steps}</h2>
+      <h2 className="text-2xl sm:text-3xl font-bold uppercase text-gray-900 mb-10" >{dictionary.support.our_steps}</h2>
       <motion.div
         className="absolute left-1/2 transform -translate-x-1/2 h-full w-[4px] bg-white"
         style={{ scaleY: scrollYProgress }}
@@ -122,7 +123,13 @@ export default function Timeline({ dictionary }) {
             />
           </motion.div>
         ))}
+
       </div>
+      <Link href={`/${Lang}/calendar`}>
+              <button className="bg-teal-500 text-white font-bold mt-10 py-2 px-4 uppercase rounded hover:bg-teal-600">
+                {dictionary.calendar.take_rdv}
+              </button>
+            </Link>
     </div>
   );
 }

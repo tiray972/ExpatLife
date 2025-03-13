@@ -12,6 +12,7 @@ import Timeline from '@/components/animation/timeline';
 import FAQ from '@/components/faq';
 import ContactSection from '@/components/contact/contactHome';
 import CalendlyPopup from '@/components/contact/calendar';
+import BandeauContact from '@/components/contact/BandeauContact';
 
 export async function generateStaticParams() {
   return locales.map((Lang) => ({
@@ -38,6 +39,7 @@ export default async function  acompagnementpage({params}) {
       <div className="bg-gray-100 scroll-smooth">
         
         <Header lang={Lang}  />
+        <BandeauContact/>
       
         {/* Section formulaire  */}
         <section
@@ -54,12 +56,12 @@ export default async function  acompagnementpage({params}) {
             <p className="text-gray-700 mb-4">
               {dictionary.support.p_herro}
             </p>
-            <Link href="https://wa.me/971568127898">
+            <Link href={`/${Lang}/calendar`}>
               <button className="bg-teal-500 text-white font-bold py-2 px-4 uppercase rounded hover:bg-teal-600">
-                {dictionary.support.creatSas}
+                {dictionary.calendar.take_rdv}
               </button>
             </Link>
-            <CalendlyPopup url="https://calendly.com/jojolala972/30min" />
+
           </div>
           <div className="md:w-1/2">
             {/* formulaire  */}
@@ -144,7 +146,7 @@ export default async function  acompagnementpage({params}) {
           
         </section>
         {/* timeline  */}
-        <Timeline dictionary={dictionary}/>
+        <Timeline dictionary={dictionary} Lang={Lang}/>
 
         {/* Section communication et visibilité */}
         <section

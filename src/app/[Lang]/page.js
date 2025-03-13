@@ -185,7 +185,7 @@ export default async function  Home({params}) {
       {dictionary.home.expatlife_intro}
         
       </p>
-      <Link href="#CONTACT">
+      <Link href={`/${Lang}/calendar`}>
         <button className="bg-teal-500 text-white font-bold py-2 px-4 rounded-lg hover:bg-teal-600 transition">
           {dictionary.home.hero_contact_us}
         </button>
@@ -295,7 +295,7 @@ export default async function  Home({params}) {
             <p className="text-gray-700 mb-4">
             {dictionary.home.your_trust_p2}
             </p>
-            <Link href={`/${Lang}/contact`}>
+            <Link href="https://wa.me/971568127898">
               <button className="bg-teal-500 text-white font-bold py-2 px-4 rounded hover:bg-teal-600">
               {dictionary.home.hero_contact_us}
               </button>
