@@ -84,7 +84,7 @@ export default function Timeline({ dictionary,Lang }) {
     <div id="timeline" className="relative min-h-screen bg-teal-200 flex flex-col items-center justify-center py-20 px-6">
       <h2 className="text-2xl sm:text-3xl font-bold uppercase text-gray-900 mb-10" >{dictionary.support.our_steps}</h2>
       <motion.div
-        className="absolute left-1/2 transform -translate-x-1/2 h-full w-[4px] bg-white"
+        className="absolute left-1/2 transform -translate-x-1/2 h-full w-[4px] "
         style={{ scaleY: scrollYProgress }}
       ></motion.div>
 
