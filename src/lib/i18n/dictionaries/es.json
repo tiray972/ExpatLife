@@ -187,6 +187,10 @@
         "icon": "briefcase-business"
       }
     ]
+  },
+  "calendar": {
+    "Schedule_time_with_me": "programar una cita conmigo",
+    "take_rdv": "tomar una cita"
   }
   
 

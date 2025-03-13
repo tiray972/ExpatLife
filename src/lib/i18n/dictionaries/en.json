@@ -188,5 +188,9 @@
       }
     ]
     
-  }  
+  },
+  "calendar": {
+    "Schedule_time_with_me": "schedule a meeting with me",
+    "take_rdv": "take an appointment"
+  } 
 }
