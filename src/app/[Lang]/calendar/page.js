@@ -17,11 +17,7 @@ export default async function calendarPage({params}) {
             <div className="min-h-full">
                 Test 
                 
-            <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
-            <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
-            <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/jojolala972/30min'});return false;">Schedule time with me</a>
-            </link>
-                        
+               
 
             </div>
             <Footer lang={ Lang }/>
