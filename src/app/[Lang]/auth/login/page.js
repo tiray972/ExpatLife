@@ -75,7 +75,7 @@ export default function Login() {
       await saveUserToFirestore(user);
 
       // Redirection vers le tableau de bord basé sur le rôle
-      router.push(role === "agent" ? "en/dashboard/agent" : "en/dashboard/client");
+      router.push(role === "agent" ? "/en/dashboard/agent" : "/en/dashboard/client");
     } catch (error) {
       console.error("Erreur lors de la connexion :", error);
       if (error.code === "auth/user-not-found") {
@@ -103,7 +103,7 @@ export default function Login() {
       await saveUserToFirestore(user);
 
       // Redirection vers le tableau de bord basé sur le rôle
-      router.push(role === "agent" ? "en/dashboard/agent" : "en/dashboard/client");
+      router.push(role === "agent" ? "/en/dashboard/agent" : "/en/dashboard/client");
     } catch (error) {
       console.error("Erreur lors de la connexion Google :", error);
       setError("Une erreur s'est produite lors de la connexion avec Google.");
