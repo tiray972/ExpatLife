@@ -17,8 +17,21 @@ module.exports = {
   			md: 'calc(var(--radius) - 2px)',
   			sm: 'calc(var(--radius) - 4px)'
   		},
-  		colors: {
-  			background: 'hsl(var(--background))',
+		colors: {
+			teal: {
+				50: 'rgb(var(--brand-light) / <alpha-value>)',
+				100: 'rgb(var(--brand-light) / <alpha-value>)',
+				200: 'rgb(var(--brand-light) / <alpha-value>)',
+				300: 'rgb(var(--brand-light) / <alpha-value>)',
+				400: 'rgb(var(--brand-light) / <alpha-value>)',
+				500: 'rgb(var(--brand-dark) / <alpha-value>)',
+				600: 'rgb(var(--brand-dark) / <alpha-value>)',
+				700: 'rgb(var(--brand-dark) / <alpha-value>)',
+				800: 'rgb(var(--brand-dark) / <alpha-value>)',
+				900: 'rgb(var(--brand-dark) / <alpha-value>)',
+				950: 'rgb(var(--brand-dark) / <alpha-value>)'
+			},
+			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
   			card: {
   				DEFAULT: 'hsl(var(--card))',
@@ -28,8 +41,8 @@ module.exports = {
   				DEFAULT: 'hsl(var(--popover))',
   				foreground: 'hsl(var(--popover-foreground))'
   			},
-  			primary: {
-  				DEFAULT: 'hsl(var(--primary))',
+			primary: {
+				DEFAULT: 'rgb(var(--primary) / <alpha-value>)',
   				foreground: 'hsl(var(--primary-foreground))'
   			},
   			secondary: {
